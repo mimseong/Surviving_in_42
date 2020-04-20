@@ -19,6 +19,7 @@ public class DialogController : MonoBehaviour
     }
 
     /// <summary> textUI에 text를 출력하는 함수</summary>
+    /// <param name="text"> textUI에 출력되는 문자열 </param>
     /// <param name="startTerm"> text가 처음에 출력되기전에 대기하는 시간 </param>
     /// <param name="speed"> 한글자가 나타나는 속도 0.02f를 추천 </param>
     public void ShowText(string text, float startTerm, float speed)
