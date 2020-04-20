@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     private Schedule schedule;
     private int week;
     private Day day;
+
     void Start()
     {
 
