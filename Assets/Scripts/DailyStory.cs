@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DailyStory : MonoBehaviour, Story
 {
+    [SerializeField] private DailyUIManager uIManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,13 @@ public class DailyStory : MonoBehaviour, Story
     public void FirstMent(DialogController dialogController)
     {
         //if (GameManager.instance.GetSchedule() == Schedule.MORNING)
-        dialogController.ShowText("상쾌한 아침이다.", 0.5f, 0.02f);
-        dialogController.ShowText("이번엔 뭘할까?", 1.0f, 0.02f);
+        dialogController.ShowTexts(0.5f, 1.5f, 0.02f, "상쾌한 아침이다!", "이번엔 뭘 할까?");
+        Invoke("SelectButton", 3.0f);
+
+    }
+
+    private void SelectButton()
+    {
+        uIManager.SelectButton(true);
     }
 }

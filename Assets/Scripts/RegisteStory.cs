@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RegisteStory : MonoBehaviour, Story
 {
+    [SerializeField] private RegisterUIManager registerUIManager;
+    [SerializeField] private DialogController dialogController;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +18,19 @@ public class RegisteStory : MonoBehaviour, Story
         
     }
 
+    public void Input()
+    {
+        registerUIManager.AppearInput();
+    }
+
     public void FirstMent(DialogController dialogController)
     {
-        dialogController.ShowText("드디어 라피신이 시작되었다.", 0.5f, 0.02f);
-        dialogController.ShowText("등록 과정 멘트 ...", 1.0f, 0.02f);
-        dialogController.ShowText("이제 올라가서 원하는 자리 사용하시면 됩니다!", 1.0f, 0.02f);
+        dialogController.ShowTexts(0.5f, 1.5f, 0.02f, "라피신 첫 날이다!", "두근두근", "등록하시겠어요?");
+        Invoke("Input", 5.0f);
+    }
+
+    public void Registered()
+    {
+        dialogController.ShowTexts(0.5f, 1.5f, 0.02f, "등록되었습니다!");
     }
 }
