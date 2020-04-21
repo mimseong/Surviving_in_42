@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static GameManager instance;
     private float codingLevel;
     private float fortytwoLevel;
     private int clean;
@@ -15,12 +15,24 @@ public class GameManager : MonoBehaviour
     private int week;
     private Day day;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
 
