@@ -5,10 +5,13 @@ using UnityEngine;
 public class StoryManager : MonoBehaviour
 {
     [SerializeField] private DialogController dialogController;
-    // Start is called before the first frame update
+    private Story nowStory;
+
     void Start()
     {
-        dialogController.ShowText("HAHA!", 1.0f, 0.02f);
+        nowStory = GameObject.Find("Story").GetComponent<Story>();
+        //dialogController.ShowText("HAHA!", 1.0f, 0.02f);
+        nowStory.FirstMent(dialogController);
     }
 
     public void PushButton()
