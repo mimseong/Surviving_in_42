@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class DailyUIManager : MonoBehaviour
 {
+    [SerializeField] private Button backButton;
     [SerializeField] private Button studyButton;
     [SerializeField] private Button restButton;
     [SerializeField] private Button soloCodingButton;
@@ -29,6 +30,10 @@ public class UIManager : MonoBehaviour
         
     }
 
+    public void BackButton(bool value)
+    {
+        backButton.gameObject.SetActive(value);
+    }
     public void SelectButton(bool value)
     {
         studyButton.gameObject.SetActive(value);
@@ -42,7 +47,8 @@ public class UIManager : MonoBehaviour
         evaluateButton.gameObject.SetActive(value);
         evaluatedButton.gameObject.SetActive(value);
         cheatingButton.gameObject.SetActive(value);
-        SelectButton(false);
+        SelectButton(!value);
+        BackButton(value);
     }
 
     public void RestButton(bool value)
@@ -51,7 +57,13 @@ public class UIManager : MonoBehaviour
         sleepButton.gameObject.SetActive(value);
         goHomeButton.gameObject.SetActive(value);
         lazyButton.gameObject.SetActive(value);
-        SelectButton(false);
+        SelectButton(!value);
+        BackButton(value);
     }
 
+    public void GoBack()
+    {
+        StudyButton(false);
+        RestButton(false);
+    }
 }
