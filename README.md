@@ -40,3 +40,6 @@
 - 협업 도구 : github, notion, google docs, discord
 
 - 개발 방식 : pair programming
+
+### 기획 회의 및 작업 일지
+https://github.com/mimseong/Surviving_in_42/wiki
