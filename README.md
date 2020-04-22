@@ -41,5 +41,5 @@
 
 - 개발 방식 : pair programming
 
-### 기획 회의 및 작업 일지
+### 위키페이지
 https://github.com/mimseong/Surviving_in_42/wiki
