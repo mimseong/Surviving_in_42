@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     private int week;
     private Day day;
     private string name;
+    private Work work;
 
     private void Awake()
     {
@@ -107,6 +108,16 @@ public class GameManager : MonoBehaviour
     public string GetName()
     {
         return (this.name);
+    }
+
+    public void SetWork(Work work)
+    {
+        this.work = work;
+    }
+
+    public Work GetWork()
+    {
+        return (this.work);
     }
 
 

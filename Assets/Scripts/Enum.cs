@@ -16,3 +16,16 @@ public enum Day
     SAT,
     SUN
 };
+
+public enum Work
+{
+    SOLO_CODING,
+    DUO_CODING,
+    EVALUATE,
+    EVALUATED,
+    CHEATING,
+    DRINKING,
+    SLEEP,
+    GO_HOME,
+    LAZY
+};
