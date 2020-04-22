@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class RegisterUIManager : MonoBehaviour
@@ -39,5 +40,10 @@ public class RegisterUIManager : MonoBehaviour
         inputField.gameObject.SetActive(false);
         RegisterStory();
         NextButton(true);
+    }
+
+    public void NextScene()
+    {
+        SceneManager.LoadScene("DailyScene");
     }
 }
