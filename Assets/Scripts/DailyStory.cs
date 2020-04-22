@@ -20,7 +20,7 @@ public class DailyStory : MonoBehaviour, Story
     public void FirstMent(DialogController dialogController)
     {
         //if (GameManager.instance.GetSchedule() == Schedule.MORNING)
-        dialogController.ShowTexts(0.5f, 1.5f, 0.02f, "상쾌한 아침이다!", "이번엔 뭘 할까?");
+        dialogController.ShowTexts(0.5f, 1.5f, 0.02f, "상쾌한 아침이다!", "무엇을 할까?");
         Invoke("SelectButton", 3.0f);
 
     }
