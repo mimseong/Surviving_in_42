@@ -35,7 +35,7 @@ public class RegisterUIManager : MonoBehaviour
     }
     public void InputName()
     {
-        Debug.Log(inputField.text);
+        GameManager.instance.SetName(inputField.text);
         inputField.gameObject.SetActive(false);
         RegisterStory();
         NextButton(true);
