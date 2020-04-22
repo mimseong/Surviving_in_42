@@ -37,6 +37,6 @@
 
 - 개발 도구 : unity 2019.3.10f1, visual studio 2019
 
-- 협업 도구 : github, notion, google docs,discord
+- 협업 도구 : github, notion, google docs, discord
 
 - 개발 방식 : pair programming
