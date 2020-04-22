@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     private Schedule schedule;
     private int week;
     private Day day;
+    private string name;
 
     private void Awake()
     {
@@ -97,6 +98,17 @@ public class GameManager : MonoBehaviour
     {
         return (this.sleep);
     }
+
+    public void SetName(string name)
+    {
+        this.name = name;
+    }
+
+    public string GetName()
+    {
+        return (this.name);
+    }
+
 
     public void SetSchedule(Schedule schedule)
     {
