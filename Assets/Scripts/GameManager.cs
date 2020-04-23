@@ -50,6 +50,11 @@ public class GameManager : MonoBehaviour
         return (this.codingLevel);
     }
 
+    public void AddCodingLevel(float codingLevel)
+    {
+        this.codingLevel += codingLevel;
+    }
+
     public void SetFortytwoLevel(float fortytwoLevel)
     {
         this.fortytwoLevel = fortytwoLevel;
@@ -58,6 +63,11 @@ public class GameManager : MonoBehaviour
     public float GetFortytwoLevel()
     {
         return (this.fortytwoLevel);
+    }
+
+    public void AddFortytwoLevel(float fortytwoLevel)
+    {
+        this.fortytwoLevel += fortytwoLevel;
     }
 
     public void SetClean(int clean)
@@ -70,6 +80,11 @@ public class GameManager : MonoBehaviour
         return (this.clean);
     }
 
+    public void AddClean(int clean)
+    {
+        this.clean += clean;
+    }
+
     public void SetFriendship(int friendship)
     {
         this.friendship = friendship;
@@ -78,6 +93,11 @@ public class GameManager : MonoBehaviour
     public int GetFriendship()
     {
         return (this.friendship);
+    }
+
+    public void AddFriendship(int friendship)
+    {
+        this.friendship = friendship;
     }
 
     public void SetStress(int stress)
@@ -90,6 +110,11 @@ public class GameManager : MonoBehaviour
         return (this.stress);
     }
 
+    public void AddStress(int stress)
+    {
+        this.stress = stress;
+    }
+
     public void SetSleep(int sleep)
     {
         this.sleep = sleep;
@@ -98,6 +123,11 @@ public class GameManager : MonoBehaviour
     public int GetSleep()
     {
         return (this.sleep);
+    }
+
+    public void AddSleep(int sleep)
+    {
+        this.sleep = sleep;
     }
 
     public void SetName(string name)
@@ -119,7 +149,6 @@ public class GameManager : MonoBehaviour
     {
         return (this.work);
     }
-
 
     public void SetSchedule(Schedule schedule)
     {
