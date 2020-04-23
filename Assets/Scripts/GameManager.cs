@@ -11,11 +11,12 @@ public class GameManager : MonoBehaviour
     private int friendship;
     private int stress;
     private int sleep;
-    private Schedule schedule;
     private int week;
-    private Day day;
     private string name;
+    private Day day;
+    private Schedule schedule;
     private Work work;
+    private bool isEvaluate = false;
 
     private void Awake()
     {
@@ -50,6 +51,11 @@ public class GameManager : MonoBehaviour
         return (this.codingLevel);
     }
 
+    public void AddCodingLevel(float codingLevel)
+    {
+        this.codingLevel += codingLevel;
+    }
+
     public void SetFortytwoLevel(float fortytwoLevel)
     {
         this.fortytwoLevel = fortytwoLevel;
@@ -58,6 +64,11 @@ public class GameManager : MonoBehaviour
     public float GetFortytwoLevel()
     {
         return (this.fortytwoLevel);
+    }
+
+    public void AddFortytwoLevel(float fortytwoLevel)
+    {
+        this.fortytwoLevel += fortytwoLevel;
     }
 
     public void SetClean(int clean)
@@ -70,6 +81,11 @@ public class GameManager : MonoBehaviour
         return (this.clean);
     }
 
+    public void AddClean(int clean)
+    {
+        this.clean += clean;
+    }
+
     public void SetFriendship(int friendship)
     {
         this.friendship = friendship;
@@ -78,6 +94,11 @@ public class GameManager : MonoBehaviour
     public int GetFriendship()
     {
         return (this.friendship);
+    }
+
+    public void AddFriendship(int friendship)
+    {
+        this.friendship = friendship;
     }
 
     public void SetStress(int stress)
@@ -90,6 +111,11 @@ public class GameManager : MonoBehaviour
         return (this.stress);
     }
 
+    public void AddStress(int stress)
+    {
+        this.stress = stress;
+    }
+
     public void SetSleep(int sleep)
     {
         this.sleep = sleep;
@@ -98,6 +124,11 @@ public class GameManager : MonoBehaviour
     public int GetSleep()
     {
         return (this.sleep);
+    }
+
+    public void AddSleep(int sleep)
+    {
+        this.sleep = sleep;
     }
 
     public void SetName(string name)
@@ -120,7 +151,6 @@ public class GameManager : MonoBehaviour
         return (this.work);
     }
 
-
     public void SetSchedule(Schedule schedule)
     {
         this.schedule = schedule;
@@ -131,10 +161,21 @@ public class GameManager : MonoBehaviour
         return (this.schedule);
     }
 
+    public void SetIsEvaluate(bool value)
+    {
+        this.isEvaluate = value;
+    }
+
+    public bool GetIsEvaluate()
+    {
+        return (isEvaluate);
+    }
+
     public void NextWeek(int amount)
     {
         this.week += amount;
     }
+
     public void NextDay(int amount)
     {
         this.day += amount;
@@ -144,6 +185,7 @@ public class GameManager : MonoBehaviour
             NextWeek(1);
         }
     }
+
     /// <summary>
     /// 스케쥴을 증가시키는 함수. 밤이 지나면 다음 날이 된다.
     /// </summary>
