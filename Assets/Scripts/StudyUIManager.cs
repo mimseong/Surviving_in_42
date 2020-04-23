@@ -14,6 +14,10 @@ public class StudyUIManager : MonoBehaviour
     [SerializeField] private Sprite[] duoSprites;
     [SerializeField] private Sprite[] evalSprites;
     [SerializeField] private Sprite[] evedSprites;
+    [SerializeField] private Image terminal;
+    [SerializeField] private Button nextButton;
+    [SerializeField] private StudyStory studyStory;
+    [SerializeField] private DialogController dialogController;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +30,17 @@ public class StudyUIManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void ActiveTerminal()
+    {
+        terminal.gameObject.SetActive(true);
+        studyStory.DecideStudy(dialogController, GameManager.instance.GetWork());
+    }
+
+    public void NextButton(bool value)
+    {
+        nextButton.gameObject.SetActive(value);
     }
 
     public void ActiveImage()
@@ -53,6 +68,8 @@ public class StudyUIManager : MonoBehaviour
                 cheating.gameObject.SetActive(true);
                 break;
         }
+        if (tmp == Work.SOLO_CODING || tmp == Work.DUO_CODING || tmp == Work.EVALUATE || tmp == Work.EVALUATED || tmp == Work.CHEATING)
+            Invoke("ActiveTerminal", 1.2f);
     }
 
     public void RandomSetImage(Image target, Sprite[] sprites)
