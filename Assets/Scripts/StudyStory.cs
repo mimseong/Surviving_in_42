@@ -47,6 +47,7 @@ public class StudyStory : MonoBehaviour
                 Cheating(dialogController);
                 break;
         }
+        GameManager.instance.NextSchedule(1);
     }
 
     private void SoloCoding(DialogController dialogController)
