@@ -54,6 +54,10 @@ public class GameManager : MonoBehaviour
     public void AddCodingLevel(float codingLevel)
     {
         this.codingLevel += codingLevel;
+        if (this.codingLevel > 42)
+            this.codingLevel = 42;
+        else if (this.codingLevel < 0)
+            this.codingLevel = 0;
     }
 
     public void SetFortytwoLevel(float fortytwoLevel)
@@ -69,6 +73,10 @@ public class GameManager : MonoBehaviour
     public void AddFortytwoLevel(float fortytwoLevel)
     {
         this.fortytwoLevel += fortytwoLevel;
+        if (this.fortytwoLevel > 12)
+            this.fortytwoLevel = 12;
+        else if (this.fortytwoLevel < 0)
+            this.fortytwoLevel = 0;
     }
 
     public void SetClean(int clean)
@@ -84,6 +92,10 @@ public class GameManager : MonoBehaviour
     public void AddClean(int clean)
     {
         this.clean += clean;
+        if (this.clean > 100)
+            this.clean = 100;
+        else if (this.clean < 0)
+            this.clean = 0;
     }
 
     public void SetFriendship(int friendship)
@@ -99,6 +111,10 @@ public class GameManager : MonoBehaviour
     public void AddFriendship(int friendship)
     {
         this.friendship = friendship;
+        if (this.friendship > 100)
+            this.friendship = 100;
+        else if (this.friendship < 0)
+            this.friendship = 0;
     }
 
     public void SetStress(int stress)
@@ -114,6 +130,11 @@ public class GameManager : MonoBehaviour
     public void AddStress(int stress)
     {
         this.stress = stress;
+        if (this.stress > 100)
+            this.stress = 100;
+        else if (this.stress < 0)
+            this.stress = 0;
+
     }
 
     public void SetSleep(int sleep)
@@ -129,6 +150,10 @@ public class GameManager : MonoBehaviour
     public void AddSleep(int sleep)
     {
         this.sleep = sleep;
+        if(this.sleep > 100)
+            this.sleep = 100;
+        else if (this.sleep < 0)
+            this.sleep = 0;
     }
 
     public void SetName(string name)
