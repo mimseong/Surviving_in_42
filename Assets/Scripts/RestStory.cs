@@ -37,22 +37,22 @@ public class RestStory : MonoBehaviour
         }
     }
 
-    public void Beer(DialogController dialogController)
+    private void Beer(DialogController dialogController)
     {
         dialogController.ShowTexts(0.5f, 1.5f, 0.02f, "동료들과 함께 술을 마셨다", "언제까지 어깨춤을 추게 할거야~", "동료와의 관계 += 5", "만취해서 집에 갑니다");
     }
 
-    public void Sleep(DialogController dialogController)
+    private void Sleep(DialogController dialogController)
     {
         dialogController.ShowTexts(0.5f, 1.5f, 0.02f, "소파에서 조금 자기로 합니다", "...\n..\n...", "졸림 -= 30 \n스트레스 -= 10");
     }
 
-    public void GoHome(DialogController dialogController)
+    private void GoHome(DialogController dialogController)
     {
         dialogController.ShowTexts(0.5f, 1.5f, 0.02f, "이만 집에 가는 게 좋겠다", "집에서 씻고 청결도가 회복됩니다", "집에서 자고 졸림이 해소됩니다", "졸림 = 0 \n청결 = MAX \n스트레스 -= 50");
     }
 
-    public void Lazy(DialogController dialogController)
+    private void Lazy(DialogController dialogController)
     {
         int situation = Random.Range(0, 5);
         switch (situation)

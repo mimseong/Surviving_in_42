@@ -28,18 +28,18 @@ public class RestUIManager : MonoBehaviour
         
     }
 
-    public void ActiveTerminal()
+    private void ActiveTerminal()
     {
         terminal.gameObject.SetActive(true);
         restStory.DecideRest(dialogController, GameManager.instance.GetWork());
     }
 
-    public void NextButton(bool value)
+    private void NextButton(bool value)
     {
         nextButton.gameObject.SetActive(value);
     }
 
-    public void ActiveImage()
+    private void ActiveImage()
     {
         Work tmp = GameManager.instance.GetWork();
         switch (tmp)
@@ -61,7 +61,7 @@ public class RestUIManager : MonoBehaviour
             Invoke("ActiveTerminal", 1.2f);
     }
 
-    public void RandomSetImage(Image target, Sprite[] sprites)
+    private void RandomSetImage(Image target, Sprite[] sprites)
     {
         int index = Random.Range(0, sprites.Length);
         if (index != 0)
