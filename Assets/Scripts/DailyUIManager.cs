@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DailyUIManager : MonoBehaviour
@@ -17,6 +18,9 @@ public class DailyUIManager : MonoBehaviour
     [SerializeField] private Button sleepButton;
     [SerializeField] private Button goHomeButton;
     [SerializeField] private Button lazyButton;
+    [SerializeField] private DialogController dialogController;
+    [SerializeField] private Image terminal;
+    [SerializeField] private DailyStory dailyStory;
 
     // Start is called before the first frame update
     void Start()
@@ -30,14 +34,29 @@ public class DailyUIManager : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// 터미널을 켜고 daily story script에 있는 firstment 함수를 실행시키는 함수
+    /// </summary>
+
+    public void ActiveTerminal()
+    {
+        terminal.gameObject.SetActive(true);
+        dailyStory.FirstMent(dialogController, ActiveButton);
+    }
+
     public void BackButton(bool value)
     {
         backButton.gameObject.SetActive(value);
     }
-    public void SelectButton(bool value)
+    private void SelectButton(bool value)
     {
         studyButton.gameObject.SetActive(value);
         restButton.gameObject.SetActive(value);
+    }
+
+    private void ActiveButton()
+    {
+        SelectButton(true);
     }
 
     public void StudyButton(bool value)
@@ -65,5 +84,43 @@ public class DailyUIManager : MonoBehaviour
     {
         StudyButton(false);
         RestButton(false);
+    }
+
+    public void DecideSelect(int index)
+    {
+        switch (index)
+        {
+            case 1:
+                GameManager.instance.SetWork(Work.SOLO_CODING);
+                break;
+            case 2:
+                GameManager.instance.SetWork(Work.DUO_CODING);
+                break;
+            case 3:
+                GameManager.instance.SetWork(Work.EVALUATE);
+                break;
+            case 4:
+                GameManager.instance.SetWork(Work.EVALUATED);
+                break;
+            case 5:
+                GameManager.instance.SetWork(Work.CHEATING);
+                break;
+            case 6:
+                GameManager.instance.SetWork(Work.DRINKING);
+                break;
+            case 7:
+                GameManager.instance.SetWork(Work.SLEEP);
+                break;
+            case 8:
+                GameManager.instance.SetWork(Work.GO_HOME);
+                break;
+            case 9:
+                GameManager.instance.SetWork(Work.LAZY);
+                break;
+        }
+        if (index >= 1 && index <= 4)
+            SceneManager.LoadScene("StudyScene");
+        else
+            SceneManager.LoadScene("RestScene");
     }
 }

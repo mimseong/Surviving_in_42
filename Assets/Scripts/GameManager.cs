@@ -212,6 +212,17 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
+    /// 다음날 어떤 시간대에서부터 시작할지를 정해주는 함수
+    /// </summary>
+    /// <param name="schedule">시간대를 정하는 변수</param>
+
+    public void NextDaySchedule(Schedule schedule)
+    {
+        NextDay(1);
+        this.schedule = schedule;
+    }
+
+    /// <summary>
     /// 스케쥴을 증가시키는 함수. 밤이 지나면 다음 날이 된다.
     /// </summary>
     /// <param name="amount"> 이 변수의 값만큼 스케쥴이 증가한다. </param>
