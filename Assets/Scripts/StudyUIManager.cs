@@ -38,7 +38,7 @@ public class StudyUIManager : MonoBehaviour
         studyStory.DecideStudy(dialogController, GameManager.instance.GetWork());
     }
 
-    private void NextButton(bool value)
+    public void NextButton(bool value)
     {
         nextButton.gameObject.SetActive(value);
     }
