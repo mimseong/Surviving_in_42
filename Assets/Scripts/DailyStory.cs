@@ -17,6 +17,12 @@ public class DailyStory : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// 시간대에 따라 다른 멘트가 준비되어 있습니다
+    /// </summary>
+    /// <param name="dialogController">대사를 출력하는 스크립트</param>
+    /// <param name="fx">버튼 나오게 하는 함수</param>
+
     public void FirstMent(DialogController dialogController, ConvertMethod fx)
     {
         switch (GameManager.instance.GetSchedule())
