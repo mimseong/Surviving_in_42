@@ -32,18 +32,18 @@ public class StudyUIManager : MonoBehaviour
         
     }
 
-    public void ActiveTerminal()
+    private void ActiveTerminal()
     {
         terminal.gameObject.SetActive(true);
         studyStory.DecideStudy(dialogController, GameManager.instance.GetWork());
     }
 
-    public void NextButton(bool value)
+    private void NextButton(bool value)
     {
         nextButton.gameObject.SetActive(value);
     }
 
-    public void ActiveImage()
+    private void ActiveImage()
     {
         Work tmp = GameManager.instance.GetWork();
         switch (tmp)
@@ -72,7 +72,7 @@ public class StudyUIManager : MonoBehaviour
             Invoke("ActiveTerminal", 1.2f);
     }
 
-    public void RandomSetImage(Image target, Sprite[] sprites)
+    private void RandomSetImage(Image target, Sprite[] sprites)
     {
         int index = Random.Range(0, sprites.Length);
         if (index != 0)
