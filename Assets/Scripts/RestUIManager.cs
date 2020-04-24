@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class RestUIManager : MonoBehaviour
@@ -18,8 +19,7 @@ public class RestUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.instance.SetWork(Work.LAZY);
-        ActiveImage();
+
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class RestUIManager : MonoBehaviour
         nextButton.gameObject.SetActive(value);
     }
 
-    private void ActiveImage()
+    public void ActiveImage()
     {
         Work tmp = GameManager.instance.GetWork();
         switch (tmp)
@@ -66,5 +66,11 @@ public class RestUIManager : MonoBehaviour
         int index = Random.Range(0, sprites.Length);
         if (index != 0)
             target.sprite = sprites[index];
+    }
+
+    public void NextScene()
+    {
+        NextButton(false);
+        SceneManager.LoadScene("DailyScene");
     }
 }
