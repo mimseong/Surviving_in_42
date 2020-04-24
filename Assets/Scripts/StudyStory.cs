@@ -23,10 +23,10 @@ public class StudyStory : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// 선택지에 따라 어떤 스케쥴을 실행할지 결정하는 함수
     /// </summary>
-    /// <param name="dialogController"></param>
-    /// <param name="work"></param>
+    /// <param name="dialogController">대사를 출력하는 스크립트</param>
+    /// <param name="work">할일</param>
     public void DecideStudy(DialogController dialogController, Work work)
     {
         switch (work)
