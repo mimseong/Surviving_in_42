@@ -19,7 +19,20 @@ public class DailyStory : MonoBehaviour
 
     public void FirstMent(DialogController dialogController, ConvertMethod fx)
     {
-        //if (GameManager.instance.GetSchedule() == Schedule.MORNING)
-        dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, fx, "상쾌한 아침이다!", "무엇을 할까?");
+        switch (GameManager.instance.GetSchedule())
+        {
+            case Schedule.MORNING:
+                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, fx, "상쾌한 아침이다!", "무엇을 할까?");
+                break;
+            case Schedule.AFTERNOON:
+                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, fx, "점심을 먹고 나니 잠이 쏟아진다...", "무엇을 할까?");
+                break;
+            case Schedule.NIGHT:
+                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, fx, "한 것도 없는데 벌써 저녁이다!", "무엇을 할까?");
+                break;
+            case Schedule.DAWN:
+                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, fx, "고요한 새벽이다..", "무엇을 할까?");
+                break;
+        }
     }
 }

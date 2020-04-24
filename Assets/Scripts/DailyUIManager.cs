@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DailyUIManager : MonoBehaviour
@@ -79,5 +80,43 @@ public class DailyUIManager : MonoBehaviour
     {
         StudyButton(false);
         RestButton(false);
+    }
+
+    public void DecideSelect(int index)
+    {
+        switch (index)
+        {
+            case 1:
+                GameManager.instance.SetWork(Work.SOLO_CODING);
+                break;
+            case 2:
+                GameManager.instance.SetWork(Work.DUO_CODING);
+                break;
+            case 3:
+                GameManager.instance.SetWork(Work.EVALUATE);
+                break;
+            case 4:
+                GameManager.instance.SetWork(Work.EVALUATED);
+                break;
+            case 5:
+                GameManager.instance.SetWork(Work.CHEATING);
+                break;
+            case 6:
+                GameManager.instance.SetWork(Work.DRINKING);
+                break;
+            case 7:
+                GameManager.instance.SetWork(Work.SLEEP);
+                break;
+            case 8:
+                GameManager.instance.SetWork(Work.GO_HOME);
+                break;
+            case 9:
+                GameManager.instance.SetWork(Work.LAZY);
+                break;
+        }
+        if (index >= 1 && index <= 4)
+            SceneManager.LoadScene("StudyScene");
+        else
+            SceneManager.LoadScene("RestScene");
     }
 }
