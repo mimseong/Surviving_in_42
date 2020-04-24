@@ -34,6 +34,10 @@ public class DailyUIManager : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// 터미널을 켜고 daily story script에 있는 firstment 함수를 실행시키는 함수
+    /// </summary>
+
     public void ActiveTerminal()
     {
         terminal.gameObject.SetActive(true);
