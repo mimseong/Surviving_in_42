@@ -17,6 +17,9 @@ public class DailyUIManager : MonoBehaviour
     [SerializeField] private Button sleepButton;
     [SerializeField] private Button goHomeButton;
     [SerializeField] private Button lazyButton;
+    [SerializeField] private DialogController dialogController;
+    [SerializeField] private Image terminal;
+    [SerializeField] private DailyStory dailyStory;
 
     // Start is called before the first frame update
     void Start()
@@ -30,14 +33,25 @@ public class DailyUIManager : MonoBehaviour
         
     }
 
+    public void ActiveTerminal()
+    {
+        terminal.gameObject.SetActive(true);
+        dailyStory.FirstMent(dialogController, ActiveButton);
+    }
+
     public void BackButton(bool value)
     {
         backButton.gameObject.SetActive(value);
     }
-    public void SelectButton(bool value)
+    private void SelectButton(bool value)
     {
         studyButton.gameObject.SetActive(value);
         restButton.gameObject.SetActive(value);
+    }
+
+    private void ActiveButton()
+    {
+        SelectButton(true);
     }
 
     public void StudyButton(bool value)
