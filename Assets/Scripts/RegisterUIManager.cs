@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class RegisterUIManager : MonoBehaviour
 {
+    [SerializeField] private Image terminal;
     [SerializeField] private InputField inputField;
-    [SerializeField] private RegisteStory registeStory;
     [SerializeField] private Button nextButton;
+    [SerializeField] private RegisteStory registeStory;
+    [SerializeField] private DialogController dialogController;
 
     void Start()
     {
@@ -20,6 +22,16 @@ public class RegisterUIManager : MonoBehaviour
     {
         
     }
+
+    /// <summary>
+    /// 터미널 이미지 활성화 및 Register 장면에 맞는 멘트 출력 함수 호출
+    /// </summary>
+    public void ActiveTerminal()
+    {
+        terminal.gameObject.SetActive(true);
+        registeStory.FirstMent(dialogController);
+    }
+
     public void NextButton(bool value)
     {
         nextButton.gameObject.SetActive(value);
@@ -27,13 +39,14 @@ public class RegisterUIManager : MonoBehaviour
 
     public void RegisterStory()
     {
-        registeStory.Registered();
+        registeStory.Registered(dialogController);
     }
 
     public void AppearInput()
     {
         inputField.gameObject.SetActive(true);
     }
+
     public void InputName()
     {
         GameManager.instance.SetName(inputField.text);

@@ -5,13 +5,12 @@ using UnityEngine;
 public class DailyStory : MonoBehaviour
 {
     [SerializeField] private DailyUIManager uIManager;
-    // Start is called before the first frame update
+
     void Start()
     {
         uIManager.ActiveTerminal();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
