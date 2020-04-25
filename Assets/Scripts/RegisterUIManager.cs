@@ -23,6 +23,9 @@ public class RegisterUIManager : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// 터미널 이미지 활성화 및 Register 장면에 맞는 멘트 출력 함수 호출
+    /// </summary>
     public void ActiveTerminal()
     {
         terminal.gameObject.SetActive(true);
