@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RegisteStory : MonoBehaviour, Story
+public class RegisteStory : MonoBehaviour
 {
     [SerializeField] private RegisterUIManager registerUIManager;
-    [SerializeField] private DialogController dialogController;
-    // Start is called before the first frame update
+    
+
     void Start()
     {
-        
+        registerUIManager.ActiveTerminal();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -25,11 +24,10 @@ public class RegisteStory : MonoBehaviour, Story
 
     public void FirstMent(DialogController dialogController)
     {
-        dialogController.ShowTexts(0.5f, 1.5f, 0.02f, "라피신 첫 날이다!", "두근두근", "등록하시겠어요?");
-        Invoke("Input", 5.0f);
+        dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, Input, "라피신 첫 날이다!", "두근두근", "등록하시겠어요?");
     }
 
-    public void Registered()
+    public void Registered(DialogController dialogController)
     {
         dialogController.ShowTexts(0.5f, 1.5f, 0.02f, "등록되었습니다!");
     }
