@@ -5,18 +5,21 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    private float codingLevel;
-    private float fortytwoLevel;
-    private int clean;
-    private int friendship;
-    private int stress;
-    private int sleep;
-    private int week;
+    private float codingLevel = 0;
+    private float fortytwoLevel = 0;
+    private int clean = 100;
+    private int friendship = 0;
+    private int stress = 0;
+    private int sleep = 0;
+    private int week = 1;
     private string name;
-    private Day day;
-    private Schedule schedule;
+    private Day day = Day.MON;
+    private Schedule schedule = Schedule.MORNING;
     private Work work;
     private bool isEvaluate = false;
+    private bool isExam = false;
+    private bool isRush = false;
+    private bool isBSQ = false;
 
     private void Awake()
     {
@@ -196,9 +199,59 @@ public class GameManager : MonoBehaviour
         return (isEvaluate);
     }
 
+    public void SetisExam(bool value)
+    {
+        this.isExam = value;
+    }
+
+    public bool GetisExam()
+    {
+        return (isExam);
+    }
+
+    public void SetisRush(bool value)
+    {
+        this.isRush = value;
+    }
+
+    public bool GetisRush()
+    {
+        return (isRush);
+    }
+
+    public void SetisBSQ(bool value)
+    {
+        this.isBSQ = value;
+    }
+
+    public bool GetisBSQ()
+    {
+        return (isBSQ);
+    }
+
+    public void SetWeek(int amount)
+    {
+        this.week = amount;
+    }
+
+    public int GetWeek()
+    {
+        return (this.week);
+    }
+
     public void NextWeek(int amount)
     {
         this.week += amount;
+    }
+
+    public void SetDay(Day day)
+    {
+        this.day = day;
+    }
+
+    public Day GetDay()
+    {
+        return (this.day);
     }
 
     public void NextDay(int amount)
