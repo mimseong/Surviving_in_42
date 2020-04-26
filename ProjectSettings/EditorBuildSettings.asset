@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StudyScene.unity
     guid: d2e55a877e20d964584174db52747f4e
+  - enabled: 1
+    path: Assets/Scenes/Exam.unity
+    guid: 5cba35ac4dc7ea3479e5003f4057d939
+  - enabled: 1
+    path: Assets/Scenes/RushScene.unity
+    guid: 058afa2d01438524c9d55895e520d452
   m_configObjects: {}
