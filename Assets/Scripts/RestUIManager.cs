@@ -40,11 +40,18 @@ public class RestUIManager : MonoBehaviour
         restStory.DecideRest(dialogController, GameManager.instance.GetWork());
     }
 
+    /// <summary>
+    /// 다음 버튼을 활성화시키는 함수
+    /// </summary>
+    /// <param name="value"></param>
     public void NextButton(bool value)
     {
         nextButton.gameObject.SetActive(value);
     }
 
+    /// <summary>
+    /// 스케쥴에 따라 이미지 활성화시키는 함수
+    /// </summary>
     public void ActiveImage()
     {
         Work tmp = GameManager.instance.GetWork();
@@ -102,6 +109,9 @@ public class RestUIManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 다음 씬으로 넘어가는 함수
+    /// </summary>
     public void NextScene()
     {
         NextButton(false);
