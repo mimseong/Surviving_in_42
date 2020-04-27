@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// 팀원1 = 티모
+/// 팀원2 = 야스오
+/// </summary>
+
 public class RushStory : MonoBehaviour
 {
     private float timoCodingLv = 0;
