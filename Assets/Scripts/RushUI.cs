@@ -36,6 +36,9 @@ public class RushUI : MonoBehaviour
         nextButton.gameObject.SetActive(value);
     }
 
+    /// <summary>
+    /// 러시 등록 여부에 따라, 버튼을 누를 때마다 러시가 진행되도록 하는 함수입니다
+    /// </summary>
     public void RushProcess()
     {
         if (!GameManager.instance.GetisRush())
@@ -74,17 +77,28 @@ public class RushUI : MonoBehaviour
         NextButton(false);
     }
 
+    /// <summary>
+    /// 터미널을 켜는 함수
+    /// </summary>
     public void ActiveTerminal()
     {
         terminal.gameObject.SetActive(true);
     }
 
+
+    /// <summary>
+    /// 넥스트 버튼 켜는 함수
+    /// </summary>
     private void ActiveNextButton()
     {
         NextButton(true);
         countingButton++;
     }
 
+
+    /// <summary>
+    /// 데일리 씬으로 넘어가는 함수
+    /// </summary>
     public void NextScene()
     {
         NextButton(false);
@@ -98,6 +112,9 @@ public class RushUI : MonoBehaviour
        target.sprite = sprites[index];
     }
 
+    /// <summary>
+    /// 티모와 야스오 이미지를 넣는 함수
+    /// </summary>
     public void ActiveImage()
     {
         RandomSetImage(timo, sprites);
@@ -106,11 +123,18 @@ public class RushUI : MonoBehaviour
         yasuo.gameObject.SetActive(true);
     }
 
+
+    /// <summary>
+    /// 티모 도망간 이미지 나타내는 함수
+    /// </summary>
     public void ActiveUnavailableTimo()
     {
         unavailableTimo.gameObject.SetActive(true);
     }
 
+    /// <summary>
+    /// 야스오 도망간 이미지 나타내는 함수
+    /// </summary>
     public void ActiveUnavailableYasuo()
     {
         unavailableYasuo.gameObject.SetActive(true);

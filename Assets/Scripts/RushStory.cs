@@ -23,6 +23,11 @@ public class RushStory : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// 각 주차에 따라 러시 결과를 나타내는 함수
+    /// </summary>
+    /// <param name="dialogController">대사를 출력하는 스크립트</param>
+    /// <param name="nextButton">넥스트 버튼을 나타내는 함수</param>
     public void RushResult(DialogController dialogController, ConvertMethod nextButton)
     {
         float sum;
@@ -77,6 +82,11 @@ public class RushStory : MonoBehaviour
         dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "러시를 시작합니다!", "랜덤으로 팀원이 배정되었습니다");
     }
 
+    /// <summary>
+    /// 티모를 소개하는 함수입니다. 티모 멘탈을 랜덤으로 정해서 멘탈이 구리면 집으로 튀게 만듭니다.
+    /// </summary>
+    /// <param name="dialogController">대사를 출력하는 스크립트</param>
+    /// <param name="nextButton">넥스트 버튼을 나타내는 함수</param>
     public void Timo(DialogController dialogController, ConvertMethod nextButton)
     {
         string tmoTxt;
@@ -95,6 +105,11 @@ public class RushStory : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 야스오를 소개하는 함수입니다. 야스오 멘탈이 랜덤으로 정해지고 그에 따라 랜덤확률로 집으로 튑니다
+    /// </summary>
+    /// <param name="dialogController"></param>
+    /// <param name="nextButton"></param>
     public void Yasuo(DialogController dialogController, ConvertMethod nextButton)
     {
         string ysoTxt;
@@ -113,6 +128,11 @@ public class RushStory : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 러시 등록 여부에 따라 러시 스케쥴을 실행할지 말지 결정하는 함수입니다.
+    /// </summary>
+    /// <param name="dialogController">대사를 출력하는 스크립트</param>
+    /// <param name="nextButton">넥스트 버튼을 나타내는 함수</param>
     public void IsRegister(DialogController dialogController, ConvertMethod nextButton)
     {
         if (!GameManager.instance.GetisRush())
@@ -124,16 +144,26 @@ public class RushStory : MonoBehaviour
             rushUI.RushProcess();
     }
 
+    /// <summary>
+    /// 티모가 도망갔을 때 이미지를 나타내는 함수
+    /// </summary>
     private void NoTimo()
     {
         rushUI.ActiveUnavailableTimo();
     }
 
+    /// <summary>
+    /// 야스오가 도망갔을 때 이미지를 나타내는 함수
+    /// </summary>
     private void NoYasuo()
     {
         rushUI.ActiveUnavailableYasuo();
     }
 
+    /// <summary>
+    /// 각 주차에 따른 코딩 레벨 랜덤으로 정해주는 함수
+    /// </summary>
+    /// <returns>랜덤 코딩레벨</returns>
     public float RandomCodingLv()
     {
         float codingLv = 0;
