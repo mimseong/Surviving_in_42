@@ -24,7 +24,8 @@ public class GameManager : MonoBehaviour
     {
         if (instance == null)
         {
-
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
         }
         else
         {
@@ -34,8 +35,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        SetFriendship(80);
-        SetCodingLevel(20);
+
     }
 
     void Update()
