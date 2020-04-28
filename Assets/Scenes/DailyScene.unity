@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.033018887, g: 1, b: 0.9351441, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -262,7 +262,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB4F1\uB85D\uD558\uAE30"
+  m_Text: "EXAM \uB4F1\uB85D"
 --- !u!222 &72213174
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1665,6 +1665,7 @@ MonoBehaviour:
   sleepButton: {fileID: 1573350561}
   goHomeButton: {fileID: 1608861104}
   lazyButton: {fileID: 1848694555}
+  registerButton: {fileID: 0}
   dialogController: {fileID: 842309114}
   terminal: {fileID: 842309115}
   dailyStory: {fileID: 758707409}
@@ -3318,8 +3319,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 491, y: -221}
-  m_SizeDelta: {x: 117.1859, y: 30}
+  m_AnchoredPosition: {x: 520.8, y: -247.4}
+  m_SizeDelta: {x: 176.6956, y: 82.897545}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1733063589
 MonoBehaviour:
@@ -3365,12 +3366,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 938682781}
-        m_MethodName: DecideSelect
-        m_Mode: 3
+        m_MethodName: WhenRegister
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 9
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
