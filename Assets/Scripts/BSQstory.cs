@@ -19,11 +19,22 @@ public class BSQstory : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// bsq 시작하는함수
+    /// </summary>
+    /// <param name="dialogController"></param>
+    /// <param name="nextButton"></param>
     public void BSQstart(DialogController dialogController, ConvertMethod nextButton)
     {
         dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "BSQ를 시작합니다! \n시험 전까지 BSQ를 진행합니다", "랜덤으로 팀원이 배정되었습니다");
     }
 
+
+    /// <summary>
+    /// bsq결과 알려주는 함수
+    /// </summary>
+    /// <param name="dialogController"></param>
+    /// <param name="nextButton"></param>
     public void BSQresult(DialogController dialogController, ConvertMethod nextButton)
     {
         float sum;
@@ -58,6 +69,11 @@ public class BSQstory : MonoBehaviour
         GameManager.instance.NextDaySchedule(Schedule.MORNING);
     }
 
+    /// <summary>
+    /// 팀원 소개하는 함수
+    /// </summary>
+    /// <param name="dialogController"></param>
+    /// <param name="nextButton"></param>
     public void Jinx(DialogController dialogController, ConvertMethod nextButton)
     {
         string jinxTxt;

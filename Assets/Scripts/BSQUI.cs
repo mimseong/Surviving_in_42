@@ -27,6 +27,9 @@ public class BSQUI : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// 버튼을 누름에 따라 bsq스토리가 진행됨
+    /// </summary>
     public void BSQprocess()
     {
         switch (countingButton)
@@ -59,17 +62,28 @@ public class BSQUI : MonoBehaviour
     {
         terminal.gameObject.SetActive(true);
     }
+
+    /// <summary>
+    /// 다음씬으로 넘어간다
+    /// </summary>
     public void NextScene()
     {
         NextButton(false);
         SceneManager.LoadScene("ExamScene");
     }
 
+    /// <summary>
+    /// 넥스트 버튼 활성화 함수
+    /// </summary>
+    /// <param name="value"></param>
     public void NextButton(bool value)
     {
         nextButton.gameObject.SetActive(value);
     }
 
+    /// <summary>
+    /// 팀원 이미지 활성화
+    /// </summary>
     public void ActiveImage()
     {
         RandomSetImage(jinx, sprites);
