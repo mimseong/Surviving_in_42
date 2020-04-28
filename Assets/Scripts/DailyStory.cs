@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DailyStory : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class DailyStory : MonoBehaviour
     void Start()
     {
         uIManager.ActiveTerminal();
+        Debug.Log(GameManager.instance.GetDay());
+        if (GameManager.instance.GetDay() == Day.FRI)
+            SceneManager.LoadScene("ExamScene");
     }
 
     void Update()

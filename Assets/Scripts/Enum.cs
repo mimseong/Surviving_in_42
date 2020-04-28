@@ -29,3 +29,11 @@ public enum Work
     GO_HOME,
     LAZY
 };
+
+public enum Register
+{
+    NONE,
+    EXAM,
+    RUSH,
+    BSQ
+};
