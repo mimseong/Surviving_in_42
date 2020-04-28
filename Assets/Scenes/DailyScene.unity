@@ -2339,6 +2339,7 @@ MonoBehaviour:
   dialogController: {fileID: 842309114}
   terminal: {fileID: 842309115}
   dailyStory: {fileID: 758707409}
+  status: {fileID: 1615039287}
 --- !u!4 &938682782
 Transform:
   m_ObjectHideFlags: 0
@@ -3898,7 +3899,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.4, y: -364}
+  m_AnchoredPosition: {x: 0.000045776, y: -65}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1531404709
@@ -5249,7 +5250,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.4000244, y: 235.00002}
+  m_AnchoredPosition: {x: 0.000063181, y: -65}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1889270207
