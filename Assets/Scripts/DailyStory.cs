@@ -10,7 +10,6 @@ public class DailyStory : MonoBehaviour
     void Start()
     {
         uIManager.ActiveTerminal();
-        Debug.Log(GameManager.instance.GetDay());
         if (GameManager.instance.GetDay() == Day.FRI)
             SceneManager.LoadScene("ExamScene");
     }
