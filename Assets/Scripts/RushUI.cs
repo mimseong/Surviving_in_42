@@ -109,7 +109,7 @@ public class RushUI : MonoBehaviour
     private void RandomSetImage(Image target, Sprite[] sprites)
     {
         int index = Random.Range(0, sprites.Length);
-       target.sprite = sprites[index];
+        target.sprite = sprites[index];
     }
 
     /// <summary>

@@ -56,7 +56,7 @@ public class RushStory : MonoBehaviour
                 score = sum / 3 / 42 * 100;
                 break;
         }
-        scoreTxt = "최종 점수는 \n...\n...\n" + score + "점 입니다";
+        scoreTxt = "최종 점수는 \n...\n...\n" + (int)score + "점 입니다";
 
         if (score < 50)
         {
