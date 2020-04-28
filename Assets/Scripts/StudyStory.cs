@@ -73,32 +73,43 @@ public class StudyStory : MonoBehaviour
     private void Evaluate(DialogController dialogController)
     {
         int situation = Random.Range(0, 5);
-        switch (situation)
+        if (GameManager.instance.GetWeek() == 1)
         {
-            case 0:
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "동료가 다른 층에 있었다", "계단을 이용해서 조금 건강해진 기분이다", "코딩레벨 += 0.5 \n동료와의 관계 += 5 \n스트레스 += 5");
-                GameManager.instance.AddCodingLevel(0.5f);
-                GameManager.instance.AddFriendship(5);
-                break;
-            case 1:
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "나보다 진도가 느린 사람을 만났다", "내가 배운 것을 알려주고 왔다", "뿌듯하다", "코딩레벨 += 0.5 \n동료와의 관계 += 5 \n스트레스 += 5");
-                GameManager.instance.AddCodingLevel(0.5f);
-                GameManager.instance.AddFriendship(5);
-                break;
-            case 2:
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "동료와 친해졌다", "꿀팁을 공유하고 왔다", "코딩레벨 += 0.5 \n동료와의 관계 += 5 \n스트레스 += 5");
-                GameManager.instance.AddCodingLevel(0.5f);
-                GameManager.instance.AddFriendship(5);
-                break;
-            case 3:
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "나보다 더 진도가 빠른 사람을 만났다", "조금 긴장됐지만 잘 가르쳐줘서 많은 것을 배웠다", "코딩레벨 += 0.5 \n동료와의 관계 += 5 \n스트레스 += 5");
-                GameManager.instance.AddCodingLevel(0.5f);
-                GameManager.instance.AddFriendship(5);
-                break;
-            case 4:
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "무례한 동료를 만났다", "너무 속상하다", "ㅂㄷㅂㄷ...", "스트레스 += 40");
-                GameManager.instance.AddStress(35);
-                break;
+            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "엘레베이터가 지하로 내려가서 지각했다", "코딩레벨 += 0.5 \n동료와의 관계 += 5 \n스트레스 += 5");
+            studyUIManager.Elevator();
+            GameManager.instance.AddCodingLevel(0.5f);
+            GameManager.instance.AddFriendship(5);
+        }
+        else
+        {
+            switch (situation)
+            {
+                case 0:
+                    dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "동료가 다른 층에 있었다 \n계단을 이용해서 조금 건강해진 기분이다", "코딩레벨 += 0.5 \n동료와의 관계 += 5 \n스트레스 += 5");
+                    GameManager.instance.AddCodingLevel(0.5f);
+                    GameManager.instance.AddFriendship(5);
+                    break;
+                case 1:
+                    dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "나보다 진도가 느린 사람을 만났다", "내가 배운 것을 알려주고 왔다 \n뿌듯하다", "코딩레벨 += 0.5 \n동료와의 관계 += 5 \n스트레스 += 5");
+                    GameManager.instance.AddCodingLevel(0.5f);
+                    GameManager.instance.AddFriendship(5);
+                    break;
+                case 2:
+                    dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "동료와 친해졌다 \n꿀팁을 공유하고 왔다", "코딩레벨 += 0.5 \n동료와의 관계 += 5 \n스트레스 += 5");
+                    GameManager.instance.AddCodingLevel(0.5f);
+                    GameManager.instance.AddFriendship(5);
+                    break;
+                case 3:
+                    dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "나보다 더 진도가 빠른 사람을 만났다 \n조금 긴장됐지만 잘 가르쳐줘서 많은 것을 배웠다", "코딩레벨 += 0.5 \n동료와의 관계 += 5 \n스트레스 += 5");
+                    GameManager.instance.AddCodingLevel(0.5f);
+                    GameManager.instance.AddFriendship(5);
+                    break;
+                case 4:
+                    dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "무례한 동료를 만났다 \n너무 속상하다", "ㅂㄷㅂㄷ...", "스트레스 += 40");
+                    StartCoroutine(RudeEval(2.0f));
+                    GameManager.instance.AddStress(35);
+                    break;
+            }
         }
         GameManager.instance.AddClean(-10);
         GameManager.instance.AddStress(5);
@@ -145,10 +156,12 @@ public class StudyStory : MonoBehaviour
         {
             case 0:
                 dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "컨닝을 했다", "양심의 가책을 느낀다", "...\n...\n...", "다행스럽게도 무사히 통과했다!", "42레벨 += 0.8 \n코딩레벨 += 0");
+                StartCoroutine(CheatingResult(5.0f, true));
                 GameManager.instance.AddFortytwoLevel(0.8f);
                 break;
             case 1:
                 dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "컨닝을 했다", "찔리지만 어쩔 수 없어", "...\n...\n...", "부정행위를 걸려버렸다!", "-42점을 받았다", "코딩레벨 += 0 \n동료와의 관계 -= 5 \n스트레스 += 10");
+                StartCoroutine(CheatingResult(5.0f, false));
                 GameManager.instance.AddFriendship(-5);
                 GameManager.instance.AddStress(5);
                 break;
@@ -157,4 +170,21 @@ public class StudyStory : MonoBehaviour
         GameManager.instance.AddStress(5);
         GameManager.instance.AddSleep(10);
     }
+
+    private IEnumerator CheatingResult(float seconds, bool value)
+    {
+        yield return new WaitForSeconds(seconds);
+
+        if (value)
+            studyUIManager.CheatingSuccess();
+        else
+            studyUIManager.CheatingFailed();
+    }
+
+    private IEnumerator RudeEval(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        studyUIManager.RudePeer();
+    }
+
 }

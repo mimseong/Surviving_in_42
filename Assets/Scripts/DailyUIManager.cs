@@ -118,7 +118,7 @@ public class DailyUIManager : MonoBehaviour
                 GameManager.instance.SetWork(Work.LAZY);
                 break;
         }
-        if (index >= 1 && index <= 4)
+        if (index >= 1 && index <= 5)
             SceneManager.LoadScene("StudyScene");
         else
             SceneManager.LoadScene("RestScene");
