@@ -18,6 +18,7 @@ public class DailyUIManager : MonoBehaviour
     [SerializeField] private Button sleepButton;
     [SerializeField] private Button goHomeButton;
     [SerializeField] private Button lazyButton;
+    [SerializeField] private Button registerButton;
     [SerializeField] private DialogController dialogController;
     [SerializeField] private Image terminal;
     [SerializeField] private DailyStory dailyStory;
@@ -44,6 +45,10 @@ public class DailyUIManager : MonoBehaviour
         dailyStory.FirstMent(dialogController, ActiveButton);
     }
 
+    /// <summary>
+    /// 뒤로가기 버튼 활성화
+    /// </summary>
+    /// <param name="value"></param>
     public void BackButton(bool value)
     {
         backButton.gameObject.SetActive(value);
@@ -52,6 +57,7 @@ public class DailyUIManager : MonoBehaviour
     {
         studyButton.gameObject.SetActive(value);
         restButton.gameObject.SetActive(value);
+        ActiveRegisterButton();
     }
 
     private void ActiveButton()
@@ -59,6 +65,57 @@ public class DailyUIManager : MonoBehaviour
         SelectButton(true);
     }
 
+    /// <summary>
+    /// 등록버튼 활성화하는 함수
+    /// </summary>
+    public void ActiveRegisterButton()
+    {
+        if (GameManager.instance.GetWeek() != 4)
+        {
+            switch (GameManager.instance.GetDay())
+            {
+                case Day.WED:
+                    if (!GameManager.instance.GetisExam())
+                    {
+                        registerButton.gameObject.SetActive(true);
+                        registerButton.transform.GetChild(0).GetComponent<Text>().text = "EXAM 등록";
+                    }
+                    break;
+                case Day.THU:
+                    if (!GameManager.instance.GetisRush())
+                    {
+                        registerButton.gameObject.SetActive(true);
+                        registerButton.transform.GetChild(0).GetComponent<Text>().text = "RUSH 등록";
+                    }
+                    break;
+            }
+        }
+    }
+
+    /// <summary>
+    /// 각 주차에 따라 등록결과를 저장
+    /// </summary>
+    public void WhenRegister()
+    {
+        if (GameManager.instance.GetWeek() != 4)
+        {
+            switch (GameManager.instance.GetDay())
+            {
+                case Day.WED:
+                    GameManager.instance.SetisExam(true);
+                    break;
+                case Day.THU:
+                    GameManager.instance.SetisRush(true);
+                    break;
+            }
+            registerButton.gameObject.SetActive(false);
+        }
+    }
+
+    /// <summary>
+    /// 스터디 버튼을 누르면 나타나는 일
+    /// </summary>
+    /// <param name="value"></param>
     public void StudyButton(bool value)
     {
         soloCodingButton.gameObject.SetActive(value);
@@ -70,6 +127,10 @@ public class DailyUIManager : MonoBehaviour
         BackButton(value);
     }
 
+    /// <summary>
+    /// 휴식버튼을 누르면 나타나는 일
+    /// </summary>
+    /// <param name="value"></param>
     public void RestButton(bool value)
     {
         beerButton.gameObject.SetActive(value);
@@ -80,12 +141,19 @@ public class DailyUIManager : MonoBehaviour
         BackButton(value);
     }
 
+    /// <summary>
+    /// 뒤로가기
+    /// </summary>
     public void GoBack()
     {
         StudyButton(false);
         RestButton(false);
     }
 
+    /// <summary>
+    /// 버튼에 따라서 어떤 스케쥴을 진행할지 결정
+    /// </summary>
+    /// <param name="index"></param>
     public void DecideSelect(int index)
     {
         switch (index)
