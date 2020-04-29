@@ -132,6 +132,7 @@ public class StudyStory : MonoBehaviour
                 break;
             case 2:
                 dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 받았다", "제발 한번에 통과했으면...", "...\n...\n...", "segmentation fault!", "코딩레벨 += 0.5 \n동료와의 관계 += 5 \n스트레스 += 10");
+                GameManager.instance.AddStress(5);
                 break;
             case 3:
                 dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 받았다", "이번엔 제발 통과하자!", "...\n...\n...", "드디어 통과했다!", "42레벨 += 0.8 \n코딩레벨 += 0.5 \n동료와의 관계 += 5 \n스트레스 += 5");
@@ -139,6 +140,7 @@ public class StudyStory : MonoBehaviour
                 break;
             case 4:
                 dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 받았다", "이번엔 제발 통과하자!", "...\n...\n...", "segmentation fault가 또...", "코딩레벨 += 0.5 \n동료와의 관계 += 5 \n스트레스 += 10");
+                GameManager.instance.AddStress(5);
                 break;
         }
         GameManager.instance.AddClean(-10);

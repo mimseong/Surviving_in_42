@@ -12,6 +12,12 @@ public class GameManager : MonoBehaviour
     private int stress = 0;
     private int sleep = 0;
     private int week = 1;
+    private float precodingLevel = 0;
+    private float prefortytwoLevel = 0;
+    private int preclean = 100;
+    private int prefriendship = 0;
+    private int prestress = 0;
+    private int presleep = 0;
     private string name;
     private Day day = Day.MON;
     private Schedule schedule = Schedule.MORNING;
@@ -48,13 +54,24 @@ public class GameManager : MonoBehaviour
         this.codingLevel = codingLevel;
     }
 
+    public void SetPreCodingLv(float precodingLevel)
+    {
+        this.precodingLevel = precodingLevel;
+    }
+
     public float GetCodingLevel()
     {
         return (this.codingLevel);
     }
 
+    public float GetPrecodingLevel()
+    {
+        return (this.precodingLevel);
+    }
+
     public void AddCodingLevel(float codingLevel)
     {
+        this.precodingLevel = this.codingLevel;
         this.codingLevel += codingLevel;
         if (this.codingLevel > 42)
             this.codingLevel = 42;
@@ -67,13 +84,24 @@ public class GameManager : MonoBehaviour
         this.fortytwoLevel = fortytwoLevel;
     }
 
+    public void SetPreFortytwoLevel(float prefortytwoLevel)
+    {
+        this.prefortytwoLevel = prefortytwoLevel;
+    }
+
     public float GetFortytwoLevel()
     {
         return (this.fortytwoLevel);
     }
 
+    public float GetPrefortytwoLevel()
+    {
+        return (this.prefortytwoLevel);
+    }
+
     public void AddFortytwoLevel(float fortytwoLevel)
     {
+        this.prefortytwoLevel = this.fortytwoLevel;
         this.fortytwoLevel += fortytwoLevel;
         if (this.fortytwoLevel > 12)
             this.fortytwoLevel = 12;
@@ -86,13 +114,24 @@ public class GameManager : MonoBehaviour
         this.clean = clean;
     }
 
+    public void SetPreclean(int preclean)
+    {
+        this.preclean = clean;
+    }
+
     public int GetClean()
     {
         return (this.clean);
     }
 
+    public int GetPreclean()
+    {
+        return (this.preclean);
+    }
+
     public void AddClean(int clean)
     {
+        this.preclean = this.clean;
         this.clean += clean;
         if (this.clean > 100)
             this.clean = 100;
@@ -105,14 +144,25 @@ public class GameManager : MonoBehaviour
         this.friendship = friendship;
     }
 
+    public void SetPrefriendship(int prefriendship)
+    {
+        this.prefriendship = prefriendship;
+    }
+
     public int GetFriendship()
     {
         return (this.friendship);
     }
 
+    public int GetPreFriendship()
+    {
+        return (this.prefriendship);
+    }
+
     public void AddFriendship(int friendship)
     {
-        this.friendship = friendship;
+        this.prefriendship = this.friendship;
+        this.friendship += friendship;
         if (this.friendship > 100)
             this.friendship = 100;
         else if (this.friendship < 0)
@@ -124,19 +174,29 @@ public class GameManager : MonoBehaviour
         this.stress = stress;
     }
 
+    public void SetPrestress(int prestress)
+    {
+        this.prestress = prestress;
+    }
+
     public int GetStress()
     {
         return (this.stress);
     }
 
+    public int GetPrestress()
+    {
+        return (this.prestress);
+    }
+
     public void AddStress(int stress)
     {
-        this.stress = stress;
+        this.prestress = this.stress;
+        this.stress += stress;
         if (this.stress > 100)
             this.stress = 100;
         else if (this.stress < 0)
             this.stress = 0;
-
     }
 
     public void SetSleep(int sleep)
@@ -144,14 +204,25 @@ public class GameManager : MonoBehaviour
         this.sleep = sleep;
     }
 
+    public void SetPresleep(int presleep)
+    {
+        this.presleep = presleep;
+    }
+
     public int GetSleep()
     {
         return (this.sleep);
     }
 
+    public int GetPresleep()
+    {
+        return (this.presleep);
+    }
+
     public void AddSleep(int sleep)
     {
-        this.sleep = sleep;
+        this.presleep = this.sleep;
+        this.sleep += sleep;
         if(this.sleep > 100)
             this.sleep = 100;
         else if (this.sleep < 0)
