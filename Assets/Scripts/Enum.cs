@@ -29,3 +29,13 @@ public enum Work
     GO_HOME,
     LAZY
 };
+
+public enum Condition
+{
+    NORMAL,
+    HANGOVER,
+    TIRED,
+    DIRTY,
+    SLEEPY,
+    FEVER
+};

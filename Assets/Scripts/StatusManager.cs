@@ -11,18 +11,21 @@ public class StatusManager : MonoBehaviour
     [SerializeField] private Image sleepGauge;
     [SerializeField] private Image codingLvGauge;
     [SerializeField] private Image fortytwoGauge;
+    [SerializeField] private Image player;
     [SerializeField] private Text stressTxt;
     [SerializeField] private Text friendshipTxt;
     [SerializeField] private Text cleanTxt;
     [SerializeField] private Text sleepTxt;
     [SerializeField] private Text codingLvTxt;
     [SerializeField] private Text fortytwoTxt;
+    [SerializeField] private Sprite[] playerSprites;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameManager.instance.DecideCondition();
+        PlayerCondition();
     }
 
     // Update is called once per frame
@@ -81,4 +84,31 @@ public class StatusManager : MonoBehaviour
             }
         }
     }
+
+    private void PlayerCondition()
+    {
+        switch (GameManager.instance.GetCondition())
+        {
+            case Condition.NORMAL:
+                player.sprite = playerSprites[0];
+                break;
+            case Condition.DIRTY:
+                player.sprite = playerSprites[1];
+                break;
+            case Condition.SLEEPY:
+                player.sprite = playerSprites[2];
+                break;
+            case Condition.HANGOVER:
+                player.sprite = playerSprites[3];
+                break;
+            case Condition.TIRED:
+                player.sprite = playerSprites[4];
+                break;
+            case Condition.FEVER:
+                player.sprite = playerSprites[5];
+                break;
+        }
+    }
+
+
 }

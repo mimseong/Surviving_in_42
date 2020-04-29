@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     private Day day = Day.MON;
     private Schedule schedule = Schedule.MORNING;
     private Work work;
+    private Condition condition = Condition.NORMAL;
     private bool isEvaluate = false;
     private bool isExam = false;
     private bool isRush = false;
@@ -49,6 +50,11 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public Condition GetCondition()
+    {
+        return (this.condition);
+    }
+
     public void SetCodingLevel(float codingLevel)
     {
         this.codingLevel = codingLevel;
@@ -72,7 +78,12 @@ public class GameManager : MonoBehaviour
     public void AddCodingLevel(float codingLevel)
     {
         this.precodingLevel = this.codingLevel;
-        this.codingLevel += codingLevel;
+        if (condition == Condition.FEVER)
+            this.codingLevel += codingLevel * 1.5f;
+        else if (condition == Condition.SLEEPY)
+            this.codingLevel += codingLevel * 0.5f;
+        else
+            this.codingLevel += codingLevel;
         if (this.codingLevel > 42)
             this.codingLevel = 42;
         else if (this.codingLevel < 0)
@@ -162,7 +173,10 @@ public class GameManager : MonoBehaviour
     public void AddFriendship(int friendship)
     {
         this.prefriendship = this.friendship;
-        this.friendship += friendship;
+        if (this.condition == Condition.DIRTY)
+            this.friendship -= friendship;
+        else
+            this.friendship += friendship;
         if (this.friendship > 100)
             this.friendship = 100;
         else if (this.friendship < 0)
@@ -192,7 +206,19 @@ public class GameManager : MonoBehaviour
     public void AddStress(int stress)
     {
         this.prestress = this.stress;
-        this.stress += stress;
+        if (stress > 0)
+        {
+            if (condition == Condition.FEVER)
+                this.stress += stress / 2;
+            else if (condition == Condition.HANGOVER)
+                this.stress += (int)Mathf.Ceil((float)stress * 1.1f);
+            else if (condition == Condition.TIRED)
+                this.stress += stress * 2;
+            else
+                this.stress += stress;
+        }
+        else
+            this.stress += stress;
         if (this.stress > 100)
             this.stress = 100;
         else if (this.stress < 0)
@@ -222,11 +248,38 @@ public class GameManager : MonoBehaviour
     public void AddSleep(int sleep)
     {
         this.presleep = this.sleep;
-        this.sleep += sleep;
+        if (sleep > 0)
+        {
+            if (condition == Condition.FEVER)
+                this.sleep += sleep / 2;
+            else if (condition == Condition.HANGOVER)
+                this.sleep += (int)Mathf.Ceil((float)sleep * 1.1f);
+            else if (condition == Condition.TIRED)
+                this.sleep += sleep * 2;
+            else
+                this.sleep += sleep;
+        }
+        else
+            this.sleep += sleep;
         if(this.sleep > 100)
             this.sleep = 100;
         else if (this.sleep < 0)
             this.sleep = 0;
+    }
+
+    public void DecideCondition()
+    {
+        this.condition = Condition.NORMAL;
+        if (this.clean <= 30)
+            this.condition = Condition.DIRTY;
+        if (this.sleep >= 70)
+            this.condition = Condition.SLEEPY;
+        if (this.stress + this.sleep >= 120)
+            this.condition = Condition.TIRED;
+        if (this.work == Work.DRINKING)
+            this.condition = Condition.HANGOVER;
+        if (90 < Random.Range(0, 101))
+            this.condition = Condition.FEVER;
     }
 
     public void SetName(string name)
