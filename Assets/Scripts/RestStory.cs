@@ -64,7 +64,7 @@ public class RestStory : MonoBehaviour
 
     private void GoHome(DialogController dialogController)
     {
-        dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "이만 집에 가는 게 좋겠다", "집에서 씻고 청결도가 회복됩니다", "집에서 자고 졸림이 해소됩니다");
+        dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "이만 집에 가는 게 좋겠다", "집에서 씻고 청결도가 회복됩니다 \n집에서 자고 졸림이 해소됩니다");
         GameManager.instance.AddStress(-50);
         GameManager.instance.SetClean(100);
         GameManager.instance.SetSleep(0);
