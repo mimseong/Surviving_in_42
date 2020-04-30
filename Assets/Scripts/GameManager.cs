@@ -203,6 +203,10 @@ public class GameManager : MonoBehaviour
         return (this.prestress);
     }
 
+    /// <summary>
+    /// 상태에 따라 스트레스 수치를 조정합니다
+    /// </summary>
+    /// <param name="stress"></param>
     public void AddStress(int stress)
     {
         this.prestress = this.stress;
@@ -245,6 +249,10 @@ public class GameManager : MonoBehaviour
         return (this.presleep);
     }
 
+    /// <summary>
+    /// 상태에 따라 수치 변경
+    /// </summary>
+    /// <param name="sleep"></param>
     public void AddSleep(int sleep)
     {
         this.presleep = this.sleep;
@@ -267,6 +275,9 @@ public class GameManager : MonoBehaviour
             this.sleep = 0;
     }
 
+    /// <summary>
+    /// 수치에 따라 상태를 결정하는 함수
+    /// </summary>
     public void DecideCondition()
     {
         this.condition = Condition.NORMAL;

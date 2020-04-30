@@ -69,6 +69,14 @@ public class StatusManager : MonoBehaviour
         GameManager.instance.SetPresleep(GameManager.instance.GetSleep());
     }
 
+    /// <summary>
+    /// 상태 변화를 애니메이션으로 보여주는 함수, gap == 변화량
+    /// </summary>
+    /// <param name="image"> 이미지 </param>
+    /// <param name="prestatus"> 이전 수치 </param>
+    /// <param name="status"> 현재 수치 </param>
+    /// <param name="div"> 나눌 숫자 </param>
+    /// <returns></returns>
     private IEnumerator AnimateStatus(Image image, float prestatus, float status, float div)
     {
         float gap = status - prestatus;
