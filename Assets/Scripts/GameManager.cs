@@ -19,14 +19,12 @@ public class GameManager : MonoBehaviour
     private bool isEvaluate = false;
     private bool isExam = false;
     private bool isRush = false;
-    private bool isBSQ = false;
 
     private void Awake()
     {
         if (instance == null)
         {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
+
         }
         else
         {
@@ -36,7 +34,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-
+        SetFriendship(80);
+        SetCodingLevel(20);
     }
 
     void Update()
@@ -217,16 +216,6 @@ public class GameManager : MonoBehaviour
     public bool GetisRush()
     {
         return (isRush);
-    }
-
-    public void SetisBSQ(bool value)
-    {
-        this.isBSQ = value;
-    }
-
-    public bool GetisBSQ()
-    {
-        return (isBSQ);
     }
 
     public void SetWeek(int amount)
