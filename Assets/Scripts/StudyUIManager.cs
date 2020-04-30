@@ -75,7 +75,7 @@ public class StudyUIManager : MonoBehaviour
                 duoCoding.gameObject.SetActive(true);
                 break;
             case Work.EVALUATE:
-                if (GameManager.instance.GetWeek() != 1)
+                if (!(GameManager.instance.GetWeek() == 1 && (GameManager.instance.GetDay() == Day.TUE || GameManager.instance.GetDay() == Day.WED)))
                 {
                     RandomSetImage(evaluate, evalSprites);
                     evaluate.gameObject.SetActive(true);

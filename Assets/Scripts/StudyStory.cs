@@ -54,66 +54,66 @@ public class StudyStory : MonoBehaviour
     {
         dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "스스로 학습하기로 했다", "...\n...\n...", "열심히 코딩을 했다!");
         GameManager.instance.AddCodingLevel(1.0f);
-        GameManager.instance.AddClean(-10);
+        GameManager.instance.AddClean(-20);
         GameManager.instance.AddStress(10);
-        GameManager.instance.AddSleep(10);
+        GameManager.instance.AddSleep(20);
     }
 
     private void DuoCoding(DialogController dialogController)
     {
         dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "동료와 함께 코딩학습을 했다", "...\n...\n...", "많은 것을 배웠다!");
-        GameManager.instance.AddClean(-10);
+        GameManager.instance.AddClean(-20);
         GameManager.instance.AddStress(10);
-        GameManager.instance.AddSleep(10);
+        GameManager.instance.AddSleep(20);
         GameManager.instance.AddCodingLevel(1.0f);
-        GameManager.instance.AddFriendship(5);
+        GameManager.instance.AddFriendship(2);
 
     }
 
     private void Evaluate(DialogController dialogController)
     {
         int situation = Random.Range(0, 5);
-        if (GameManager.instance.GetWeek() == 1)
+        if (GameManager.instance.GetWeek() == 1 && (GameManager.instance.GetDay() == Day.TUE || GameManager.instance.GetDay() == Day.WED))
         {
             dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "엘레베이터가 지하로 내려가서 지각했다");
             studyUIManager.Elevator();
             GameManager.instance.AddCodingLevel(0.5f);
-            GameManager.instance.AddFriendship(5);
         }
         else
         {
+            if (GameManager.instance.GetCondition() == Condition.DIRTY)
+                GameManager.instance.AddFriendship(-2);
+            else
+                GameManager.instance.AddFriendship(2);
             switch (situation)
             {
                 case 0:
                     dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "동료가 다른 층에 있었다 \n계단을 이용해서 조금 건강해진 기분이다");
                     GameManager.instance.AddCodingLevel(0.5f);
-                    GameManager.instance.AddFriendship(5);
                     break;
                 case 1:
                     dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "나보다 진도가 느린 사람을 만났다", "내가 배운 것을 알려주고 왔다 \n뿌듯하다");
                     GameManager.instance.AddCodingLevel(0.5f);
-                    GameManager.instance.AddFriendship(5);
                     break;
                 case 2:
                     dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "동료와 친해졌다 \n꿀팁을 공유하고 왔다");
                     GameManager.instance.AddCodingLevel(0.5f);
-                    GameManager.instance.AddFriendship(5);
                     break;
                 case 3:
                     dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "나보다 더 진도가 빠른 사람을 만났다 \n조금 긴장됐지만 잘 가르쳐줘서 많은 것을 배웠다");
                     GameManager.instance.AddCodingLevel(0.5f);
-                    GameManager.instance.AddFriendship(5);
                     break;
                 case 4:
                     dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "무례한 동료를 만났다 \n너무 속상하다", "ㅂㄷㅂㄷ...");
                     StartCoroutine(RudeEval(2.0f));
-                    GameManager.instance.AddStress(35);
+                    GameManager.instance.AddStress(30);
+                    GameManager.instance.AddFriendship(-2);
                     break;
             }
         }
-        GameManager.instance.AddClean(-10);
-        GameManager.instance.AddStress(5);
-        GameManager.instance.AddSleep(10);
+        GameManager.instance.AddClean(-20);
+        GameManager.instance.AddStress(10);
+        GameManager.instance.AddSleep(20);
         GameManager.instance.SetIsEvaluate(true);
     }
 
@@ -132,7 +132,7 @@ public class StudyStory : MonoBehaviour
                 break;
             case 2:
                 dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 받았다", "제발 한번에 통과했으면...", "...\n...\n...", "segmentation fault!");
-                GameManager.instance.AddStress(5);
+                GameManager.instance.AddStress(10);
                 break;
             case 3:
                 dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 받았다", "이번엔 제발 통과하자!", "...\n...\n...", "드디어 통과했다!");
@@ -140,13 +140,16 @@ public class StudyStory : MonoBehaviour
                 break;
             case 4:
                 dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 받았다", "이번엔 제발 통과하자!", "...\n...\n...", "segmentation fault가 또...");
-                GameManager.instance.AddStress(5);
+                GameManager.instance.AddStress(10);
                 break;
         }
-        GameManager.instance.AddClean(-10);
-        GameManager.instance.AddStress(5);
-        GameManager.instance.AddSleep(10);
-        GameManager.instance.AddFriendship(5);
+        if (GameManager.instance.GetCondition() == Condition.DIRTY)
+            GameManager.instance.AddFriendship(-2);
+        else
+            GameManager.instance.AddFriendship(2);
+        GameManager.instance.AddClean(-20);
+        GameManager.instance.AddStress(10);
+        GameManager.instance.AddSleep(20);
         GameManager.instance.AddCodingLevel(0.5f);
         GameManager.instance.SetIsEvaluate(false);
     }
@@ -165,12 +168,13 @@ public class StudyStory : MonoBehaviour
                 dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "컨닝을 했다", "찔리지만 어쩔 수 없어", "...\n...\n...", "부정행위를 걸려버렸다!");
                 StartCoroutine(CheatingResult(5.0f, false));
                 GameManager.instance.AddFriendship(-5);
-                GameManager.instance.AddStress(5);
+                GameManager.instance.AddStress(10);
                 break;
         }
-        GameManager.instance.AddClean(-10);
-        GameManager.instance.AddStress(5);
-        GameManager.instance.AddSleep(10);
+        GameManager.instance.AddClean(-20);
+        GameManager.instance.AddStress(10);
+        GameManager.instance.AddSleep(20);
+        GameManager.instance.SetIsEvaluate(false);
     }
 
     private IEnumerator CheatingResult(float seconds, bool value)
