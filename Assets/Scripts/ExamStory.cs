@@ -23,9 +23,10 @@ public class ExamStory : MonoBehaviour
         float result = 0;
 
         if (!GameManager.instance.GetisExam())
-            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "시험이 시작되었습니다", "두근두근.. \n떨린다", "...\n...?\n???\n??????????", "시험에 등록하지 않아서 시험을 칠 수 없습니다", "42레벨 +0 \n스트레스 증가");
+            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "시험이 시작되었습니다", "두근두근.. \n떨린다", "...\n...?\n???\n??????????", "시험에 등록하지 않아서 시험을 칠 수 없습니다");
         else
         {
+            GameManager.instance.SetWork(Work.NONE);
             switch (GameManager.instance.GetWeek())
             {
                 case 1:
@@ -47,7 +48,7 @@ public class ExamStory : MonoBehaviour
             string scoreTxt = "점수는 " + score + "점 입니다";
             string fortytwoTxt = "42레벨 += " + GameManager.instance.GetFortytwoLevel();
             if (GameManager.instance.GetCodingLevel() <= 5.0f)
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "시험이 시작되었습니다", "두근두근.. \n떨린다", "...\n...?\n???\n??????????", "로그인조차 하지 못했다", "점수는 0점입니다", "42레벨 +0 \n스트레스 증가");
+                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "시험이 시작되었습니다", "두근두근.. \n떨린다", "...\n...?\n???\n??????????", "로그인조차 하지 못했다", "점수는 0점입니다");
             else
             {
                 dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "시험이 시작되었습니다", "두근두근.. \n떨린다", "...\n...?\n???\n??????????", "무사히 시험을 마쳤다", scoreTxt, fortytwoTxt);

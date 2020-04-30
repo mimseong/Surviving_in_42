@@ -19,6 +19,7 @@ public enum Day
 
 public enum Work
 {
+    NONE,
     SOLO_CODING,
     DUO_CODING,
     EVALUATE,
