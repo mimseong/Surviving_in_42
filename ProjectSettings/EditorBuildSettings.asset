@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StudyScene.unity
     guid: d2e55a877e20d964584174db52747f4e
   - enabled: 1
+    path: Assets/Scenes/EndingScene.unity
+    guid: cbcc3bdc787725e449fed344b4168695
+  - enabled: 1
     path: Assets/Scenes/ExamScene.unity
     guid: 5cba35ac4dc7ea3479e5003f4057d939
   - enabled: 1
