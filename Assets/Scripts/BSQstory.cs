@@ -48,7 +48,7 @@ public class BSQstory : MonoBehaviour
         if (score < 50)
         {
             //fail;
-            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "동료에게 평가를 받습니다", "평가자 : 이 코드를 설명해 보시겠어요? \n 평가자(은)는 기습공격을 시전했다!", "...\n...\n...", scoreTxt, "BSQ Fail !!! \n42레벨 += 0 \n코딩레벨 += 2 \n동료와의 관계 += 5 \n스트레스 += 20", "집으로 돌아갑니다", "졸림 = 0 \n청결 = MAX \n스트레스 -= 50");
+            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "동료에게 평가를 받습니다", "평가자 : 이 코드를 설명해 보시겠어요? \n 평가자(은)는 기습공격을 시전했다!", "...\n...\n...", scoreTxt, "BSQ Fail !!!");
             GameManager.instance.AddCodingLevel(2);
             GameManager.instance.AddFriendship(5);
             GameManager.instance.AddStress(20);
@@ -56,7 +56,7 @@ public class BSQstory : MonoBehaviour
         else
         {
             //pass;
-            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "동료에게 평가를 받습니다", "평가자 : 이 코드를 설명해 보시겠어요?\n평가자(은)는 기습공격을 시전했다!", "...\n...\n...", scoreTxt, "42레벨 += 1 \n코딩레벨 += 3 \n동료와의 관계 += 10 \n스트레스 += 5", "집으로 돌아갑니다", "졸림 = 0 \n청결 = MAX \n스트레스 -= 50");
+            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "동료에게 평가를 받습니다", "평가자 : 이 코드를 설명해 보시겠어요?\n평가자(은)는 기습공격을 시전했다!", "...\n...\n...", scoreTxt, "집으로 돌아갑니다");
             GameManager.instance.AddFortytwoLevel(1);
             GameManager.instance.AddCodingLevel(3);
             GameManager.instance.AddFriendship(10);
@@ -79,7 +79,7 @@ public class BSQstory : MonoBehaviour
         string jinxTxt;
         jinxLv = (float)GameManager.instance.GetFriendship() / 100f * 42f;
 
-        jinxTxt = "징크스의 코딩레벨 == " + jinxLv;
+        jinxTxt = "징크스의 코딩레벨 == " + (int)jinxLv;
         if (GameManager.instance.GetFriendship() >= 50)
             dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "동료와의 관계가 높아서 좋은 동료를 구했습니다!", "안녕하세요 징크스입니다 \n잘 부탁드려요!", jinxTxt);
         else

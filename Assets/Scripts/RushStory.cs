@@ -61,7 +61,7 @@ public class RushStory : MonoBehaviour
         if (score < 50)
         {
             //fail;
-            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "멘토에게 평가를 받습니다", "멘토 : 이 코드를 설명해 보시겠어요? \n 멘토(은)는 기습공격을 시전했다!", "...\n...\n...", scoreTxt, "Rush Fail !!! \n42레벨 += 0 \n코딩레벨 += 2 \n동료와의 관계 += 5 \n스트레스 += 20", "집으로 돌아갑니다", "졸림 = 0 \n청결 = MAX \n스트레스 -= 50");
+            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "멘토에게 평가를 받습니다", "멘토 : 이 코드를 설명해 보시겠어요? \n 멘토(은)는 기습공격을 시전했다!", "...\n...\n...", scoreTxt, "Rush Fail !!!", "집으로 돌아갑니다");
             GameManager.instance.AddCodingLevel(2);
             GameManager.instance.AddFriendship(5);
             GameManager.instance.AddStress(20);
@@ -69,7 +69,7 @@ public class RushStory : MonoBehaviour
         else
         {
             //pass;
-            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "멘토에게 평가를 받습니다", "멘토 : 이 코드를 설명해 보시겠어요?\n멘토(은)는 기습공격을 시전했다!", "...\n...\n...", scoreTxt, "42레벨 += 1 \n코딩레벨 += 3 \n동료와의 관계 += 10 \n스트레스 += 5", "집으로 돌아갑니다", "졸림 = 0 \n청결 = MAX \n스트레스 -= 50");
+            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "멘토에게 평가를 받습니다", "멘토 : 이 코드를 설명해 보시겠어요?\n멘토(은)는 기습공격을 시전했다!", "...\n...\n...", scoreTxt, "집으로 돌아갑니다");
             GameManager.instance.AddFortytwoLevel(1);
             GameManager.instance.AddCodingLevel(3);
             GameManager.instance.AddFriendship(10);
@@ -82,6 +82,11 @@ public class RushStory : MonoBehaviour
         GameManager.instance.NextDaySchedule(Schedule.MORNING);
     }
 
+    /// <summary>
+    /// 러시 시작하는 함수
+    /// </summary>
+    /// <param name="dialogController">대사를 출력하는 스크립트</param>
+    /// <param name="nextButton">넥스트 버튼을 나타내는 함수</param>
     public void RushStart(DialogController dialogController, ConvertMethod nextButton)
     {
         dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "러시를 시작합니다!", "랜덤으로 팀원이 배정되었습니다");
@@ -98,7 +103,7 @@ public class RushStory : MonoBehaviour
 
         timoCodingLv = RandomCodingLv();
         timoMental = Random.Range(0, 101);
-        tmoTxt = "티모의 코딩레벨 == " + timoCodingLv + "\n티모의 멘탈 == " + timoMental;
+        tmoTxt = "티모의 코딩레벨 == " + (int)timoCodingLv + "\n티모의 멘탈 == " + timoMental;
         dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "안녕하세요 티모입니다 \n잘 부탁드려요!", tmoTxt);
         
         if (timoMental < Random.Range(0, 101))
@@ -121,7 +126,7 @@ public class RushStory : MonoBehaviour
 
         yasuoCodingLv = RandomCodingLv();
         yasuoMental = Random.Range(0, 101);
-        ysoTxt = "야스오의 코딩레벨 == " + yasuoCodingLv + "\n야스오의 멘탈 == " + yasuoMental;
+        ysoTxt = "야스오의 코딩레벨 == " + (int)yasuoCodingLv + "\n야스오의 멘탈 == " + yasuoMental;
         dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "안녕하십니까 야스오입니다 \n잘 부탁드립니다!", ysoTxt);
 
         if (yasuoMental < Random.Range(0, 101))
@@ -146,7 +151,10 @@ public class RushStory : MonoBehaviour
             dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "러시를 등록하지 않았습니다");
         }
         else
+        {
+            GameManager.instance.SetWork(Work.NONE);
             rushUI.RushProcess();
+        }
     }
 
     /// <summary>

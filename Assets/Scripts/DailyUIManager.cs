@@ -22,11 +22,12 @@ public class DailyUIManager : MonoBehaviour
     [SerializeField] private DialogController dialogController;
     [SerializeField] private Image terminal;
     [SerializeField] private DailyStory dailyStory;
+    [SerializeField] private StatusManager status;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        status.ShowStatus();
     }
 
     // Update is called once per frame
@@ -168,9 +169,20 @@ public class DailyUIManager : MonoBehaviour
                 GameManager.instance.SetWork(Work.EVALUATE);
                 break;
             case 4:
-                GameManager.instance.SetWork(Work.EVALUATED);
+                if (GameManager.instance.GetIsEvaluate() == false)
+                {
+                    dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, ActiveButton, "평가를 해야만 평가를 받을 수 있습니다!");
+                    return;
+                }
+                else
+                    GameManager.instance.SetWork(Work.EVALUATED);
                 break;
             case 5:
+                if (GameManager.instance.GetIsEvaluate() == false)
+                {
+                    dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, ActiveButton, "평가를 해야만 평가를 받을 수 있습니다!");
+                    return;
+                }
                 GameManager.instance.SetWork(Work.CHEATING);
                 break;
             case 6:

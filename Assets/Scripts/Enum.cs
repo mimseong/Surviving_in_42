@@ -19,6 +19,7 @@ public enum Day
 
 public enum Work
 {
+    NONE,
     SOLO_CODING,
     DUO_CODING,
     EVALUATE,
@@ -28,4 +29,14 @@ public enum Work
     SLEEP,
     GO_HOME,
     LAZY
+};
+
+public enum Condition
+{
+    NORMAL,
+    HANGOVER,
+    TIRED,
+    DIRTY,
+    SLEEPY,
+    FEVER
 };
