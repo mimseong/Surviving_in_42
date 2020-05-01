@@ -22,6 +22,7 @@ public class DailyUIManager : MonoBehaviour
     [SerializeField] private Button registerButton;
     [SerializeField] private DialogController dialogController;
     [SerializeField] private Image terminal;
+    [SerializeField] private Image goEvent;
     [SerializeField] private DailyStory dailyStory;
     [SerializeField] private StatusManager status;
     private int countingButton = 0;
@@ -30,6 +31,7 @@ public class DailyUIManager : MonoBehaviour
     void Start()
     {
         status.ShowStatus();
+        StartEvent();
     }
 
     // Update is called once per frame
@@ -226,5 +228,52 @@ public class DailyUIManager : MonoBehaviour
     public void NextString()
     {
         dialogController.ShowTexts(0.5f, 1.5f, 0.02f, "...별 도움이 되지 않았다", "무엇을 할까?");
+    }
+
+    public void StartEvent()
+    {
+        bool value = false;
+
+        if (GameManager.instance.GetWeek() == 1 && GameManager.instance.GetDay() == Day.TUE && GameManager.instance.GetSchedule() == Schedule.AFTERNOON)
+        {
+            GameManager.instance.SetEvent(Suprise.REVERSE_COLOR);
+            value = true;
+        }
+        else if (GameManager.instance.GetWeek() == 1 && GameManager.instance.GetDay() == Day.THU && GameManager.instance.GetSchedule() == Schedule.AFTERNOON)
+        {
+            GameManager.instance.SetEvent(Suprise.CANDY);
+            value = true;
+        }
+        else if (GameManager.instance.GetWeek() == 2 && GameManager.instance.GetDay() == Day.TUE && GameManager.instance.GetSchedule() == Schedule.AFTERNOON)
+        {
+            GameManager.instance.SetEvent(Suprise.SQUAT);
+            value = true;
+        }
+        else if (GameManager.instance.GetWeek() == 2 && GameManager.instance.GetDay() == Day.THU && GameManager.instance.GetSchedule() == Schedule.AFTERNOON)
+        {
+            GameManager.instance.SetEvent(Suprise.CHOCOLATE);
+            value = true;
+        }
+        else if (GameManager.instance.GetWeek() == 3 && GameManager.instance.GetDay() == Day.TUE && GameManager.instance.GetSchedule() == Schedule.AFTERNOON)
+        {
+            GameManager.instance.SetEvent(Suprise.ENERGYBAR);
+            value = true;
+        }
+        else if (GameManager.instance.GetWeek() == 3 && GameManager.instance.GetDay() == Day.THU && GameManager.instance.GetSchedule() == Schedule.AFTERNOON)
+        {
+            GameManager.instance.SetEvent(Suprise.PIZZA);
+            value = true;
+        }
+
+        if (value == true)
+        {
+            goEvent.gameObject.SetActive(true);
+        }
+    }
+
+
+    public void NextEvent()
+    {
+        SceneManager.LoadScene("EventScene");
     }
 }

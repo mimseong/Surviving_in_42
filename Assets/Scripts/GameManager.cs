@@ -24,8 +24,10 @@ public class GameManager : MonoBehaviour
     private Schedule schedule = Schedule.MORNING;
     private Work work;
     private Condition condition = Condition.NORMAL;
+    private Suprise events;
     private bool isExam = false;
     private bool isRush = false;
+    private bool isMousePad = false;
 
     private void Awake()
     {
@@ -78,6 +80,8 @@ public class GameManager : MonoBehaviour
     public void AddCodingLevel(float codingLevel)
     {
         this.precodingLevel = this.codingLevel;
+        if (GetisMousePad() == true)
+            this.codingLevel += codingLevel * 0.1f;
         if (condition == Condition.FEVER)
             this.codingLevel += codingLevel * 1.5f;
         else if (condition == Condition.SLEEPY)
@@ -418,5 +422,25 @@ public class GameManager : MonoBehaviour
             NextDay(1);
             this.schedule -= 4;
         }
+    }
+
+    public void SetEvent(Suprise events)
+    {
+        this.events = events;
+    }
+    
+    public Suprise GetEvent()
+    {
+        return (this.events);
+    }
+
+    public void SetisMousePad(bool value)
+    {
+        this.isMousePad = value;
+    }
+
+    public bool GetisMousePad()
+    {
+        return (this.isMousePad);
     }
 }

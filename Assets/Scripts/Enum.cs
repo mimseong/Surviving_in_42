@@ -40,3 +40,14 @@ public enum Condition
     SLEEPY,
     FEVER
 };
+
+public enum Suprise
+{
+    REVERSE_COLOR,
+    SQUAT,
+    PIZZA,
+    MOUSE_PAD,
+    CANDY,
+    CHOCOLATE,
+    ENERGYBAR
+};
