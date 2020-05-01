@@ -23,6 +23,9 @@ public class StatusManager : MonoBehaviour
     [SerializeField] private Text fortytwoTxt;
     [SerializeField] private Text playerCondition;
     [SerializeField] private Text curfewTxt;
+    [SerializeField] private Text time;
+    [SerializeField] private Text evalPoint;
+    [SerializeField] private Text playerName;
     [SerializeField] private Sprite[] playerSprites;
     [SerializeField] private Sprite[] curfewSprite;
     [SerializeField] private Button goCurfew;
@@ -54,12 +57,15 @@ public class StatusManager : MonoBehaviour
         StartCoroutine(AnimateStatus(cleanGauge, (float)GameManager.instance.GetPreclean(), (float)GameManager.instance.GetClean(), 100f));
         StartCoroutine(AnimateStatus(sleepGauge, (float)GameManager.instance.GetPresleep(), (float)GameManager.instance.GetSleep(), 100f));
 
-        codingLvTxt.text = "코딩 레벨 " + GameManager.instance.GetCodingLevel();
+        codingLvTxt.text = "코딩 레벨 " + GameManager.instance.GetCodingLevel().ToString("0.0");
         fortytwoTxt.text = "42 레벨 " + GameManager.instance.GetFortytwoLevel().ToString("0.0");
         stressTxt.text = "스트레스 " + GameManager.instance.GetStress();
         friendshipTxt.text = "인싸력 " + GameManager.instance.GetFriendship();
         cleanTxt.text = "청결도 " + GameManager.instance.GetClean();
         sleepTxt.text = "졸림 " + GameManager.instance.GetSleep();
+        time.text = "WEEK " + GameManager.instance.GetWeek() + "    " + GameManager.instance.GetDay() + "    " + GameManager.instance.GetSchedule();
+        evalPoint.text = "Evaluation Points  " + GameManager.instance.GetEvalPoint();
+        playerName.text = GameManager.instance.GetName();
 
         GameManager.instance.SetPreCodingLv(GameManager.instance.GetCodingLevel());
         GameManager.instance.SetPreFortytwoLevel(GameManager.instance.GetFortytwoLevel());

@@ -54,7 +54,7 @@ public class StudyStory : MonoBehaviour
     {
         dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "스스로 학습하기로 했다", "...\n...\n...", "열심히 코딩을 했다!");
         GameManager.instance.AddCodingLevel(1.0f);
-        GameManager.instance.AddClean(-20);
+        GameManager.instance.AddClean(-10);
         GameManager.instance.AddStress(10);
         GameManager.instance.AddSleep(20);
     }
@@ -62,12 +62,11 @@ public class StudyStory : MonoBehaviour
     private void DuoCoding(DialogController dialogController)
     {
         dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "동료와 함께 코딩학습을 했다", "...\n...\n...", "많은 것을 배웠다!");
-        GameManager.instance.AddClean(-20);
+        GameManager.instance.AddClean(-10);
         GameManager.instance.AddStress(10);
         GameManager.instance.AddSleep(20);
-        GameManager.instance.AddCodingLevel(1.0f);
+        GameManager.instance.AddCodingLevel(0.7f);
         GameManager.instance.AddFriendship(2);
-
     }
 
     private void Evaluate(DialogController dialogController)
@@ -111,10 +110,10 @@ public class StudyStory : MonoBehaviour
                     break;
             }
         }
-        GameManager.instance.AddClean(-20);
+        GameManager.instance.AddClean(-10);
         GameManager.instance.AddStress(10);
         GameManager.instance.AddSleep(20);
-        GameManager.instance.SetIsEvaluate(true);
+        GameManager.instance.AddEvalPoint(2);
     }
 
     private void Evaluted(DialogController dialogController)
@@ -147,11 +146,11 @@ public class StudyStory : MonoBehaviour
             GameManager.instance.AddFriendship(-2);
         else
             GameManager.instance.AddFriendship(2);
-        GameManager.instance.AddClean(-20);
+        GameManager.instance.AddClean(-10);
         GameManager.instance.AddStress(10);
         GameManager.instance.AddSleep(20);
         GameManager.instance.AddCodingLevel(0.5f);
-        GameManager.instance.SetIsEvaluate(false);
+        GameManager.instance.AddEvalPoint(-2);
     }
 
     private void Cheating(DialogController dialogController)
@@ -171,10 +170,10 @@ public class StudyStory : MonoBehaviour
                 GameManager.instance.AddStress(10);
                 break;
         }
-        GameManager.instance.AddClean(-20);
+        GameManager.instance.AddClean(-10);
         GameManager.instance.AddStress(10);
         GameManager.instance.AddSleep(20);
-        GameManager.instance.SetIsEvaluate(false);
+        GameManager.instance.AddEvalPoint(-2);
     }
 
     private IEnumerator CheatingResult(float seconds, bool value)
@@ -192,5 +191,4 @@ public class StudyStory : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         studyUIManager.RudePeer();
     }
-
 }

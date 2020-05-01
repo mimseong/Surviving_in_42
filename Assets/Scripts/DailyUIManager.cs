@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class DailyUIManager : MonoBehaviour
 {
+    [SerializeField] private Button questionary;
     [SerializeField] private Button backButton;
     [SerializeField] private Button studyButton;
     [SerializeField] private Button restButton;
@@ -23,6 +24,7 @@ public class DailyUIManager : MonoBehaviour
     [SerializeField] private Image terminal;
     [SerializeField] private DailyStory dailyStory;
     [SerializeField] private StatusManager status;
+    private int countingButton = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +61,7 @@ public class DailyUIManager : MonoBehaviour
         studyButton.gameObject.SetActive(value);
         restButton.gameObject.SetActive(value);
         ActiveRegisterButton();
+        questionary.gameObject.SetActive(true);
     }
 
     private void ActiveButton()
@@ -169,18 +172,18 @@ public class DailyUIManager : MonoBehaviour
                 GameManager.instance.SetWork(Work.EVALUATE);
                 break;
             case 4:
-                if (GameManager.instance.GetIsEvaluate() == false)
+                if (GameManager.instance.GetEvalPoint() == 0)
                 {
-                    dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, ActiveButton, "평가를 해야만 평가를 받을 수 있습니다!");
+                    dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, ActiveButton, "평가 포인트가 부족합니다!");
                     return;
                 }
                 else
                     GameManager.instance.SetWork(Work.EVALUATED);
                 break;
             case 5:
-                if (GameManager.instance.GetIsEvaluate() == false)
+                if (GameManager.instance.GetEvalPoint() == 0)
                 {
-                    dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, ActiveButton, "평가를 해야만 평가를 받을 수 있습니다!");
+                    dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, ActiveButton, "평가 포인트가 부족합니다!");
                     return;
                 }
                 GameManager.instance.SetWork(Work.CHEATING);
@@ -202,5 +205,26 @@ public class DailyUIManager : MonoBehaviour
             SceneManager.LoadScene("StudyScene");
         else
             SceneManager.LoadScene("RestScene");
+    }
+
+    public void Questionary()
+    {
+        dialogController.SetText("");
+        switch(countingButton)
+        {
+            case 0:
+                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, "궁금하신 게 있나요? \n다시 한 번 눌러보세요");
+                countingButton++;
+                break;
+            case 1:
+                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextString, "알려드릴 수 없습니다");
+                questionary.gameObject.SetActive(false);
+                break;
+        }
+    }
+
+    public void NextString()
+    {
+        dialogController.ShowTexts(0.5f, 1.5f, 0.02f, "...별 도움이 되지 않았다", "무엇을 할까?");
     }
 }

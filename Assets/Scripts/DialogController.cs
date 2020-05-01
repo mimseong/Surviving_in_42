@@ -18,6 +18,15 @@ public class DialogController : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// 텍스트를 입력하는 함수
+    /// </summary>
+    /// <param name="text"></param>
+    public void SetText(string text)
+    {
+        textUI.text = text;
+    }
+
     /// <summary> textUI에 text를 출력하는 함수</summary>
     /// <param name="text"> textUI에 출력되는 문자열 </param>
     /// <param name="startTerm"> text가 처음에 출력되기전에 대기하는 시간 </param>
@@ -58,6 +67,7 @@ public class DialogController : MonoBehaviour
         coruoutine = PrintTexts(startTerm, eachTerm, speed, methodTerm, func, texts);
         StartCoroutine(coruoutine);
     }
+
 
     /// <summary>
     /// textUI에 texts array중 랜덤으로 하나를 선택하여 texts를 순서대로 출력한후 매개변수로 넘어온 함수를 실행하는 함수
