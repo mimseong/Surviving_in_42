@@ -49,22 +49,19 @@ public class RegisterUIManager : MonoBehaviour
 
     public void InputName()
     {
-     //   if (inputField.isFocused == true)
+        if (inputField.text.Length <= 0)
+            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, "이름을 입력해주세요!");
+        else if (inputField.text.Length > 5)
         {
-            if (inputField.text.Length <= 0)
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, "이름을 입력해주세요!");
-            else if (inputField.text.Length > 5)
-            {
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, "이름을 5자 이내로 입력해주세요!");
-                inputField.text = "";
-            }
-            else
-            {
-                GameManager.instance.SetName(inputField.text);
-                inputField.gameObject.SetActive(false);
-                RegisterStory();
-                NextButton(true);
-            }
+            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, "이름을 5자 이내로 입력해주세요!");
+            inputField.text = "";
+        }
+        else
+        {
+            GameManager.instance.SetName(inputField.text);
+            inputField.gameObject.SetActive(false);
+            RegisterStory();
+            NextButton(true);
         }
     }
 
