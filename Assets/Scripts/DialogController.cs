@@ -59,6 +59,22 @@ public class DialogController : MonoBehaviour
         StartCoroutine(coruoutine);
     }
 
+    /// <summary>
+    /// textUI에 texts array중 랜덤으로 하나를 선택하여 texts를 순서대로 출력한후 매개변수로 넘어온 함수를 실행하는 함수
+    /// </summary>
+    /// <param name="startTerm"> text를 처음에 출력하기전에 대기하는 시간, 첫번째 텍스트에만 적용된다. </param>
+    /// <param name="eachTerm"> 각 text를 출력하기 전에 대기하는 시간, 첫번째 텍스트에는 적용되지 않는다. </param>
+    /// <param name="speed"> 한글자가 나타나는 속도 0.02f를 추천 </param>
+    /// <param name="methodTerm"> func가 실행되기 전에 대기하는 시간 </param>
+    /// <param name="func"> 모든 text가 출력된 후 실행되는 함수 </param>
+    /// <param name="multiTexts"> textUI에 출력되는 2차원 문자열 배열 </param>
+    public void ShowRandomTexts(float startTerm, float eachTerm, float speed, float methodTerm, ConvertMethod func, string[][] multiTexts)
+    {
+        int index = Random.Range(0, multiTexts.Length);
+
+        ShowTexts(startTerm, eachTerm, speed, methodTerm, func, multiTexts[index]);
+    }
+
     private IEnumerator PrintText(string text, float startTerm, float speed)
     {
         yield return new WaitForSeconds(startTerm);
