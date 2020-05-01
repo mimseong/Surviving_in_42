@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     private int stress = 0;
     private int sleep = 0;
     private int week = 1;
+    private int evalpoint = 2;
     private float precodingLevel = 0;
     private float prefortytwoLevel = 0;
     private int preclean = 100;
@@ -23,7 +24,6 @@ public class GameManager : MonoBehaviour
     private Schedule schedule = Schedule.MORNING;
     private Work work;
     private Condition condition = Condition.NORMAL;
-    private bool isEvaluate = false;
     private bool isExam = false;
     private bool isRush = false;
 
@@ -323,14 +323,21 @@ public class GameManager : MonoBehaviour
         return (this.schedule);
     }
 
-    public void SetIsEvaluate(bool value)
+    public void SetEvalPoint(int point)
     {
-        this.isEvaluate = value;
+        this.evalpoint = point;
     }
 
-    public bool GetIsEvaluate()
+    public void AddEvalPoint(int point)
     {
-        return (isEvaluate);
+        this.evalpoint += point;
+        if (this.evalpoint < 0)
+            this.evalpoint = 0;
+    }
+
+    public int GetEvalPoint()
+    {
+        return (this.evalpoint);
     }
 
     public void SetisExam(bool value)
