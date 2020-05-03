@@ -13,17 +13,16 @@ public class ExamUI : MonoBehaviour
     [SerializeField] private ExamStory examStory;
     [SerializeField] private DialogController dialogController;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        ChangeBackground();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
+
     public void NextButton(bool value)
     {
         nextButton.gameObject.SetActive(value);

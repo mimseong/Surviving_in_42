@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ExamStory : MonoBehaviour
 {
@@ -9,13 +8,17 @@ public class ExamStory : MonoBehaviour
 
     void Start()
     {
-        examUI.ActiveTerminal();
+        Invoke("ActiveTerminal", 1.5f);
     }
 
-    // Update is called once per frame
     void Update()
     {
 
+    }
+
+    private void ActiveTerminal()
+    {
+        examUI.ActiveTerminal();
     }
 
     /// <summary>

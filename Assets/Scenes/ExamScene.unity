@@ -650,7 +650,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &842309113
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1384,8 +1384,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextButton: {fileID: 220785516}
   terminal: {fileID: 842309115}
-  background: {fileID: 0}
-  sprite: []
+  background: {fileID: 1413309232}
+  sprite:
+  - {fileID: 21300000, guid: 834e4e9f16043a247a6ad1ef93874809, type: 3}
+  - {fileID: 21300000, guid: 3e8a6424a37650440880c149188c05e6, type: 3}
+  - {fileID: 21300000, guid: 5f7a8df1933c1e24eb966d1878178604, type: 3}
+  - {fileID: 21300000, guid: 5b83d29ada5f74f43bacc62fd7815f76, type: 3}
   examStory: {fileID: 643203068}
   dialogController: {fileID: 842309114}
 --- !u!4 &1875573458
