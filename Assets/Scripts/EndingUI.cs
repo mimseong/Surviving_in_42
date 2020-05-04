@@ -15,7 +15,7 @@ public class EndingUI : MonoBehaviour
 
     void Start()
     {
-        
+        GameManager.instance.gameObject.GetComponent<SoundManager>().EndingSound();
     }
 
     public void StartMent()
