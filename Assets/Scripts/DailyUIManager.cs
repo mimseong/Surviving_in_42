@@ -32,6 +32,7 @@ public class DailyUIManager : MonoBehaviour
     {
         status.ShowStatus();
         StartEvent();
+        GameManager.instance.gameObject.GetComponent<SoundManager>().ActiveSound(GameManager.instance.GetWeek());
     }
 
     // Update is called once per frame
