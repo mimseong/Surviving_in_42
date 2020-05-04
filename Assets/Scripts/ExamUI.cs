@@ -42,7 +42,10 @@ public class ExamUI : MonoBehaviour
     public void NextScene()
     {
         NextButton(false);
-        SceneManager.LoadScene("RushScene");
+        if (GameManager.instance.GetWeek() == 4)
+            SceneManager.LoadScene("EndingScene");
+        else
+            SceneManager.LoadScene("RushScene");
     }
 
     public void ChangeBackground()
