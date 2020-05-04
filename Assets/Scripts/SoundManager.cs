@@ -12,14 +12,12 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip ending;
     private int storeWeek = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
         audioSource.clip = opening;
         audioSource.Play();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
