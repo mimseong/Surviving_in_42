@@ -25,6 +25,10 @@ public class SoundManager : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// 각 주차에 따라 bgm을 삽입하는 함수
+    /// </summary>
+    /// <param name="week">getweek함수를 params로 받을 것임</param>
     public void ActiveSound(int week)
     {
         switch (week)
@@ -46,6 +50,9 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 엔딩씬에서 bgm 재생하는 함수
+    /// </summary>
     public void EndingSound()
     {
         audioSource.clip = ending;
