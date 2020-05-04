@@ -38,10 +38,10 @@ public class Prologue : MonoBehaviour
     {
         this.background.position = this.movePoints[0].position;
         background.gameObject.SetActive(true);
-        yield return StartCoroutine(MoveWaypoint(this.background, this.movePoints, 0.15f));
+        yield return StartCoroutine(MoveWaypoint(this.background, this.movePoints, 0.4f));
         yield return new WaitForSeconds(1.5f);
-        yield return StartCoroutine(MoveTarget(this.mainLogo, this.targetEndPoint.position, 1.5f));
-        yield return new WaitForSeconds(5.0f);
+        yield return StartCoroutine(MoveTarget(this.mainLogo, this.targetEndPoint.position, 2.5f));
+        yield return new WaitForSeconds(3.0f);
         SceneManager.LoadScene("RegisterScene");
     }
 
