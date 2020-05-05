@@ -54,7 +54,7 @@ public class StudyStory : MonoBehaviour
     {
         dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "스스로 학습하기로 했다\n열심히 코딩을 했다!");
         GameManager.instance.AddCodingLevel(1.0f);
-        GameManager.instance.AddClean(-10);
+        GameManager.instance.AddClean(-15);
         GameManager.instance.AddStress(10);
         GameManager.instance.AddSleep(20);
     }
@@ -62,7 +62,7 @@ public class StudyStory : MonoBehaviour
     private void DuoCoding(DialogController dialogController)
     {
         dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "동료와 함께 코딩학습을 했다\n많은 것을 배웠다!");
-        GameManager.instance.AddClean(-10);
+        GameManager.instance.AddClean(-15);
         GameManager.instance.AddStress(10);
         GameManager.instance.AddSleep(20);
         GameManager.instance.AddCodingLevel(0.7f);
@@ -103,14 +103,14 @@ public class StudyStory : MonoBehaviour
                     GameManager.instance.AddCodingLevel(0.5f);
                     break;
                 case 4:
-                    dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "무례한 동료를 만났다 \n너무 속상하다", "ㅂㄷㅂㄷ...");
+                    dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "무례한 동료를 만났다 \n너무 속상하다");
                     StartCoroutine(RudeEval(2.0f));
                     GameManager.instance.AddStress(30);
                     GameManager.instance.AddFriendship(-2);
                     break;
             }
         }
-        GameManager.instance.AddClean(-10);
+        GameManager.instance.AddClean(-15);
         GameManager.instance.AddStress(10);
         GameManager.instance.AddSleep(20);
         GameManager.instance.AddEvalPoint(2);
@@ -146,7 +146,7 @@ public class StudyStory : MonoBehaviour
             GameManager.instance.AddFriendship(-2);
         else
             GameManager.instance.AddFriendship(2);
-        GameManager.instance.AddClean(-10);
+        GameManager.instance.AddClean(-15);
         GameManager.instance.AddStress(10);
         GameManager.instance.AddSleep(20);
         GameManager.instance.AddCodingLevel(0.5f);
@@ -159,18 +159,19 @@ public class StudyStory : MonoBehaviour
         switch (situation)
         {
             case 0:
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "컨닝을 했다", "양심의 가책을 느낀다", "...\n...\n다행스럽게도 무사히 통과했다!");
+                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "컨닝을 했다", "양심의 가책을 느낀다", "...\n...\n...", "다행스럽게도 무사히 통과했다!");
                 StartCoroutine(CheatingResult(5.0f, true));
                 GameManager.instance.AddFortytwoLevel(0.8f);
+                GameManager.instance.AddFriendship(0);
                 break;
             case 1:
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "컨닝을 했다", "찔리지만 어쩔 수 없어", "...\n...\n부정행위를 걸려버렸다!");
+                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "컨닝을 했다", "찔리지만 어쩔 수 없어", "...\n...\n...", "부정행위를 걸려버렸다!");
                 StartCoroutine(CheatingResult(5.0f, false));
                 GameManager.instance.AddFriendship(-5);
                 GameManager.instance.AddStress(10);
                 break;
         }
-        GameManager.instance.AddClean(-10);
+        GameManager.instance.AddClean(-15);
         GameManager.instance.AddStress(10);
         GameManager.instance.AddSleep(20);
         GameManager.instance.AddEvalPoint(-2);

@@ -61,6 +61,7 @@ public class RestStory : MonoBehaviour
         dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "소파에서 조금 자기로 합니다", "...\n..zzzzZZZ");
         GameManager.instance.AddSleep(-30);
         GameManager.instance.AddStress(-10);
+        GameManager.instance.AddClean(-15);
         GameManager.instance.NextSchedule(1);
     }
 
@@ -94,9 +95,9 @@ public class RestStory : MonoBehaviour
                 dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "동료들과 노닥거렸다", "동료A : 기침은 Calloc Calloc! \n동료들 : 하하하! 너무 웃겨! \n동료B : 또 시작이군");
                 break;
         }
-        GameManager.instance.AddStress(-5);
+        GameManager.instance.AddStress(-30);
         GameManager.instance.NextSchedule(1);
         GameManager.instance.AddSleep(10);
-        GameManager.instance.AddClean(-10);
+        GameManager.instance.AddClean(-15);
     }
 }
