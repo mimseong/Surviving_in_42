@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     private Schedule schedule = Schedule.MORNING;
     private Work work;
     private Condition condition = Condition.NORMAL;
-    private Suprise events;
+    private Surprise events;
     private bool isExam = false;
     private bool isRush = false;
     private bool isMousePad = false;
@@ -285,9 +285,9 @@ public class GameManager : MonoBehaviour
     public void DecideCondition()
     {
         this.condition = Condition.NORMAL;
-        if (this.clean <= 30)
+        if (this.clean < 50)
             this.condition = Condition.DIRTY;
-        if (this.sleep >= 70)
+        if (this.sleep > 50)
             this.condition = Condition.SLEEPY;
         if (this.stress + this.sleep >= 120)
             this.condition = Condition.TIRED;
@@ -424,12 +424,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SetEvent(Suprise events)
+    public void SetEvent(Surprise events)
     {
         this.events = events;
     }
     
-    public Suprise GetEvent()
+    public Surprise GetEvent()
     {
         return (this.events);
     }

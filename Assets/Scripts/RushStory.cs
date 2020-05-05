@@ -61,7 +61,7 @@ public class RushStory : MonoBehaviour
         if (score < 50)
         {
             //fail;
-            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "멘토에게 평가를 받습니다", "멘토 : 이 코드를 설명해 보시겠어요? \n 멘토(은)는 기습공격을 시전했다!", "...\n...\n...", scoreTxt, "Rush Fail !!!", "집으로 돌아갑니다");
+            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "멘토에게 평가를 받습니다", "멘토 : 이 코드를 설명해 보시겠어요? \n 멘토(은)는 기습공격을 시전했다!\n...\n...\n...", scoreTxt, "Rush Failed !!! \n집으로 돌아갑니다");
             GameManager.instance.AddCodingLevel(2);
             GameManager.instance.AddFriendship(5);
             GameManager.instance.AddStress(20);
@@ -69,7 +69,7 @@ public class RushStory : MonoBehaviour
         else
         {
             //pass;
-            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "멘토에게 평가를 받습니다", "멘토 : 이 코드를 설명해 보시겠어요?\n멘토(은)는 기습공격을 시전했다!", "...\n...\n...", scoreTxt, "집으로 돌아갑니다");
+            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "멘토에게 평가를 받습니다", "멘토 : 이 코드를 설명해 보시겠어요?\n멘토(은)는 기습공격을 시전했다!\n...\n...\n...", scoreTxt, "러시를 무사히 마치고 집으로 돌아갑니다");
             GameManager.instance.AddFortytwoLevel(1);
             GameManager.instance.AddCodingLevel(3);
             GameManager.instance.AddFriendship(10);
@@ -102,7 +102,7 @@ public class RushStory : MonoBehaviour
         string tmoTxt;
 
         timoCodingLv = RandomCodingLv();
-        timoMental = Random.Range(0, 101);
+        timoMental = Random.Range(25, 101);
         tmoTxt = "티모의 코딩레벨 == " + (int)timoCodingLv + "\n티모의 멘탈 == " + timoMental;
         dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "안녕하세요 티모입니다 \n잘 부탁드려요!", tmoTxt);
         
@@ -125,7 +125,7 @@ public class RushStory : MonoBehaviour
         string ysoTxt;
 
         yasuoCodingLv = RandomCodingLv();
-        yasuoMental = Random.Range(0, 101);
+        yasuoMental = Random.Range(25, 101);
         ysoTxt = "야스오의 코딩레벨 == " + (int)yasuoCodingLv + "\n야스오의 멘탈 == " + yasuoMental;
         dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "안녕하십니까 야스오입니다 \n잘 부탁드립니다!", ysoTxt);
 
@@ -187,13 +187,13 @@ public class RushStory : MonoBehaviour
                 codingLv = Random.Range(0.0f, 13.0f);
                 break;
             case 2:
-                codingLv = Random.Range(0.0f, 25.0f);
+                codingLv = Random.Range(5.0f, 25.0f);
                 break;
             case 3:
-                codingLv = Random.Range(0.0f, 37.0f);
+                codingLv = Random.Range(10.0f, 37.0f);
                 break;
             case 4:
-                codingLv = Random.Range(0.0f, 43.0f);
+                codingLv = Random.Range(15.0f, 43.0f);
                 break;
         }
         return (codingLv);

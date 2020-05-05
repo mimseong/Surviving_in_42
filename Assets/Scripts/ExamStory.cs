@@ -53,13 +53,13 @@ public class ExamStory : MonoBehaviour
             if (result > 1)
                 result = 1;
             float score = result * 100;
-            string scoreTxt = "점수는 " + score + "점 입니다";
+            string scoreTxt = "점수는 " + (int)score + "점 입니다";
             if (GameManager.instance.GetCodingLevel() <= 5.0f)
                 dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "시험이 시작되었습니다", "두근두근.. \n떨린다", "...\n...?\n???\n??????????", "로그인조차 하지 못했다", "점수는 0점입니다");
             else
             {
                 dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "시험이 시작되었습니다", "두근두근.. \n떨린다", "...\n...?\n???\n??????????", "무사히 시험을 마쳤다", scoreTxt);
-                GameManager.instance.AddFortytwoLevel(result * 2);
+                GameManager.instance.AddFortytwoLevel(result * 1.5f);
             }
         }
         GameManager.instance.AddStress(-50);

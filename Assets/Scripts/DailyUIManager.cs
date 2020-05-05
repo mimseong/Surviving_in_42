@@ -6,25 +6,27 @@ using UnityEngine.UI;
 
 public class DailyUIManager : MonoBehaviour
 {
-    [SerializeField] private Button questionary;
-    [SerializeField] private Button backButton;
-    [SerializeField] private Button studyButton;
-    [SerializeField] private Button restButton;
-    [SerializeField] private Button soloCodingButton;
-    [SerializeField] private Button duoCodingButton;
-    [SerializeField] private Button evaluateButton;
-    [SerializeField] private Button evaluatedButton;
-    [SerializeField] private Button cheatingButton;
-    [SerializeField] private Button beerButton;
-    [SerializeField] private Button sleepButton;
-    [SerializeField] private Button goHomeButton;
-    [SerializeField] private Button lazyButton;
-    [SerializeField] private Button registerButton;
-    [SerializeField] private DialogController dialogController;
-    [SerializeField] private Image terminal;
-    [SerializeField] private Image goEvent;
-    [SerializeField] private DailyStory dailyStory;
-    [SerializeField] private StatusManager status;
+    [SerializeField] private Button questionary = null;
+    [SerializeField] private Button backButton = null;
+    [SerializeField] private Button studyButton = null;
+    [SerializeField] private Button restButton = null;
+    [SerializeField] private Button soloCodingButton = null;
+    [SerializeField] private Button duoCodingButton = null;
+    [SerializeField] private Button evaluateButton = null;
+    [SerializeField] private Button evaluatedButton = null;
+    [SerializeField] private Button cheatingButton = null;
+    [SerializeField] private Button beerButton = null;
+    [SerializeField] private Button sleepButton = null;
+    [SerializeField] private Button goHomeButton = null;
+    [SerializeField] private Button lazyButton = null;
+    [SerializeField] private Button registerButton = null;
+    [SerializeField] private DialogController dialogController = null;
+    [SerializeField] private Image terminal = null;
+    [SerializeField] private Image goEvent = null;
+    [SerializeField] private Image goExam = null;
+    [SerializeField] private Image goBSQ = null;
+    [SerializeField] private DailyStory dailyStory = null;
+    [SerializeField] private StatusManager status = null;
     private int countingButton = 0;
 
     // Start is called before the first frame update
@@ -32,7 +34,16 @@ public class DailyUIManager : MonoBehaviour
     {
         status.ShowStatus();
         StartEvent();
-        GameManager.instance.gameObject.GetComponent<SoundManager>().ActiveSound(GameManager.instance.GetWeek());
+        if (GameManager.instance.gameObject.GetComponent<SoundManager>())
+            GameManager.instance.gameObject.GetComponent<SoundManager>().ActiveSound(GameManager.instance.GetWeek());
+        if (GameManager.instance.GetDay() == Day.FRI)
+        {
+            goExam.gameObject.SetActive(true);
+        }
+        if (GameManager.instance.GetWeek() == 4 && GameManager.instance.GetDay() == Day.MON)
+        {
+            goBSQ.gameObject.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -237,32 +248,37 @@ public class DailyUIManager : MonoBehaviour
 
         if (GameManager.instance.GetWeek() == 1 && GameManager.instance.GetDay() == Day.TUE && GameManager.instance.GetSchedule() == Schedule.AFTERNOON)
         {
-            GameManager.instance.SetEvent(Suprise.REVERSE_COLOR);
+            GameManager.instance.SetEvent(Surprise.REVERSE_COLOR);
+            value = true;
+        }
+        else if (GameManager.instance.GetWeek() == 1 && GameManager.instance.GetDay() == Day.WED && GameManager.instance.GetSchedule() == Schedule.AFTERNOON)
+        {
+            GameManager.instance.SetEvent(Surprise.EVAL_MISTAKE);
             value = true;
         }
         else if (GameManager.instance.GetWeek() == 1 && GameManager.instance.GetDay() == Day.THU && GameManager.instance.GetSchedule() == Schedule.AFTERNOON)
         {
-            GameManager.instance.SetEvent(Suprise.CANDY);
+            GameManager.instance.SetEvent(Surprise.CANDY);
             value = true;
         }
         else if (GameManager.instance.GetWeek() == 2 && GameManager.instance.GetDay() == Day.TUE && GameManager.instance.GetSchedule() == Schedule.AFTERNOON)
         {
-            GameManager.instance.SetEvent(Suprise.SQUAT);
+            GameManager.instance.SetEvent(Surprise.SQUAT);
             value = true;
         }
         else if (GameManager.instance.GetWeek() == 2 && GameManager.instance.GetDay() == Day.THU && GameManager.instance.GetSchedule() == Schedule.AFTERNOON)
         {
-            GameManager.instance.SetEvent(Suprise.CHOCOLATE);
+            GameManager.instance.SetEvent(Surprise.CHOCOLATE);
             value = true;
         }
         else if (GameManager.instance.GetWeek() == 3 && GameManager.instance.GetDay() == Day.TUE && GameManager.instance.GetSchedule() == Schedule.AFTERNOON)
         {
-            GameManager.instance.SetEvent(Suprise.ENERGYBAR);
+            GameManager.instance.SetEvent(Surprise.ENERGYBAR);
             value = true;
         }
         else if (GameManager.instance.GetWeek() == 3 && GameManager.instance.GetDay() == Day.THU && GameManager.instance.GetSchedule() == Schedule.AFTERNOON)
         {
-            GameManager.instance.SetEvent(Suprise.PIZZA);
+            GameManager.instance.SetEvent(Surprise.PIZZA);
             value = true;
         }
 
@@ -272,6 +288,15 @@ public class DailyUIManager : MonoBehaviour
         }
     }
 
+    public void GoExam()
+    {
+        SceneManager.LoadScene("ExamScene");
+    }
+
+    public void GoBSQ()
+    {
+        SceneManager.LoadScene("BSQScene");
+    }
 
     public void NextEvent()
     {

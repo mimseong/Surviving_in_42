@@ -41,7 +41,7 @@ public enum Condition
     FEVER
 };
 
-public enum Suprise
+public enum Surprise
 {
     REVERSE_COLOR,
     SQUAT,
@@ -49,5 +49,6 @@ public enum Suprise
     MOUSE_PAD,
     CANDY,
     CHOCOLATE,
-    ENERGYBAR
+    ENERGYBAR,
+    EVAL_MISTAKE
 };
