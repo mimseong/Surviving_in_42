@@ -23,6 +23,8 @@ public class DailyUIManager : MonoBehaviour
     [SerializeField] private DialogController dialogController;
     [SerializeField] private Image terminal;
     [SerializeField] private Image goEvent;
+    [SerializeField] private Image goExam;
+    [SerializeField] private Image goBSQ;
     [SerializeField] private DailyStory dailyStory;
     [SerializeField] private StatusManager status;
     private int countingButton = 0;
@@ -33,6 +35,14 @@ public class DailyUIManager : MonoBehaviour
         status.ShowStatus();
         StartEvent();
         GameManager.instance.gameObject.GetComponent<SoundManager>().ActiveSound(GameManager.instance.GetWeek());
+        if (GameManager.instance.GetDay() == Day.FRI)
+        {
+            goExam.gameObject.SetActive(true);
+        }
+        if (GameManager.instance.GetWeek() == 4 && GameManager.instance.GetDay() == Day.MON)
+        {
+            goBSQ.gameObject.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -272,6 +282,15 @@ public class DailyUIManager : MonoBehaviour
         }
     }
 
+    public void GoExam()
+    {
+        SceneManager.LoadScene("ExamScene");
+    }
+
+    public void GoBSQ()
+    {
+        SceneManager.LoadScene("BSQScene");
+    }
 
     public void NextEvent()
     {
