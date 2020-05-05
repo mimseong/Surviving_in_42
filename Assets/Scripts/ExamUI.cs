@@ -42,7 +42,12 @@ public class ExamUI : MonoBehaviour
     public void NextScene()
     {
         NextButton(false);
-        if (GameManager.instance.GetWeek() == 4)
+        if (GameManager.instance.GetWeek() == 1)
+        {
+            GameManager.instance.SetEvent(Suprise.MOUSE_PAD);
+            SceneManager.LoadScene("EventScene");
+        }
+        else if (GameManager.instance.GetWeek() == 4)
             SceneManager.LoadScene("EndingScene");
         else
             SceneManager.LoadScene("RushScene");
