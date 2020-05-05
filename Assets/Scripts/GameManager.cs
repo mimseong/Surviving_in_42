@@ -285,9 +285,9 @@ public class GameManager : MonoBehaviour
     public void DecideCondition()
     {
         this.condition = Condition.NORMAL;
-        if (this.clean <= 30)
+        if (this.clean < 50)
             this.condition = Condition.DIRTY;
-        if (this.sleep >= 70)
+        if (this.sleep > 50)
             this.condition = Condition.SLEEPY;
         if (this.stress + this.sleep >= 120)
             this.condition = Condition.TIRED;
