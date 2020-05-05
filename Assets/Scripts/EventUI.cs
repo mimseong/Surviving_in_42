@@ -18,6 +18,7 @@ public class EventUI : MonoBehaviour
     [SerializeField] private Image background;
     [SerializeField] private Image terminal;
     [SerializeField] private Image reverseColor;
+    [SerializeField] private Image evalMistake;
     [SerializeField] private Button nextButton;
     [SerializeField] private Sprite[] backgroundSprites;
     [SerializeField] private EventStory eventStory;
@@ -52,21 +53,24 @@ public class EventUI : MonoBehaviour
     /// </summary>
     public void ActiveImage()
     {
-        Suprise tmp = GameManager.instance.GetEvent();
-        if (tmp == Suprise.SQUAT || tmp == Suprise.REVERSE_COLOR)
+        Surprise tmp = GameManager.instance.GetEvent();
+        if (tmp == Surprise.SQUAT || tmp == Surprise.REVERSE_COLOR || tmp == Surprise.EVAL_MISTAKE)
         {
             switch (tmp)
             {
-                case Suprise.REVERSE_COLOR:
+                case Surprise.REVERSE_COLOR:
                     background.sprite = backgroundSprites[1];
                     reverseColor.gameObject.SetActive(true);
                     player.gameObject.SetActive(true);
                     break;
-                case Suprise.SQUAT:
+                case Surprise.SQUAT:
                     background.sprite = backgroundSprites[2];
                     squat.gameObject.SetActive(true);
                     break;
-
+                case Surprise.EVAL_MISTAKE:
+                    background.sprite = backgroundSprites[3];
+                    evalMistake.gameObject.SetActive(true);
+                    break;
             }
         }
         else
@@ -76,19 +80,19 @@ public class EventUI : MonoBehaviour
             switch (tmp)
             {
 
-                case Suprise.CANDY:
+                case Surprise.CANDY:
                     candy.gameObject.SetActive(true);
                     break;
-                case Suprise.MOUSE_PAD:
+                case Surprise.MOUSE_PAD:
                     mousepad.gameObject.SetActive(true);
                     break;
-                case Suprise.CHOCOLATE:
+                case Surprise.CHOCOLATE:
                     chocolate.gameObject.SetActive(true);
                     break;
-                case Suprise.ENERGYBAR:
+                case Surprise.ENERGYBAR:
                     energy.gameObject.SetActive(true);
                     break;
-                case Suprise.PIZZA:
+                case Surprise.PIZZA:
                     hand.gameObject.SetActive(false);
                     pizzaCat.gameObject.SetActive(true);
                     pizza.gameObject.SetActive(true);

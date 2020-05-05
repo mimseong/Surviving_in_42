@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     private Schedule schedule = Schedule.MORNING;
     private Work work;
     private Condition condition = Condition.NORMAL;
-    private Suprise events;
+    private Surprise events;
     private bool isExam = false;
     private bool isRush = false;
     private bool isMousePad = false;
@@ -424,12 +424,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SetEvent(Suprise events)
+    public void SetEvent(Surprise events)
     {
         this.events = events;
     }
     
-    public Suprise GetEvent()
+    public Surprise GetEvent()
     {
         return (this.events);
     }
