@@ -52,7 +52,7 @@ public class StudyStory : MonoBehaviour
 
     private void SoloCoding(DialogController dialogController)
     {
-        dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "스스로 학습하기로 했다", "...\n...\n...", "열심히 코딩을 했다!");
+        dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "스스로 학습하기로 했다\n열심히 코딩을 했다!");
         GameManager.instance.AddCodingLevel(1.0f);
         GameManager.instance.AddClean(-10);
         GameManager.instance.AddStress(10);
@@ -61,7 +61,7 @@ public class StudyStory : MonoBehaviour
 
     private void DuoCoding(DialogController dialogController)
     {
-        dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "동료와 함께 코딩학습을 했다", "...\n...\n...", "많은 것을 배웠다!");
+        dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "동료와 함께 코딩학습을 했다\n많은 것을 배웠다!");
         GameManager.instance.AddClean(-10);
         GameManager.instance.AddStress(10);
         GameManager.instance.AddSleep(20);
@@ -74,7 +74,7 @@ public class StudyStory : MonoBehaviour
         int situation = Random.Range(0, 5);
         if (GameManager.instance.GetWeek() == 1 && (GameManager.instance.GetDay() == Day.TUE || GameManager.instance.GetDay() == Day.WED))
         {
-            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "엘레베이터가 지하로 내려가서 지각했다");
+            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "엘레베이터가 지하로 내려가서 지각했다!");
             studyUIManager.Elevator();
             GameManager.instance.AddCodingLevel(0.5f);
         }
@@ -91,7 +91,7 @@ public class StudyStory : MonoBehaviour
                     GameManager.instance.AddCodingLevel(0.5f);
                     break;
                 case 1:
-                    dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "나보다 진도가 느린 사람을 만났다", "내가 배운 것을 알려주고 왔다 \n뿌듯하다");
+                    dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "나보다 진도가 느린 사람을 만났다\n내가 배운 것을 알려주고 왔다 \n뿌듯하다");
                     GameManager.instance.AddCodingLevel(0.5f);
                     break;
                 case 2:
@@ -122,23 +122,23 @@ public class StudyStory : MonoBehaviour
         switch (situation)
         {
             case 0:
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 받았다", "버그가 없었으면 좋겠다", "두근두근", "...\n...\n...", "무사히 통과했다!");
+                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 받았다", "버그가 없었으면 좋겠다", "...\n...\n...\n무사히 통과했다!");
                 GameManager.instance.AddFortytwoLevel(0.8f);
                 break;
             case 1:
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 받았다", "norm 체크를 했던가?", "...\n...\n...", "다행히 통과했다!");
+                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 받았다", "norm 체크를 했던가?", "...\n...\n다행히 통과했다!");
                 GameManager.instance.AddFortytwoLevel(0.8f);
                 break;
             case 2:
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 받았다", "제발 한번에 통과했으면...", "...\n...\n...", "segmentation fault!");
+                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 받았다", "제발 한번에 통과했으면...", "...\n...\nsegmentation fault!");
                 GameManager.instance.AddStress(10);
                 break;
             case 3:
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 받았다", "이번엔 제발 통과하자!", "...\n...\n...", "드디어 통과했다!");
+                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 받았다", "이번엔 제발 통과하자!", "...\n...\n드디어 통과했다!");
                 GameManager.instance.AddFortytwoLevel(0.8f);
                 break;
             case 4:
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 받았다", "이번엔 제발 통과하자!", "...\n...\n...", "segmentation fault가 또...");
+                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 받았다", "이번엔 제발 통과하자!", "...\n...\nsegmentation fault가 또...");
                 GameManager.instance.AddStress(10);
                 break;
         }
@@ -159,12 +159,12 @@ public class StudyStory : MonoBehaviour
         switch (situation)
         {
             case 0:
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "컨닝을 했다", "양심의 가책을 느낀다", "...\n...\n...", "다행스럽게도 무사히 통과했다!");
+                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "컨닝을 했다", "양심의 가책을 느낀다", "...\n...\n다행스럽게도 무사히 통과했다!");
                 StartCoroutine(CheatingResult(5.0f, true));
                 GameManager.instance.AddFortytwoLevel(0.8f);
                 break;
             case 1:
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "컨닝을 했다", "찔리지만 어쩔 수 없어", "...\n...\n...", "부정행위를 걸려버렸다!");
+                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "컨닝을 했다", "찔리지만 어쩔 수 없어", "...\n...\n부정행위를 걸려버렸다!");
                 StartCoroutine(CheatingResult(5.0f, false));
                 GameManager.instance.AddFriendship(-5);
                 GameManager.instance.AddStress(10);
