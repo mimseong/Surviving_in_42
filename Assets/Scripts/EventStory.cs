@@ -34,6 +34,7 @@ public class EventStory : MonoBehaviour
                 break;
             case Surprise.CANDY:
                 dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "동료에게 사탕을 받았다!", "달달하다");
+                GameManager.instance.AddCountSnack(1);
                 GameManager.instance.AddStress(-5);
                 break;
             case Surprise.MOUSE_PAD:
@@ -51,15 +52,18 @@ public class EventStory : MonoBehaviour
                 dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "동료로부터 초콜릿을 받았다!", "당 떨어졌는데 잘 됐다!");
                 GameManager.instance.AddStress(-10);
                 GameManager.instance.AddSleep(-5);
+                GameManager.instance.AddCountSnack(1);
                 break;
             case Surprise.ENERGYBAR:
                 dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "동료로부터 에너지바를 받았다", "개발자의 필수품이지! \n밥 먹을 시간을 줄여서 코딩을 할 수 있겠다");
                 GameManager.instance.AddCodingLevel(0.5f);
                 GameManager.instance.AddStress(-15);
+                GameManager.instance.AddCountSnack(1);
                 break;
             case Surprise.PIZZA:
                 dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "학장님이 피자를 쏘셨다!", "너무너무 행복해!");
                 GameManager.instance.AddStress(-20);
+                GameManager.instance.AddCountSnack(1);
                 break;
         }
         GameManager.instance.NextSchedule(1);
