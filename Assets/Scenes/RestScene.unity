@@ -623,7 +623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &844724661
 RectTransform:
   m_ObjectHideFlags: 0
@@ -641,7 +641,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 1192.1981, y: 816.5271}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &844724662
 CanvasRenderer:
@@ -669,7 +669,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f82551a50ca58c745839d65eea311969, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1262,6 +1262,21 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3ae436a9f707583469ee59104dc045a8, type: 3}
   - {fileID: 21300000, guid: f9582836ff3ffc248bcf174eb12b917d, type: 3}
   - {fileID: 21300000, guid: b96642c2485e39b4ba9e0b40a7781714, type: 3}
+  lazySprites:
+  - {fileID: 21300000, guid: f82551a50ca58c745839d65eea311969, type: 3}
+  - {fileID: 21300000, guid: 526caba562a523c4b97a9afa17e64d1e, type: 3}
+  - {fileID: 21300000, guid: 34eb978971e8d1442ac6d1317439161d, type: 3}
+  - {fileID: 21300000, guid: 3f02cdae712b17748a9cc429510727d7, type: 3}
+  - {fileID: 21300000, guid: 1839fceb2a0d3404295d4c43bcffa899, type: 3}
+  - {fileID: 21300000, guid: 67ae40fb816e7434ca1c772f891459b8, type: 3}
+  - {fileID: 21300000, guid: e678ba10add8d1b4b9fc94fc726fe39a, type: 3}
+  - {fileID: 21300000, guid: b6a66a700a3ba3c419bf3aa45392a8e1, type: 3}
+  - {fileID: 21300000, guid: 0478c78515228c14ab54ce35f5f45aae, type: 3}
+  - {fileID: 21300000, guid: d2b8c98f32a7f5e4b92181e268d03395, type: 3}
+  - {fileID: 21300000, guid: 75c169c7cdf7f154097a7804212a58e5, type: 3}
+  - {fileID: 21300000, guid: 57bb110f35ee28c4aa004daa3c6eed0d, type: 3}
+  - {fileID: 21300000, guid: c82c69795f6f67b4882aa15589e74fb5, type: 3}
+  - {fileID: 21300000, guid: e3568f771570aef45aeb0c61071f5a34, type: 3}
 --- !u!4 &1655431880
 Transform:
   m_ObjectHideFlags: 0
