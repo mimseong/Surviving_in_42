@@ -54,6 +54,8 @@ public class RestStory : MonoBehaviour
         GameManager.instance.SetClean(100);
         GameManager.instance.SetSleep(0);
         GameManager.instance.NextSchedule(2);
+        GameManager.instance.AddCountGoHome(1);
+        GameManager.instance.AddCountDrinking(1);
     }
 
     private void Sleep(DialogController dialogController)
@@ -72,6 +74,7 @@ public class RestStory : MonoBehaviour
         GameManager.instance.SetClean(100);
         GameManager.instance.SetSleep(0);
         GameManager.instance.NextSchedule(2);
+        GameManager.instance.AddCountGoHome(1);
     }
 
     private void Lazy(DialogController dialogController)
