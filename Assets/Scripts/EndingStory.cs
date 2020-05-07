@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EndingStory : MonoBehaviour
 {
-    [SerializeField] private EndingUI endingUI;
+    [SerializeField] private EndingUI endingUI = null;
 
     void Start()
     {
@@ -21,11 +21,10 @@ public class EndingStory : MonoBehaviour
 
     public void SecondMent(DialogController dialogController, ConvertMethod func)
     {
-        string[] texts = new string[3];
+        string[] texts = new string[2];
 
         texts[0] = "띠링~";
-        texts[1] = "42서울 결과 메일이 온 것 같다!";
-        texts[2] = "42 SEOUL / 본 과정 교육생 최종 선발 결과";
+        texts[1] = "결과 메일이 온 것 같다!";
         dialogController.ShowTexts(0.5f, 1.5f, 0.08f, 0.5f, func, texts);
     }
 
@@ -33,7 +32,12 @@ public class EndingStory : MonoBehaviour
     {
         string text;
 
-        text = "42는 눈에 보이는 요소로만 여러분을 평가하지 않습니다.\n\n 그래도 결과가 궁금하시다고요?\n\n직접 경험하십시오";
-        dialogController.ShowTexts(0.5f, 1.5f, 0.05f, 0.5f, func, text);
+        text = "0" + "회";
+        text += "\n0" + "회";
+        text += "\n0" + "회";
+        text += "\n0" + "회";
+        text += "\n0" + "회";
+        text += "\n0" + "회";
+        dialogController.ShowTexts(0.5f, 1.0f, 0.1f, 3f, func, text);
     }
 }
