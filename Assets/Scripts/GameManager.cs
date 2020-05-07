@@ -13,6 +13,12 @@ public class GameManager : MonoBehaviour
     private int sleep = 0;
     private int week = 1;
     private int evalpoint = 2;
+    private int countCheating = 0;
+    private int countDrinking = 0;
+    private int countDuoCoding = 0;
+    private int countGoHome = 0;
+    private int countSoloCoding = 0;
+    private int countSnack = 0;
     private float precodingLevel = 0;
     private float prefortytwoLevel = 0;
     private int preclean = 100;
@@ -25,6 +31,7 @@ public class GameManager : MonoBehaviour
     private Work work;
     private Condition condition = Condition.NORMAL;
     private Surprise events;
+    private Title title;
     private bool isExam = false;
     private bool isRush = false;
     private bool isMousePad = false;
@@ -273,7 +280,7 @@ public class GameManager : MonoBehaviour
         }
         else
             this.sleep += sleep;
-        if(this.sleep > 100)
+        if (this.sleep > 100)
             this.sleep = 100;
         else if (this.sleep < 0)
             this.sleep = 0;
@@ -428,7 +435,7 @@ public class GameManager : MonoBehaviour
     {
         this.events = events;
     }
-    
+
     public Surprise GetEvent()
     {
         return (this.events);
@@ -442,5 +449,118 @@ public class GameManager : MonoBehaviour
     public bool GetisMousePad()
     {
         return (this.isMousePad);
+    }
+
+    public void SetCountCheating(int count)
+    {
+        this.countCheating = count;
+    }
+
+    public void AddCountCheating(int count)
+    {
+        this.countCheating += count;
+    }
+
+    public int GetCountCheating()
+    {
+        return (this.countCheating);
+    }
+
+    public void SetCountDrinking(int count)
+    {
+        this.countDrinking = count;
+    }
+
+    public void AddCountDrinking(int count)
+    {
+        this.countDrinking += count;
+    }
+
+    public int GetCountDrinking()
+    {
+        return (this.countDrinking);
+    }
+
+    public void SetCountSoloCoding(int count)
+    {
+        this.countSoloCoding = count;
+    }
+
+    public void AddCountSoloCoding(int count)
+    {
+        this.countSoloCoding = count;
+    }
+
+    public int GetCountSoloCoding()
+    {
+        return (this.countSoloCoding);
+    }
+
+    public void SetCountDuoCoding(int count)
+    {
+        this.countDuoCoding = count;
+    }
+
+    public void AddCountDuoCoding(int count)
+    {
+        this.countDuoCoding = count;
+    }
+
+    public int GetCountDuoCoding()
+    {
+        return (this.countDuoCoding);
+    }
+
+    public void SetCountGoHome(int count)
+    {
+        this.countGoHome = count;
+    }
+
+    public void AddCountGoHome(int count)
+    {
+        this.countGoHome += count;
+    }
+
+    public int GetCountGoHome()
+    {
+        return (countGoHome);
+    }
+
+    public void SetCountSnack(int count)
+    {
+        this.countSnack = count;
+    }
+
+    public void AddCountSnack(int count)
+    {
+        this.countSnack += count;
+    }
+
+    public int GetCountSnack()
+    {
+        return (this.countSnack);
+    }
+
+    public void TitleResult()
+    {
+        this.title = Title.NONE;
+        if (GetCountSnack() == 4)
+            this.title = Title.PIG;
+        if (GetCountSnack() == 0)
+            this.title = Title.HUNGRY;
+        if (GetCountSoloCoding() >= 10)
+            this.title = Title.MY_WAY;
+        if (GetCountDuoCoding() >= 10)
+            this.title = Title.COMMUNICATOR;
+        if (GetCountDrinking() >= 10)
+            this.title = Title.ALCOHOLIC;
+        if (GetCountCheating() >= 3)
+            this.title = Title.TRASH;
+        if (GetCountGoHome() < 10)
+            this.title = Title.HOMELESS;
+        if (GetCountGoHome() > 20)
+            this.title = Title.HOME_LOVER;
+        if (GetEvalPoint() >= 10)
+            this.title = Title.RICH;
     }
 }

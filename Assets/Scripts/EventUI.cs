@@ -104,6 +104,9 @@ public class EventUI : MonoBehaviour
 
     public void NextScene()
     {
-        SceneManager.LoadScene("DailyScene");
+        if (GameManager.instance.GetEvent() == Surprise.MOUSE_PAD)
+            SceneManager.LoadScene("RushScene");
+        else
+            SceneManager.LoadScene("DailyScene");
     }
 }

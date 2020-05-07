@@ -44,7 +44,7 @@ public class ExamUI : MonoBehaviour
         NextButton(false);
         if (GameManager.instance.GetWeek() == 1)
         {
-            GameManager.instance.SetEvent(Suprise.MOUSE_PAD);
+            GameManager.instance.SetEvent(Surprise.MOUSE_PAD);
             SceneManager.LoadScene("EventScene");
         }
         else if (GameManager.instance.GetWeek() == 4)

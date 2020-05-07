@@ -57,6 +57,7 @@ public class StudyStory : MonoBehaviour
         GameManager.instance.AddClean(-15);
         GameManager.instance.AddStress(10);
         GameManager.instance.AddSleep(20);
+        GameManager.instance.AddCountSoloCoding(1);
     }
 
     private void DuoCoding(DialogController dialogController)
@@ -67,6 +68,7 @@ public class StudyStory : MonoBehaviour
         GameManager.instance.AddSleep(20);
         GameManager.instance.AddCodingLevel(0.7f);
         GameManager.instance.AddFriendship(2);
+        GameManager.instance.AddCountDuoCoding(1);
     }
 
     private void Evaluate(DialogController dialogController)
@@ -175,6 +177,7 @@ public class StudyStory : MonoBehaviour
         GameManager.instance.AddStress(10);
         GameManager.instance.AddSleep(20);
         GameManager.instance.AddEvalPoint(-2);
+        GameManager.instance.AddCountCheating(1);
     }
 
     private IEnumerator CheatingResult(float seconds, bool value)

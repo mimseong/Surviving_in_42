@@ -52,3 +52,17 @@ public enum Surprise
     ENERGYBAR,
     EVAL_MISTAKE
 };
+
+public enum Title
+{
+    NONE,
+    ALCOHOLIC,
+    COMMUNICATOR,
+    MY_WAY,
+    HOME_LOVER,
+    HOMELESS,
+    PIG,
+    HUNGRY,
+    RICH,
+    TRASH
+}

@@ -20,6 +20,7 @@ public class RestUIManager : MonoBehaviour
     [SerializeField] private Sprite[] drinking;
     [SerializeField] private Sprite[] goHomeSprites;
     [SerializeField] private Sprite[] backgroundSprites;
+    [SerializeField] private Sprite[] lazySprites;
     
 
     // Start is called before the first frame update
@@ -54,6 +55,8 @@ public class RestUIManager : MonoBehaviour
     /// </summary>
     public void ActiveImage()
     {
+        int idx = Random.Range(0, lazySprites.Length);
+
         Work tmp = GameManager.instance.GetWork();
         switch (tmp)
         {
@@ -79,6 +82,7 @@ public class RestUIManager : MonoBehaviour
                 goHome.gameObject.SetActive(true);
                 break;
             case Work.LAZY:
+                lazy.sprite = lazySprites[idx];
                 break;
         }
         if (tmp == Work.DRINKING || tmp == Work.SLEEP || tmp == Work.GO_HOME || tmp == Work.LAZY)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /// <summary>
 /// 팀원1 = 티모
@@ -79,6 +80,7 @@ public class RushStory : MonoBehaviour
         GameManager.instance.SetClean(100);
         GameManager.instance.SetSleep(0);
         GameManager.instance.NextDay(1);
+        GameManager.instance.AddCountGoHome(1);
         GameManager.instance.NextDaySchedule(Schedule.MORNING);
     }
 
@@ -93,46 +95,56 @@ public class RushStory : MonoBehaviour
     }
 
     /// <summary>
-    /// 티모를 소개하는 함수입니다. 티모 멘탈을 랜덤으로 정해서 멘탈이 구리면 집으로 튀게 만듭니다.
+    /// 팀원1을 소개하는 함수입니다. 티모 멘탈을 랜덤으로 정해서 멘탈이 구리면 집으로 튀게 만듭니다.
     /// </summary>
     /// <param name="dialogController">대사를 출력하는 스크립트</param>
     /// <param name="nextButton">넥스트 버튼을 나타내는 함수</param>
     public void Timo(DialogController dialogController, ConvertMethod nextButton)
     {
-        string tmoTxt;
+        string[] texts = new string[4];
+        string[] names = { "티모", "케이틀린", "럭스" };
+        int idx = Random.Range(0, 3);
 
         timoCodingLv = RandomCodingLv();
         timoMental = Random.Range(25, 101);
-        tmoTxt = "티모의 코딩레벨 == " + (int)timoCodingLv + "\n티모의 멘탈 == " + timoMental;
-        dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "안녕하세요 티모입니다 \n잘 부탁드려요!", tmoTxt);
+        texts[0] = "안녕하세요 " + names[idx] + "입니다 \n잘 부탁드려요!";
+        texts[1] = names[idx] + "의 코딩레벨 == " + (int)timoCodingLv + "\n" + names[idx] + "의 멘탈 == " + timoMental;
+        texts[2] = names[idx] + ": 도저히 못하겠어 난 집에 갈래!";
+        texts[3] = "앗\n" + names[idx] + "가 멘탈이 안좋아 집으로 가버렸습니다!";
+        dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, texts[0], texts[1]);
         
         if (timoMental < Random.Range(0, 101))
         {
             //timoRun;
-            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "안녕하세요 티모입니다 \n잘 부탁드려요!", tmoTxt, "티모: 도저히 못하겠어 난 집에 갈래!", "앗, \n티모가 멘탈이 안좋아 집으로 가버렸습니다");
+            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, texts);
             timoCodingLv = 0;
             Invoke("NoTimo", 5.0f);
         }
     }
 
     /// <summary>
-    /// 야스오를 소개하는 함수입니다. 야스오 멘탈이 랜덤으로 정해지고 그에 따라 랜덤확률로 집으로 튑니다
+    /// 팀원2를 소개하는 함수입니다. 야스오 멘탈이 랜덤으로 정해지고 그에 따라 랜덤확률로 집으로 튑니다
     /// </summary>
     /// <param name="dialogController"></param>
     /// <param name="nextButton"></param>
     public void Yasuo(DialogController dialogController, ConvertMethod nextButton)
     {
-        string ysoTxt;
+        string[] texts = new string[4];
+        string[] names = { "가렌", "야스오", "갈리오" };
+        int idx = Random.Range(0, 3);
 
         yasuoCodingLv = RandomCodingLv();
         yasuoMental = Random.Range(25, 101);
-        ysoTxt = "야스오의 코딩레벨 == " + (int)yasuoCodingLv + "\n야스오의 멘탈 == " + yasuoMental;
-        dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "안녕하십니까 야스오입니다 \n잘 부탁드립니다!", ysoTxt);
+        texts[0] = "안녕하세요 " + names[idx] + "입니다 \n잘 부탁드려요!";
+        texts[1] = names[idx] + "의 코딩레벨 == " + (int)yasuoCodingLv + "\n" + names[idx] + "의 멘탈 == " + yasuoMental;
+        texts[2] = names[idx] + "는 어디서 뭘 하고 있는거지?";
+        texts[3] = "앗! \n" + names[idx] + "가 멘탈이 깨져서 집으로 가버렸습니다!";
+        dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, texts[0] , texts[1]);
 
         if (yasuoMental < Random.Range(0, 101))
         {
             //yasuoRun;
-            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, "안녕하십니까 야스오입니다 \n잘 부탁드립니다!", ysoTxt, "야스오는 어디서 뭘 하고 있는 거지?", "앗, \n야스오가 멘탈이 깨져서 집으로 가버렸습니다");
+            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, texts);
             yasuoCodingLv = 0;
             Invoke("NoYasuo", 5.5f);
         }

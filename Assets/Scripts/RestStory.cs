@@ -54,6 +54,8 @@ public class RestStory : MonoBehaviour
         GameManager.instance.SetClean(100);
         GameManager.instance.SetSleep(0);
         GameManager.instance.NextSchedule(2);
+        GameManager.instance.AddCountGoHome(1);
+        GameManager.instance.AddCountDrinking(1);
     }
 
     private void Sleep(DialogController dialogController)
@@ -72,32 +74,25 @@ public class RestStory : MonoBehaviour
         GameManager.instance.SetClean(100);
         GameManager.instance.SetSleep(0);
         GameManager.instance.NextSchedule(2);
+        GameManager.instance.AddCountGoHome(1);
     }
 
     private void Lazy(DialogController dialogController)
     {
-        int situation = Random.Range(0, 5);
-        switch (situation)
-        {
-            case 0:
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "도비와 함께 춤을!", "도비와 사진 찍고 놀았다");
-                break;
-            case 1:
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "동료들과 수다를 떨었다", "동료A : 할게 너무 많아서 힘들어 \n동료B : 그거 나는 다 맞았는데 \n동료들 : ...");
-                break;
-            case 2:
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "유튜브 알고리즘을 따라 게임방송까지 흘러갔다", "시간이 순삭됐다");
-                break;
-            case 3:
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "멍하니 검은 창을 바라보았다", "...\n...\n...\n아무것도 안했는데 시간이 왜이리 잘가지?");
-                break;
-            case 4:
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "동료들과 노닥거렸다", "동료A : 기침은 Calloc Calloc! \n동료들 : 하하하! 너무 웃겨! \n동료B : 또 시작이군");
-                break;
-        }
+        string[][] multiText = new string[4][];
+        string name = GameManager.instance.GetName();
+
+        multiText[0] = new string[] { "동료들과 수다를 떨었다", name + " : 할게 너무 많아서 힘들어 \n미스포츈 : 그거 나는 다 맞았는데 \n" + name + " : ..." };
+        multiText[1] = new string[] { "동료들과 장난쳤다", "누누 : 기침은 Calloc Calloc! \n" + name +" : 하하하! 너무 웃겨! \n윌럼프 : 또 시작이군" };
+        multiText[2] = new string[] { "동료들과 빈둥댔다", name + " : 요 앞에 고깃집 맛있던데 \n아무무 : 다음에 먹으러 가자! \n말파이트 : 넌 누구야? \n아무무: 흑흑..." };
+        multiText[3] = new string[] { "동료들과 노닥거렸다", name + " : 이건 뭐지? \n카이사 : yeah it's merge \n지나가던 제드 : ......" };
+
+        dialogController.ShowRandomTexts(0.5f, 0.5f, 0.02f, 0.5f, NextButton, multiText);
+        
         GameManager.instance.AddStress(-30);
         GameManager.instance.NextSchedule(1);
         GameManager.instance.AddSleep(10);
         GameManager.instance.AddClean(-15);
+        GameManager.instance.AddFriendship(5);
     }
 }
