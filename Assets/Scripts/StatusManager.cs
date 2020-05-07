@@ -26,9 +26,9 @@ public class StatusManager : MonoBehaviour
     [SerializeField] private Text time;
     [SerializeField] private Text evalPoint;
     [SerializeField] private Text playerName;
-    [SerializeField] private Sprite[] playerSprites;
     [SerializeField] private Sprite[] curfewSprite;
     [SerializeField] private Button goCurfew;
+    [SerializeField] private GameObject dirtyAnimations;
 
     // Start is called before the first frame update
     void Start()
@@ -116,27 +116,27 @@ public class StatusManager : MonoBehaviour
         {
             case Condition.NORMAL:
                 playerCondition.text = ">>> 상태 좋음! <<<";
-                player.sprite = playerSprites[0];
                 break;
             case Condition.DIRTY:
                 playerCondition.text = ">>> 더러워서 동료들이 싫어합니다! <<<";
-                player.sprite = playerSprites[1];
+                player.gameObject.GetComponent<Animator>().SetBool("isDirty", true);
+                dirtyAnimations.SetActive(true);
                 break;
             case Condition.SLEEPY:
                 playerCondition.text = ">>> 졸려서 집중이 안됩니다! <<<";
-                player.sprite = playerSprites[2];
+                player.gameObject.GetComponent<Animator>().SetBool("isSleepy", true);
                 break;
             case Condition.HANGOVER:
                 playerCondition.text = ">>> 앗! 전날 술을 마셔서 상태가..! <<<";
-                player.sprite = playerSprites[3];
+                player.gameObject.GetComponent<Animator>().SetBool("isHangover", true);
                 break;
             case Condition.TIRED:
                 playerCondition.text = ">>> 피로가 누적돼서 효율이 떨어집니다... <<<";
-                player.sprite = playerSprites[4];
+                player.gameObject.GetComponent<Animator>().SetBool("isTired", true);
                 break;
             case Condition.FEVER:
                 playerCondition.text = ">>> 갑자기 오늘은 코딩이 너무 잘 되는데? <<<";
-                player.sprite = playerSprites[5];
+                player.gameObject.GetComponent<Animator>().SetBool("isFever", true);
                 break;
         }
     }
