@@ -36,14 +36,19 @@ public class RegisteStory : MonoBehaviour
         dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, Input, "두근두근.. \n라피신 첫 날이다!", "등록하시겠어요?");
     }
 
+    private void NextButton()
+    {
+        registerUIManager.NextButton(true);
+    }
+
     public void Registered(DialogController dialogController)
     {
         int tmp = Random.Range(0, 6);
         string str = "당신의 코딩 레벨은 " + tmp + "입니다!";
         GameManager.instance.SetCodingLevel(tmp);
         if (GameManager.instance.GetName().ToLower() == "dobby" || GameManager.instance.GetName().ToLower() == "doby" || GameManager.instance.GetName() == "도비")
-            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, "DOBBY IS FREE!!!", str);
+            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "DOBBY IS FREE!!!", str);
         else
-            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, "등록되었습니다!", str);
+            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "등록되었습니다!", str);
     }
 }
