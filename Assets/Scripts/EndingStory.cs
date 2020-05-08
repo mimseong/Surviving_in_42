@@ -32,12 +32,13 @@ public class EndingStory : MonoBehaviour
     {
         string text;
 
-        text = "0" + "회";
-        text += "\n0" + "회";
-        text += "\n0" + "회";
-        text += "\n0" + "회";
-        text += "\n0" + "회";
-        text += "\n0" + "회";
+        text = GameManager.instance.GetCountSoloCoding().ToString() + "\n";
+        text += GameManager.instance.GetCountDuoCoding().ToString() + "\n";
+        text += GameManager.instance.GetCountGoHome().ToString() + "\n";
+        text += GameManager.instance.GetCountCheating().ToString() + "\n";
+        text += GameManager.instance.GetCountDrinking().ToString() + "\n";
+        text += GameManager.instance.GetCountSnack().ToString() + "\n";
+        text += GameManager.instance.GetEvalPoint().ToString();
         dialogController.ShowTexts(0.5f, 1.0f, 0.1f, 3f, func, text);
     }
 }

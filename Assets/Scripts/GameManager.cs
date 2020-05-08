@@ -541,7 +541,7 @@ public class GameManager : MonoBehaviour
         return (this.countSnack);
     }
 
-    public void TitleResult()
+    public Title TitleResult()
     {
         this.title = Title.NONE;
         if (GetCountSnack() == 4)
@@ -562,5 +562,6 @@ public class GameManager : MonoBehaviour
             this.title = Title.HOME_LOVER;
         if (GetEvalPoint() >= 10)
             this.title = Title.RICH;
+        return (this.title);
     }
 }

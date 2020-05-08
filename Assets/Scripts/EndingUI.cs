@@ -16,6 +16,7 @@ public class EndingUI : MonoBehaviour
     [SerializeField] private Text titleMent = null;
     [SerializeField] private Button nextButton = null;
     [SerializeField] private Image backgroundImage = null;
+    [SerializeField] private Sprite[] titleSprites = null;
     [SerializeField] private Image titleIcon = null;
     [SerializeField] private GameObject countName = null;
     [SerializeField] private GameObject title = null;
@@ -45,11 +46,81 @@ public class EndingUI : MonoBehaviour
                 break;
             case 2:
                 textUI.text = "";
+                GameManager.instance.TitleResult();
+                ChangeTitle();
                 ActiveCountText();
                 endingStory.ThirdMent(countDialogController, ActiveTitle);
                 break;
         }
         mentIndex++;
+    }
+
+    public void ChangeTitle()
+    {
+        playerName.text = GameManager.instance.GetName();
+        switch(GameManager.instance.TitleResult())
+        {
+            case Title.NONE:
+                titleIcon.sprite = titleSprites[0];
+                titleText.text = "[평범한 사람] 칭호를 얻었다";
+                titleText2.text = "[평범한]";
+                titleMent.text = "어떤 칭호도 얻지 못했습니다.";
+                break;
+            case Title.PIG:
+                titleIcon.sprite = titleSprites[1];
+                titleText.text = "[행복한 돼지] 칭호를 얻었다";
+                titleText2.text = "[행복한 돼지]";
+                titleMent.text = "왜 자꾸 살이 찌지?";
+                break;
+            case Title.HUNGRY:
+                titleIcon.sprite = titleSprites[2];
+                titleText.text = "[배고픈 소크라테스] 칭호를 얻었다";
+                titleText2.text = "[배고픈 소크라테스]";
+                titleMent.text = "왜 자꾸 살이 빠지지?";
+                break;
+            case Title.MY_WAY:
+                titleIcon.sprite = titleSprites[3];
+                titleText.text = "[독고다이] 칭호를 얻었다";
+                titleText2.text = "[독고다이]";
+                titleMent.text = "인생은 역시 마이웨이지!";
+                break;
+            case Title.COMMUNICATOR:
+                titleIcon.sprite = titleSprites[4];
+                titleText.text = "[커뮤니케이션의 달인] 칭호를 얻었다";
+                titleText2.text = "[커뮤니케이션의 달인]";
+                titleMent.text = "혼자하면 빨리가고! \n함께하면 멀리간다!";
+                break;
+            case Title.ALCOHOLIC:
+                titleIcon.sprite = titleSprites[5];
+                titleText.text = "[술쟁이] 칭호를 얻었다";
+                titleText2.text = "[술쟁이]";
+                titleMent.text = "간은 좀 괜찮으세요?";
+                break;
+            case Title.TRASH:
+                titleIcon.sprite = titleSprites[6];
+                titleText.text = "[인간 쓰레기] 칭호를 얻었다";
+                titleText2.text = "[인간 쓰레기]";
+                titleMent.text = "인생 그렇게 살지 마세요";
+                break;
+            case Title.HOMELESS:
+                titleIcon.sprite = titleSprites[7];
+                titleText.text = "[노숙자] 칭호를 얻었다";
+                titleText2.text = "[노숙자]";
+                titleMent.text = "집은 언제 가세요?";
+                break;
+            case Title.HOME_LOVER:
+                titleIcon.sprite = titleSprites[8];
+                titleText.text = "[집순이] 칭호를 얻었다";
+                titleText2.text = "[집순이]";
+                titleMent.text = "집에 꿀단지 모셔놨나요?";
+                break;
+            case Title.RICH:
+                titleIcon.sprite = titleSprites[9];
+                titleText.text = "[포인트 재벌] 칭호를 얻었다";
+                titleText2.text = "[포인트 재벌]";
+                titleMent.text = "잃는 건 한순간이지!";
+                break;
+        }
     }
 
     public void ActiveNextButton()
@@ -66,7 +137,8 @@ public class EndingUI : MonoBehaviour
     {
         countName.SetActive(false);
         title.SetActive(true);
-        StartCoroutine(Sequence());
+
+        //StartCoroutine(Sequence());
     }
 
     private IEnumerator Sequence()

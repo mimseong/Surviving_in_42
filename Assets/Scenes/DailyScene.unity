@@ -6147,7 +6147,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d8137e536c7f5a849a20bfcd8ee36bc4, type: 3}
   - {fileID: 21300000, guid: 90f1dc287c24f284c95dac00df4b18d3, type: 3}
   goCurfew: {fileID: 1509744212}
-  dirtyAnimations: {fileID: 0}
+  dirtyAnimations: {fileID: 35457280}
 --- !u!4 &1615039288
 Transform:
   m_ObjectHideFlags: 0
