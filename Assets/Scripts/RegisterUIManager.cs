@@ -61,7 +61,6 @@ public class RegisterUIManager : MonoBehaviour
             GameManager.instance.SetName(inputField.text);
             inputField.gameObject.SetActive(false);
             RegisterStory();
-            NextButton(true);
         }
     }
 

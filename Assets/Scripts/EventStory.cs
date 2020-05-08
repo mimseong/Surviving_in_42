@@ -61,7 +61,7 @@ public class EventStory : MonoBehaviour
                 GameManager.instance.AddCountSnack(1);
                 break;
             case Surprise.PIZZA:
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "학장님이 피자를 쏘셨다!", "너무너무 행복해!");
+                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "학장님이 피자를 쏘셨다!", "그리고 학장님의 말씀이 있었습니다 \n...\n...유익한 시간이었다!");
                 GameManager.instance.AddStress(-20);
                 GameManager.instance.AddCountSnack(1);
                 break;

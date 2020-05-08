@@ -1009,7 +1009,7 @@ GameObject:
   - component: {fileID: 1129771382}
   - component: {fileID: 1129771381}
   m_Layer: 5
-  m_Name: min
+  m_Name: professor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1031,8 +1031,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -680, y: 80.20703}
-  m_SizeDelta: {x: 422.1115, y: 508.67908}
+  m_AnchoredPosition: {x: -705, y: 140.02}
+  m_SizeDelta: {x: 472.13922, y: 518.528}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1129771381
 MonoBehaviour:
@@ -1052,7 +1052,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 552cbffe8bbe84a478143ad8c9c4d0bc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64b2300af39644e4e9ab08f2bdf4f0c4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

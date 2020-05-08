@@ -488,7 +488,7 @@ public class GameManager : MonoBehaviour
 
     public void AddCountSoloCoding(int count)
     {
-        this.countSoloCoding = count;
+        this.countSoloCoding += count;
     }
 
     public int GetCountSoloCoding()
@@ -503,7 +503,7 @@ public class GameManager : MonoBehaviour
 
     public void AddCountDuoCoding(int count)
     {
-        this.countDuoCoding = count;
+        this.countDuoCoding += count;
     }
 
     public int GetCountDuoCoding()
@@ -541,7 +541,7 @@ public class GameManager : MonoBehaviour
         return (this.countSnack);
     }
 
-    public void TitleResult()
+    public Title TitleResult()
     {
         this.title = Title.NONE;
         if (GetCountSnack() == 4)
@@ -552,15 +552,16 @@ public class GameManager : MonoBehaviour
             this.title = Title.MY_WAY;
         if (GetCountDuoCoding() >= 10)
             this.title = Title.COMMUNICATOR;
-        if (GetCountDrinking() >= 10)
-            this.title = Title.ALCOHOLIC;
         if (GetCountCheating() >= 3)
             this.title = Title.TRASH;
         if (GetCountGoHome() < 10)
             this.title = Title.HOMELESS;
         if (GetCountGoHome() > 20)
             this.title = Title.HOME_LOVER;
+        if (GetCountDrinking() >= 10)
+            this.title = Title.ALCOHOLIC;
         if (GetEvalPoint() >= 10)
             this.title = Title.RICH;
+        return (this.title);
     }
 }
