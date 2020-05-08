@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ExamStory : MonoBehaviour
 {
-    [SerializeField] private ExamUI examUI;
+    [SerializeField] private ExamUI examUI = null;
 
     void Start()
     {

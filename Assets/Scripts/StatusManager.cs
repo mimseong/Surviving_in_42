@@ -6,29 +6,29 @@ using UnityEngine.UI;
 
 public class StatusManager : MonoBehaviour
 {
-    [SerializeField] private Image stressGauge;
-    [SerializeField] private Image friendshipGauge;
-    [SerializeField] private Image cleanGauge;
-    [SerializeField] private Image sleepGauge;
-    [SerializeField] private Image codingLvGauge;
-    [SerializeField] private Image fortytwoGauge;
-    [SerializeField] private Image player;
-    [SerializeField] private Image curfew;
-    [SerializeField] private Image background;
-    [SerializeField] private Text stressTxt;
-    [SerializeField] private Text friendshipTxt;
-    [SerializeField] private Text cleanTxt;
-    [SerializeField] private Text sleepTxt;
-    [SerializeField] private Text codingLvTxt;
-    [SerializeField] private Text fortytwoTxt;
-    [SerializeField] private Text playerCondition;
-    [SerializeField] private Text curfewTxt;
-    [SerializeField] private Text time;
-    [SerializeField] private Text evalPoint;
-    [SerializeField] private Text playerName;
-    [SerializeField] private Sprite[] curfewSprite;
-    [SerializeField] private Button goCurfew;
-    [SerializeField] private GameObject dirtyAnimations;
+    [SerializeField] private Image stressGauge = null;
+    [SerializeField] private Image friendshipGauge = null;
+    [SerializeField] private Image cleanGauge = null;
+    [SerializeField] private Image sleepGauge = null;
+    [SerializeField] private Image codingLvGauge = null;
+    [SerializeField] private Image fortytwoGauge = null;
+    [SerializeField] private Image player = null;
+    [SerializeField] private Image curfew = null;
+    [SerializeField] private Image background = null;
+    [SerializeField] private Text stressTxt = null;
+    [SerializeField] private Text friendshipTxt = null;
+    [SerializeField] private Text cleanTxt = null;
+    [SerializeField] private Text sleepTxt = null;
+    [SerializeField] private Text codingLvTxt = null;
+    [SerializeField] private Text fortytwoTxt = null;
+    [SerializeField] private Text playerCondition = null;
+    [SerializeField] private Text curfewTxt = null;
+    [SerializeField] private Text time = null;
+    [SerializeField] private Text evalPoint = null;
+    [SerializeField] private Text playerName = null;
+    [SerializeField] private Sprite[] curfewSprite = null;
+    [SerializeField] private Button goCurfew = null;
+    [SerializeField] private GameObject dirtyAnimations = null;
 
     // Start is called before the first frame update
     void Start()

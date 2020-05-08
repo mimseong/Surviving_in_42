@@ -6,23 +6,23 @@ using UnityEngine.UI;
 
 public class EventUI : MonoBehaviour
 {
-    [SerializeField] private Image player;
-    [SerializeField] private Image hand;
-    [SerializeField] private Image candy;
-    [SerializeField] private Image chocolate;
-    [SerializeField] private Image energy;
-    [SerializeField] private Image mousepad;
-    [SerializeField] private Image squat;
-    [SerializeField] private Image pizza;
-    [SerializeField] private Image pizzaCat;
-    [SerializeField] private Image background;
-    [SerializeField] private Image terminal;
-    [SerializeField] private Image reverseColor;
-    [SerializeField] private Image evalMistake;
-    [SerializeField] private Button nextButton;
-    [SerializeField] private Sprite[] backgroundSprites;
-    [SerializeField] private EventStory eventStory;
-    [SerializeField] private DialogController dialogController;
+    [SerializeField] private Image player = null;
+    [SerializeField] private Image hand = null;
+    [SerializeField] private Image candy = null;
+    [SerializeField] private Image chocolate = null;
+    [SerializeField] private Image energy = null;
+    [SerializeField] private Image mousepad = null;
+    [SerializeField] private Image squat = null;
+    [SerializeField] private Image pizza = null;
+    [SerializeField] private Image pizzaCat = null;
+    [SerializeField] private Image background = null;
+    [SerializeField] private Image terminal = null;
+    [SerializeField] private Image reverseColor = null;
+    [SerializeField] private Image evalMistake = null;
+    [SerializeField] private Button nextButton = null;
+    [SerializeField] private Sprite[] backgroundSprites = null;
+    [SerializeField] private EventStory eventStory = null;
+    [SerializeField] private DialogController dialogController = null;
 
     // Start is called before the first frame update
     void Start()

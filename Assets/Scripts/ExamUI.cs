@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 public class ExamUI : MonoBehaviour
 {
-    [SerializeField] private Button nextButton;
-    [SerializeField] private Image terminal;
-    [SerializeField] private Image background;
-    [SerializeField] private Sprite[] sprite;
-    [SerializeField] private ExamStory examStory;
-    [SerializeField] private DialogController dialogController;
+    [SerializeField] private Button nextButton = null;
+    [SerializeField] private Image terminal = null;
+    [SerializeField] private Image background = null;
+    [SerializeField] private Sprite[] sprite = null;
+    [SerializeField] private ExamStory examStory = null;
+    [SerializeField] private DialogController dialogController = null;
 
     void Start()
     {

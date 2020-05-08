@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StudyStory : MonoBehaviour
 {
-    [SerializeField] private StudyUIManager studyUIManager;
+    [SerializeField] private StudyUIManager studyUIManager = null;
     // Start is called before the first frame update
     void Start()
     {

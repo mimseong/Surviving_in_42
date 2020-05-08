@@ -6,13 +6,13 @@ using UnityEngine.UI;
 
 public class BSQUI : MonoBehaviour
 {
-    [SerializeField] private DialogController dialogController;
-    [SerializeField] private Button nextButton;
-    [SerializeField] private Image terminal;
-    [SerializeField] private Image jinx;
-    [SerializeField] private Image peer;
-    [SerializeField] private Sprite[] sprites;
-    [SerializeField] private BSQstory bsqStory;
+    [SerializeField] private DialogController dialogController = null;
+    [SerializeField] private Button nextButton = null;
+    [SerializeField] private Image terminal = null;
+    [SerializeField] private Image jinx = null;
+    [SerializeField] private Image peer = null;
+    [SerializeField] private Sprite[] sprites = null;
+    [SerializeField] private BSQstory bsqStory = null;
     private int countingButton = 0;
 
     // Start is called before the first frame update

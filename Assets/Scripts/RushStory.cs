@@ -15,7 +15,7 @@ public class RushStory : MonoBehaviour
     private float yasuoCodingLv = 0;
     private int timoMental = 0;
     private int yasuoMental = 0;
-    [SerializeField] private RushUI rushUI;
+    [SerializeField] private RushUI rushUI = null;
 
     // Start is called before the first frame update
     void Start()

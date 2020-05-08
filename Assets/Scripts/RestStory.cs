@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RestStory : MonoBehaviour
 {
-    [SerializeField] private RestUIManager restUIManager;
+    [SerializeField] private RestUIManager restUIManager = null;
     // Start is called before the first frame update
     void Start()
     {

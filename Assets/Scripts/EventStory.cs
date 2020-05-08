@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EventStory : MonoBehaviour
 {
-    [SerializeField] private EventUI eventUI;
+    [SerializeField] private EventUI eventUI = null;
     // Start is called before the first frame update
     void Start()
     {

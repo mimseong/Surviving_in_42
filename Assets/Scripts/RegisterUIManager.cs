@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 public class RegisterUIManager : MonoBehaviour
 {
-    [SerializeField] private Image terminal;
-    [SerializeField] private InputField inputField;
-    [SerializeField] private Button nextButton;
-    [SerializeField] private RegisteStory registeStory;
-    [SerializeField] private DialogController dialogController;
+    [SerializeField] private Image terminal = null;
+    [SerializeField] private InputField inputField = null;
+    [SerializeField] private Button nextButton = null;
+    [SerializeField] private RegisteStory registeStory = null;
+    [SerializeField] private DialogController dialogController = null;
 
     void Start()
     {
