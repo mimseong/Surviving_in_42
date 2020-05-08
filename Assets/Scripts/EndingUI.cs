@@ -15,9 +15,10 @@ public class EndingUI : MonoBehaviour
     [SerializeField] private Text playerName = null;
     [SerializeField] private Text titleMent = null;
     [SerializeField] private Button nextButton = null;
+    [SerializeField] private Button endingButton = null;
     [SerializeField] private Image backgroundImage = null;
-    [SerializeField] private Sprite[] titleSprites = null;
     [SerializeField] private Image titleIcon = null;
+    [SerializeField] private Sprite[] titleSprites = null;
     [SerializeField] private GameObject countName = null;
     [SerializeField] private GameObject title = null;
     [SerializeField] private Transform scroll = null;
@@ -137,8 +138,12 @@ public class EndingUI : MonoBehaviour
     {
         countName.SetActive(false);
         title.SetActive(true);
+        endingButton.gameObject.SetActive(true);
+    }
 
-        //StartCoroutine(Sequence());
+    public void GoEnding()
+    {
+        StartCoroutine(Sequence());
     }
 
     private IEnumerator Sequence()
