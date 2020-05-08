@@ -75,8 +75,10 @@ public class EndingUI : MonoBehaviour
         scroll.gameObject.SetActive(true);
         logo.gameObject.SetActive(true);
         yield return StartCoroutine(MoveTarget(scroll, points[0].position, 0.1f, false));
-        StartCoroutine(MoveTarget(scroll, points[1].position, 0.1f, false));
-        StartCoroutine(MoveTarget(logo, points[2].position, 0.1f, false));
+        StartCoroutine(MoveTarget(logo, points[2].position, 0.15f, false));
+        yield return StartCoroutine(MoveTarget(scroll, points[1].position, 0.1f, false));
+        yield return new WaitForSeconds(5.0f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Prologue");
     }
 
     /// <summary>
