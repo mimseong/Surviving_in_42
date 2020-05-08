@@ -106,10 +106,13 @@ public class RushUI : MonoBehaviour
     }
 
     //랜덤이미지 넣기;
-    private void RandomSetImage(Image target, Sprite[] sprites)
+    private int RandomSetImage(Image target, Sprite[] sprites, int preidx = -1)
     {
         int index = Random.Range(0, sprites.Length);
+        while (preidx == index)
+            index = Random.Range(0, sprites.Length);
         target.sprite = sprites[index];
+        return (index);
     }
 
     /// <summary>
@@ -117,8 +120,8 @@ public class RushUI : MonoBehaviour
     /// </summary>
     public void ActiveImage()
     {
-        RandomSetImage(timo, sprites);
-        RandomSetImage(yasuo, sprites);
+        int tmo = RandomSetImage(timo, sprites);
+        RandomSetImage(yasuo, sprites, tmo);
         timo.gameObject.SetActive(true);
         yasuo.gameObject.SetActive(true);
     }
