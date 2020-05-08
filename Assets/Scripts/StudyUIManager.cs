@@ -85,6 +85,7 @@ public class StudyUIManager : MonoBehaviour
                 evaluated.gameObject.SetActive(true);
                 break;
             case Work.CHEATING:
+                background.sprite = backgroundSprites[0];
                 cheating.gameObject.SetActive(true);
                 break;
         }
