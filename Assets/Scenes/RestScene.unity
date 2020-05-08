@@ -1262,6 +1262,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3ae436a9f707583469ee59104dc045a8, type: 3}
   - {fileID: 21300000, guid: f9582836ff3ffc248bcf174eb12b917d, type: 3}
   - {fileID: 21300000, guid: b96642c2485e39b4ba9e0b40a7781714, type: 3}
+  - {fileID: 21300000, guid: 3fa3cfdf7bdb7114aa63522901b3b2cc, type: 3}
   lazySprites:
   - {fileID: 21300000, guid: f82551a50ca58c745839d65eea311969, type: 3}
   - {fileID: 21300000, guid: 526caba562a523c4b97a9afa17e64d1e, type: 3}
