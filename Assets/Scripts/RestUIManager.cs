@@ -82,7 +82,9 @@ public class RestUIManager : MonoBehaviour
                 goHome.gameObject.SetActive(true);
                 break;
             case Work.LAZY:
+                lazy.gameObject.SetActive(true);
                 lazy.sprite = lazySprites[idx];
+                background.sprite = backgroundSprites[5];
                 break;
         }
         if (tmp == Work.DRINKING || tmp == Work.SLEEP || tmp == Work.GO_HOME || tmp == Work.LAZY)
