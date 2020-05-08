@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RegisteStory : MonoBehaviour
 {
-    [SerializeField] private RegisterUIManager registerUIManager;
-    
+    [SerializeField] private RegisterUIManager registerUIManager = null;
+
 
     void Start()
     {

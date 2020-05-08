@@ -6,29 +6,29 @@ using UnityEngine.UI;
 
 public class StatusManager : MonoBehaviour
 {
-    [SerializeField] private Image stressGauge;
-    [SerializeField] private Image friendshipGauge;
-    [SerializeField] private Image cleanGauge;
-    [SerializeField] private Image sleepGauge;
-    [SerializeField] private Image codingLvGauge;
-    [SerializeField] private Image fortytwoGauge;
-    [SerializeField] private Image player;
-    [SerializeField] private Image curfew;
-    [SerializeField] private Image background;
-    [SerializeField] private Text stressTxt;
-    [SerializeField] private Text friendshipTxt;
-    [SerializeField] private Text cleanTxt;
-    [SerializeField] private Text sleepTxt;
-    [SerializeField] private Text codingLvTxt;
-    [SerializeField] private Text fortytwoTxt;
-    [SerializeField] private Text playerCondition;
-    [SerializeField] private Text curfewTxt;
-    [SerializeField] private Text time;
-    [SerializeField] private Text evalPoint;
-    [SerializeField] private Text playerName;
-    [SerializeField] private Sprite[] playerSprites;
-    [SerializeField] private Sprite[] curfewSprite;
-    [SerializeField] private Button goCurfew;
+    [SerializeField] private Image stressGauge = null;
+    [SerializeField] private Image friendshipGauge = null;
+    [SerializeField] private Image cleanGauge = null;
+    [SerializeField] private Image sleepGauge = null;
+    [SerializeField] private Image codingLvGauge = null;
+    [SerializeField] private Image fortytwoGauge = null;
+    [SerializeField] private Image player = null;
+    [SerializeField] private Image curfew = null;
+    [SerializeField] private Image background = null;
+    [SerializeField] private Text stressTxt = null;
+    [SerializeField] private Text friendshipTxt = null;
+    [SerializeField] private Text cleanTxt = null;
+    [SerializeField] private Text sleepTxt = null;
+    [SerializeField] private Text codingLvTxt = null;
+    [SerializeField] private Text fortytwoTxt = null;
+    [SerializeField] private Text playerCondition = null;
+    [SerializeField] private Text curfewTxt = null;
+    [SerializeField] private Text time = null;
+    [SerializeField] private Text evalPoint = null;
+    [SerializeField] private Text playerName = null;
+    [SerializeField] private Sprite[] curfewSprite = null;
+    [SerializeField] private Button goCurfew = null;
+    [SerializeField] private GameObject dirtyAnimations = null;
 
     // Start is called before the first frame update
     void Start()
@@ -116,27 +116,27 @@ public class StatusManager : MonoBehaviour
         {
             case Condition.NORMAL:
                 playerCondition.text = ">>> 상태 좋음! <<<";
-                player.sprite = playerSprites[0];
                 break;
             case Condition.DIRTY:
                 playerCondition.text = ">>> 더러워서 동료들이 싫어합니다! <<<";
-                player.sprite = playerSprites[1];
+                player.gameObject.GetComponent<Animator>().SetBool("isDirty", true);
+                dirtyAnimations.SetActive(true);
                 break;
             case Condition.SLEEPY:
                 playerCondition.text = ">>> 졸려서 집중이 안됩니다! <<<";
-                player.sprite = playerSprites[2];
+                player.gameObject.GetComponent<Animator>().SetBool("isSleepy", true);
                 break;
             case Condition.HANGOVER:
                 playerCondition.text = ">>> 앗! 전날 술을 마셔서 상태가..! <<<";
-                player.sprite = playerSprites[3];
+                player.gameObject.GetComponent<Animator>().SetBool("isHangover", true);
                 break;
             case Condition.TIRED:
                 playerCondition.text = ">>> 피로가 누적돼서 효율이 떨어집니다... <<<";
-                player.sprite = playerSprites[4];
+                player.gameObject.GetComponent<Animator>().SetBool("isTired", true);
                 break;
             case Condition.FEVER:
                 playerCondition.text = ">>> 갑자기 오늘은 코딩이 너무 잘 되는데? <<<";
-                player.sprite = playerSprites[5];
+                player.gameObject.GetComponent<Animator>().SetBool("isFever", true);
                 break;
         }
     }

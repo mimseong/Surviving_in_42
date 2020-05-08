@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip opening;
-    [SerializeField] private AudioClip firstWeek;
-    [SerializeField] private AudioClip secondWeek;
-    [SerializeField] private AudioClip thirdWeek;
-    [SerializeField] private AudioClip ending;
+    [SerializeField] private AudioSource audioSource = null;
+    [SerializeField] private AudioClip opening = null;
+    [SerializeField] private AudioClip firstWeek = null;
+    [SerializeField] private AudioClip secondWeek = null;
+    [SerializeField] private AudioClip thirdWeek = null;
+    [SerializeField] private AudioClip ending = null;
     private int storeWeek = 0;
 
     void Start()

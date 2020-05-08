@@ -5,7 +5,7 @@ using UnityEngine;
 public class BSQstory : MonoBehaviour
 {
     float jinxLv = 0;
-    [SerializeField] private BSQUI bsqUI;
+    [SerializeField] private BSQUI bsqUI = null;
 
     // Start is called before the first frame update
     void Start()

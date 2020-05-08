@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DailyStory : MonoBehaviour
 {
-    [SerializeField] private DailyUIManager uIManager;
+    [SerializeField] private DailyUIManager uIManager = null;
 
     void Start()
     {

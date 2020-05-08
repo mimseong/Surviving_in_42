@@ -6,27 +6,26 @@ using UnityEngine.UI;
 
 public class StudyUIManager : MonoBehaviour
 {
-    [SerializeField] private Image background;
-    [SerializeField] private Image soloCoding;
-    [SerializeField] private Image duoCoding;
-    [SerializeField] private Image elevator;
-    [SerializeField] private Image evaluate;
-    [SerializeField] private Image evaluated;
-    [SerializeField] private Image cheatingSuccess;
-    [SerializeField] private Image cheatingFailed;
-    [SerializeField] private GameObject cheating;
-    [SerializeField] private Sprite[] backgroundSprites;
-    [SerializeField] private Sprite[] cheatSprites;
-    [SerializeField] private Sprite[] solosSprites;
-    [SerializeField] private Sprite[] duoSprites;
-    [SerializeField] private Sprite[] evalSprites;
-    [SerializeField] private Sprite[] evedSprites;
-    [SerializeField] private Sprite evalRude;
-    [SerializeField] private Image terminal;
-    [SerializeField] private Button nextButton;
-    [SerializeField] private StudyStory studyStory;
-    [SerializeField] private DialogController dialogController;
-    private int countingButton = 0;
+    [SerializeField] private Image background = null;
+    [SerializeField] private Image soloCoding = null;
+    [SerializeField] private Image duoCoding = null;
+    [SerializeField] private Image elevator = null;
+    [SerializeField] private Image evaluate = null;
+    [SerializeField] private Image evaluated = null;
+    [SerializeField] private Image cheatingSuccess = null;
+    [SerializeField] private Image cheatingFailed = null;
+    [SerializeField] private GameObject cheating = null;
+    [SerializeField] private Sprite[] backgroundSprites = null;
+    [SerializeField] private Sprite[] cheatSprites = null;
+    [SerializeField] private Sprite[] solosSprites = null;
+    [SerializeField] private Sprite[] duoSprites = null;
+    [SerializeField] private Sprite[] evalSprites = null;
+    [SerializeField] private Sprite[] evedSprites = null;
+    [SerializeField] private Sprite evalRude = null;
+    [SerializeField] private Image terminal = null;
+    [SerializeField] private Button nextButton = null;
+    [SerializeField] private StudyStory studyStory = null;
+    [SerializeField] private DialogController dialogController = null;
 
     // Start is called before the first frame update
     void Start()

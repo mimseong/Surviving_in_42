@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DialogController : MonoBehaviour
 {
-    [SerializeField] private Text textUI;
+    [SerializeField] private Text textUI = null;
     private IEnumerator coruoutine = null;
 
     void Start()

@@ -6,17 +6,17 @@ using UnityEngine.UI;
 
 public class RushUI : MonoBehaviour
 {
-    [SerializeField] private Button nextButton;
-    [SerializeField] private Image terminal;
-    [SerializeField] private Image mento;
-    [SerializeField] private Image timo;
-    [SerializeField] private Image yasuo;
-    [SerializeField] private Image unavailableTimo;
-    [SerializeField] private Image unavailableYasuo;
-    [SerializeField] private Sprite[] sprites;
-    [SerializeField] private Sprite[] mentoSprites;
-    [SerializeField] private RushStory rushStory;
-    [SerializeField] private DialogController dialogController;
+    [SerializeField] private Button nextButton = null;
+    [SerializeField] private Image terminal = null;
+    [SerializeField] private Image mento = null;
+    [SerializeField] private Image timo = null;
+    [SerializeField] private Image yasuo = null;
+    [SerializeField] private Image unavailableTimo = null;
+    [SerializeField] private Image unavailableYasuo = null;
+    [SerializeField] private Sprite[] sprites = null;
+    [SerializeField] private Sprite[] mentoSprites = null;
+    [SerializeField] private RushStory rushStory = null;
+    [SerializeField] private DialogController dialogController = null;
     private int countingButton = 0;
 
     // Start is called before the first frame update

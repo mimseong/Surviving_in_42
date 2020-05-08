@@ -6,22 +6,22 @@ using UnityEngine.UI;
 
 public class RestUIManager : MonoBehaviour
 {
-    [SerializeField] private Image beer;
-    [SerializeField] private Image sleep1;
-    [SerializeField] private Image sleep2;
-    [SerializeField] private Image sleep3;
-    [SerializeField] private Image goHome;
-    [SerializeField] private Image lazy;
-    [SerializeField] private Image background;
-    [SerializeField] private Button nextButton;
-    [SerializeField] private Image terminal;
-    [SerializeField] private RestStory restStory;
-    [SerializeField] private DialogController dialogController;
-    [SerializeField] private Sprite[] drinking;
-    [SerializeField] private Sprite[] goHomeSprites;
-    [SerializeField] private Sprite[] backgroundSprites;
-    [SerializeField] private Sprite[] lazySprites;
-    
+    [SerializeField] private Image beer = null;
+    [SerializeField] private Image sleep1 = null;
+    [SerializeField] private Image sleep2 = null;
+    [SerializeField] private Image sleep3 = null;
+    [SerializeField] private Image goHome = null;
+    [SerializeField] private Image lazy = null;
+    [SerializeField] private Image background = null;
+    [SerializeField] private Button nextButton = null;
+    [SerializeField] private Image terminal = null;
+    [SerializeField] private RestStory restStory = null;
+    [SerializeField] private DialogController dialogController = null;
+    [SerializeField] private Sprite[] drinking = null;
+    [SerializeField] private Sprite[] goHomeSprites = null;
+    [SerializeField] private Sprite[] backgroundSprites = null;
+    [SerializeField] private Sprite[] lazySprites = null;
+
 
     // Start is called before the first frame update
     void Start()

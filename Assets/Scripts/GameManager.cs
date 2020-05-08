@@ -25,13 +25,13 @@ public class GameManager : MonoBehaviour
     private int prefriendship = 0;
     private int prestress = 0;
     private int presleep = 0;
-    private string name;
+    private string plyaerName = null;
     private Day day = Day.MON;
     private Schedule schedule = Schedule.MORNING;
-    private Work work;
+    private Work work = Work.NONE;
     private Condition condition = Condition.NORMAL;
     private Surprise events;
-    private Title title;
+    private Title title = Title.NONE;
     private bool isExam = false;
     private bool isRush = false;
     private bool isMousePad = false;
@@ -306,12 +306,12 @@ public class GameManager : MonoBehaviour
 
     public void SetName(string name)
     {
-        this.name = name;
+        this.plyaerName = name;
     }
 
     public string GetName()
     {
-        return (this.name);
+        return (this.plyaerName);
     }
 
     public void SetWork(Work work)
