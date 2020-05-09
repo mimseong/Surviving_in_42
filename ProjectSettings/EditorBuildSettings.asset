@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Prologue.unity
+    guid: 2aafbc2372fa2a5488e2cc469f8e74c7
+  - enabled: 1
     path: Assets/Scenes/RegisterScene.unity
     guid: 7935a6af63f2d3545b05db58e5534f1d
   - enabled: 1
@@ -32,7 +35,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EventScene.unity
     guid: 102cb56dedc211341b29b30f755afe65
-  - enabled: 1
-    path: Assets/Scenes/Prologue.unity
-    guid: 2aafbc2372fa2a5488e2cc469f8e74c7
   m_configObjects: {}
