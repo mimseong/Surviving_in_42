@@ -76,7 +76,7 @@ public class StudyStory : MonoBehaviour
         int situation = Random.Range(0, 5);
         if (GameManager.instance.GetWeek() == 1 && (GameManager.instance.GetDay() == Day.TUE || GameManager.instance.GetDay() == Day.WED))
         {
-            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "엘레베이터가 지하로 내려가서 지각했다!");
+            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가를 하러 갔다", "엘레베이터가 지하로 내려가서 지각했다! \n계단을 이용해야겠다");
             studyUIManager.Elevator();
             GameManager.instance.AddCodingLevel(0.5f);
         }
