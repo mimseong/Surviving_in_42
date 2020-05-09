@@ -48,6 +48,8 @@ public class RegisteStory : MonoBehaviour
         GameManager.instance.SetCodingLevel(tmp);
         if (GameManager.instance.GetName().ToLower() == "dobby" || GameManager.instance.GetName().ToLower() == "doby" || GameManager.instance.GetName() == "도비")
             dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "DOBBY IS FREE!!!", str);
+        else if (GameManager.instance.GetName() == "이민석" || GameManager.instance.GetName() == "민석")
+            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "혹시.. 학장님이세요?", str);
         else
             dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "등록되었습니다!", str);
     }
