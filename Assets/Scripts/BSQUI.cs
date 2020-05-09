@@ -45,7 +45,6 @@ public class BSQUI : MonoBehaviour
             case 2:
                 bsqStory.BSQresult(dialogController, ActiveNextButton);
                 jinx.gameObject.SetActive(false);
-                RandomSetImage(peer, sprites);
                 peer.gameObject.SetActive(true);
                 break;
             case 3:
@@ -86,7 +85,8 @@ public class BSQUI : MonoBehaviour
     /// </summary>
     public void ActiveImage()
     {
-        RandomSetImage(jinx, sprites);
+        int jinxIndex = RandomSetImage(jinx, sprites);
+        RandomSetImage(peer, sprites, jinxIndex);
         jinx.gameObject.SetActive(true);
     }
 
@@ -100,9 +100,12 @@ public class BSQUI : MonoBehaviour
         countingButton++;
     }
 
-    private void RandomSetImage(Image target, Sprite[] sprites)
+    private int RandomSetImage(Image target, Sprite[] sprites, int preidx = -1)
     {
         int index = Random.Range(0, sprites.Length);
+        while (preidx == index)
+            index = Random.Range(0, sprites.Length);
         target.sprite = sprites[index];
+        return (index);
     }
 }
