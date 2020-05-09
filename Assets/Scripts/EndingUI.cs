@@ -14,10 +14,12 @@ public class EndingUI : MonoBehaviour
     [SerializeField] private Text titleText2 = null;
     [SerializeField] private Text playerName = null;
     [SerializeField] private Text titleMent = null;
+    [SerializeField] private Text theEnd = null;
     [SerializeField] private Button nextButton = null;
     [SerializeField] private Button endingButton = null;
     [SerializeField] private Image backgroundImage = null;
     [SerializeField] private Image titleIcon = null;
+    [SerializeField] private Image fadeout = null;
     [SerializeField] private Sprite[] titleSprites = null;
     [SerializeField] private GameObject countName = null;
     [SerializeField] private GameObject title = null;
@@ -48,9 +50,14 @@ public class EndingUI : MonoBehaviour
             case 2:
                 textUI.text = "";
                 GameManager.instance.TitleResult();
-                ChangeTitle();
                 ActiveCountText();
-                endingStory.ThirdMent(countDialogController, ActiveTitle);
+                endingStory.ThirdMent(countDialogController, ActiveNextButton);
+                break;
+            case 3:
+                ChangeTitle();
+                countName.SetActive(false);
+                title.SetActive(true);
+                endingButton.gameObject.SetActive(true);
                 break;
         }
         mentIndex++;
@@ -121,6 +128,18 @@ public class EndingUI : MonoBehaviour
                 titleText2.text = "[포인트 재벌]";
                 titleMent.text = "잃는 건 한순간이지!";
                 break;
+            case Title.GOD_CODER:
+                titleIcon.sprite = titleSprites[10];
+                titleText.text = "[코딩의 신] 칭호를 얻었다";
+                titleText2.text = "[코딩의 신]";
+                titleMent.text = "이 기만자같으니...";
+                break;
+            case Title.AMOEBA:
+                titleIcon.sprite = titleSprites[11];
+                titleText.text = "[아메바] 칭호를 얻었다";
+                titleText2.text = "[아메바]";
+                titleMent.text = "나는 아무 생각이 없다";
+                break;
         }
     }
 
@@ -134,13 +153,6 @@ public class EndingUI : MonoBehaviour
         countName.SetActive(true);
     }
 
-    public void ActiveTitle()
-    {
-        countName.SetActive(false);
-        title.SetActive(true);
-        endingButton.gameObject.SetActive(true);
-    }
-
     public void GoEnding()
     {
         StartCoroutine(Sequence());
@@ -152,11 +164,23 @@ public class EndingUI : MonoBehaviour
         scroll.gameObject.SetActive(true);
         logo.gameObject.SetActive(true);
         yield return StartCoroutine(MoveTarget(scroll, points[0].position, 0.2f, false));
-        StartCoroutine(MoveTarget(logo, points[2].position, 0.25f, false));
+        StartCoroutine(MoveTarget(logo, points[2].position, 0.3f, false));
         yield return StartCoroutine(MoveTarget(scroll, points[1].position, 0.2f, false));
         yield return new WaitForSeconds(5.0f);
-        Destroy(GameManager.instance.gameObject);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Prologue");
+        fadeout.gameObject.SetActive(true);
+        yield return StartCoroutine(Fadeout(fadeout));
+        theEnd.gameObject.SetActive(true);
+    }
+
+    private IEnumerator Fadeout(Image image)
+    {
+        float alpha = 0;
+        while (alpha < 1)
+        {
+            image.color = new Color(0, 0, 0, alpha);
+            alpha += 0.02f;
+            yield return new WaitForSeconds(0.05f);
+        }
     }
 
     /// <summary>

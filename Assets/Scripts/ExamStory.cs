@@ -30,7 +30,7 @@ public class ExamStory : MonoBehaviour
     {
         float result = 0;
 
-        if (!GameManager.instance.GetisExam())
+        if (!GameManager.instance.GetisExam() && GameManager.instance.GetWeek() != 4)
             dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "시험이 시작되었습니다", "두근두근.. \n떨린다", "...\n...?\n???\n??????????", "시험에 등록하지 않아서 시험을 칠 수 없습니다");
         else
         {
@@ -66,7 +66,7 @@ public class ExamStory : MonoBehaviour
         GameManager.instance.SetClean(100);
         GameManager.instance.SetSleep(0);
         GameManager.instance.AddCountGoHome(1);
-        GameManager.instance.SetisExam(false);
         GameManager.instance.NextDaySchedule(Schedule.MORNING);
+        GameManager.instance.SetisExam(false);
     }
 }

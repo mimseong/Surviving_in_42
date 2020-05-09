@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     private int countGoHome = 0;
     private int countSoloCoding = 0;
     private int countSnack = 0;
+    private int countLazy = 0;
     private float precodingLevel = 0;
     private float prefortytwoLevel = 0;
     private int preclean = 100;
@@ -541,27 +542,46 @@ public class GameManager : MonoBehaviour
         return (this.countSnack);
     }
 
+    public void SetCountLazy(int count)
+    {
+        this.countLazy = count;
+    }
+
+    public void AddCountLazy(int count)
+    {
+        this.countLazy += count;
+    }
+
+    public int GetCountLazy()
+    {
+        return (this.countLazy);
+    }
+
     public Title TitleResult()
     {
         this.title = Title.NONE;
+        if (GetCountSnack() == 4)
+            this.title = Title.PIG;
+        if (GetCountSnack() == 0)
+            this.title = Title.HUNGRY;
         if (GetCountSoloCoding() >= 10)
             this.title = Title.MY_WAY;
         if (GetCountDuoCoding() >= 10)
             this.title = Title.COMMUNICATOR;
+        if (GetCountDrinking() >= 5)
+            this.title = Title.ALCOHOLIC;
         if (GetCountGoHome() < 10)
             this.title = Title.HOMELESS;
         if (GetCountGoHome() >= 20)
             this.title = Title.HOME_LOVER;
-        if (GetCountDrinking() > 5)
-            this.title = Title.ALCOHOLIC;
-        if (GetCountSnack() == 0)
-            this.title = Title.HUNGRY;
-        if (GetCountSnack() == 4)
-            this.title = Title.PIG;
+        if (GetCountLazy() >= 5)
+            this.title = Title.AMOEBA;
         if (GetEvalPoint() >= 10)
             this.title = Title.RICH;
         if (GetCountCheating() >= 3)
             this.title = Title.TRASH;
+        if (GetCodingLevel() >= 38)
+            this.title = Title.GOD_CODER;
         return (this.title);
     }
 }

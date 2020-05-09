@@ -30,7 +30,7 @@ public class EventStory : MonoBehaviour
                 dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "스크린 락을 걸지 않아서 색반전 당했다!", "도비가 왔다 간 것 같다!");
                 break;
             case Surprise.EVAL_MISTAKE:
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가할 때 실수하는 바람에 사람들 앞에서 주의사항을 큰소리로 공지해줘야 했다", "부끄럽다");
+                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "평가할 때 실수하는 바람에 사람들 앞에서 주의사항을 큰소리로 공지해줘야 했다", "다시는 이런 실수를 하지 않을 것 같다");
                 break;
             case Surprise.CANDY:
                 dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "동료에게 사탕을 받았다!", "달달하다");
