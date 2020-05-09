@@ -103,8 +103,8 @@ public class RushStory : MonoBehaviour
     public void Timo(DialogController dialogController, ConvertMethod nextButton)
     {
         string[] texts = new string[4];
-        string[] names = { "티모", "케이틀린", "럭스" };
-        int idx = Random.Range(0, 3);
+        string[] names = { "티모", "케이틀린", "럭스", "카이사" };
+        int idx = Random.Range(0, names.Length);
 
         timoCodingLv = RandomCodingLv();
         timoMental = Random.Range(25, 101);
@@ -131,8 +131,8 @@ public class RushStory : MonoBehaviour
     public void Yasuo(DialogController dialogController, ConvertMethod nextButton)
     {
         string[] texts = new string[4];
-        string[] names = { "가렌", "야스오", "갈리오" };
-        int idx = Random.Range(0, 3);
+        string[] names = { "가렌", "야스오", "갈리오", "케인" };
+        int idx = Random.Range(0, names.Length);
 
         yasuoCodingLv = RandomCodingLv();
         yasuoMental = Random.Range(25, 101);
