@@ -48,9 +48,14 @@ public class EndingUI : MonoBehaviour
             case 2:
                 textUI.text = "";
                 GameManager.instance.TitleResult();
-                ChangeTitle();
                 ActiveCountText();
-                endingStory.ThirdMent(countDialogController, ActiveTitle);
+                endingStory.ThirdMent(countDialogController, ActiveNextButton);
+                break;
+            case 3:
+                ChangeTitle();
+                countName.SetActive(false);
+                title.SetActive(true);
+                endingButton.gameObject.SetActive(true);
                 break;
         }
         mentIndex++;
@@ -144,13 +149,6 @@ public class EndingUI : MonoBehaviour
     public void ActiveCountText()
     {
         countName.SetActive(true);
-    }
-
-    public void ActiveTitle()
-    {
-        countName.SetActive(false);
-        title.SetActive(true);
-        endingButton.gameObject.SetActive(true);
     }
 
     public void GoEnding()
