@@ -568,12 +568,12 @@ public class GameManager : MonoBehaviour
             this.title = Title.MY_WAY;
         if (GetCountDuoCoding() >= 10)
             this.title = Title.COMMUNICATOR;
-        if (GetCountDrinking() >= 5)
-            this.title = Title.ALCOHOLIC;
         if (GetCountGoHome() < 10)
             this.title = Title.HOMELESS;
         if (GetCountGoHome() >= 20)
             this.title = Title.HOME_LOVER;
+        if (GetCountDrinking() >= 5)
+            this.title = Title.ALCOHOLIC;
         if (GetCountLazy() >= 5)
             this.title = Title.AMOEBA;
         if (GetEvalPoint() >= 10)

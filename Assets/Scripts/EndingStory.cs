@@ -41,7 +41,7 @@ public class EndingStory : MonoBehaviour
         text += GameManager.instance.GetEvalPoint().ToString() + "\n";
         text += GameManager.instance.GetCountLazy().ToString() + "\n";
         text += GameManager.instance.GetCodingLevel().ToString() +"\n";
-        text += GameManager.instance.GetFortytwoLevel().ToString();
+        text += ((int)GameManager.instance.GetFortytwoLevel()).ToString();
         dialogController.ShowTexts(0.5f, 1.0f, 0.1f, 3f, func, text);
     }
 }
