@@ -10,6 +10,10 @@ https://mimseong.github.io/Surviving_in_42/
 
 이 프로젝트는 모바일 웹 환경은 지원되지 않습니다.
 
+windows10:
+
+https://github.com/mimseong/Surviving_in_42/releases/tag/1.0
+
 ### 프로젝트 개요
 
 한 달 동안 정말 많은 경험을 했던 피신 기간
