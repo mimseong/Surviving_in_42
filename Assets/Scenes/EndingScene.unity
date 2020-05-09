@@ -502,8 +502,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 423.5, y: 0}
-  m_SizeDelta: {x: 126.64163, y: 740.6156}
+  m_AnchoredPosition: {x: 409, y: -0.000015259}
+  m_SizeDelta: {x: 126.64163, y: 951.48425}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &513629984
 MonoBehaviour:
@@ -549,7 +549,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.5
-  m_Text: "\uD68C\n\uD68C\n\uD68C\n\uD68C\n\uD68C\n\uD68C\n\uD68C"
+  m_Text: "\uD68C\n\uD68C\n\uD68C\n\uD68C\n\uD68C\n\uD68C\n\uD68C\n\uD68C\n\uD68C"
 --- !u!222 &513629986
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -773,6 +773,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c88cfc140be32dc4a8f730b294bceb92, type: 3}
   - {fileID: 21300000, guid: 1c832f42c6b91f747aa0c6611ab6e52c, type: 3}
   - {fileID: 21300000, guid: 5a0970ab612cdb94db2195f04aab8b1c, type: 3}
+  - {fileID: 21300000, guid: 1cf800ad273f595478cce2180c4b9ae6, type: 3}
+  - {fileID: 21300000, guid: 16800d61c43f1934f8206e27676e0ac0, type: 3}
   countName: {fileID: 1728712961}
   title: {fileID: 1097841819}
   scroll: {fileID: 1589779300}
@@ -1502,8 +1504,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 280.19998, y: 0}
-  m_SizeDelta: {x: 160, y: 740.6156}
+  m_AnchoredPosition: {x: 280.19998, y: 0.000076293945}
+  m_SizeDelta: {x: 160, y: 940.3672}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1154827563
 MonoBehaviour:
@@ -1879,8 +1881,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -118, y: 30}
-  m_SizeDelta: {x: 400, y: 740.6156}
+  m_AnchoredPosition: {x: -133, y: 0}
+  m_SizeDelta: {x: 400, y: 940.36707}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1728712963
 MonoBehaviour:
@@ -1915,7 +1917,8 @@ MonoBehaviour:
     m_LineSpacing: 1.5
   m_Text: "\uD63C\uC790 \uCF54\uB529\uD558\uAE30 :\n\uB3D9\uB8CC\uC640 \uCF54\uB529\uD558\uAE30
     :\n\uC9D1\uC5D0 \uAC00\uAE30 :\n\uCEE8\uB2DD\uD558\uAE30 :\n\uC220\uB9C8\uC2DC\uAE30
-    : \n\uAC04\uC2DD :\n\uD3C9\uAC00 \uD3EC\uC778\uD2B8 :"
+    : \n\uAC04\uC2DD :\n\uD3C9\uAC00 \uD3EC\uC778\uD2B8 :\n\uBE48\uB465\uB300\uAE30
+    :\n\uCF54\uB529\uB808\uBCA8 :"
 --- !u!222 &1728712964
 CanvasRenderer:
   m_ObjectHideFlags: 0

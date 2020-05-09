@@ -64,5 +64,7 @@ public enum Title
     PIG,
     HUNGRY,
     RICH,
-    TRASH
+    TRASH,
+    GOD_CODER,
+    AMOEBA
 }

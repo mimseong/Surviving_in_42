@@ -38,7 +38,9 @@ public class EndingStory : MonoBehaviour
         text += GameManager.instance.GetCountCheating().ToString() + "\n";
         text += GameManager.instance.GetCountDrinking().ToString() + "\n";
         text += GameManager.instance.GetCountSnack().ToString() + "\n";
-        text += GameManager.instance.GetEvalPoint().ToString();
+        text += GameManager.instance.GetEvalPoint().ToString() + "\n";
+        text += GameManager.instance.GetCountLazy().ToString() + "\n";
+        text += GameManager.instance.GetCodingLevel().ToString();
         dialogController.ShowTexts(0.5f, 1.0f, 0.1f, 3f, func, text);
     }
 }

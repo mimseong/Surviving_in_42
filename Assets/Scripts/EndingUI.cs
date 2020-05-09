@@ -121,6 +121,18 @@ public class EndingUI : MonoBehaviour
                 titleText2.text = "[포인트 재벌]";
                 titleMent.text = "잃는 건 한순간이지!";
                 break;
+            case Title.GOD_CODER:
+                titleIcon.sprite = titleSprites[10];
+                titleText.text = "[코딩의 신] 칭호를 얻었다";
+                titleText2.text = "[코딩의 신]";
+                titleMent.text = "이 기만자같으니...";
+                break;
+            case Title.AMOEBA:
+                titleIcon.sprite = titleSprites[11];
+                titleText.text = "[아메바] 칭호를 얻었다";
+                titleText2.text = "[아메바]";
+                titleMent.text = "나는 아무 생각이 없다";
+                break;
         }
     }
 

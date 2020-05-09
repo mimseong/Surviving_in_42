@@ -94,5 +94,6 @@ public class RestStory : MonoBehaviour
         GameManager.instance.AddSleep(10);
         GameManager.instance.AddClean(-15);
         GameManager.instance.AddFriendship(5);
+        GameManager.instance.AddCountLazy(1);
     }
 }
