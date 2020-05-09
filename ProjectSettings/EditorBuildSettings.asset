@@ -4,5 +4,35 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Prologue.unity
+    guid: 2aafbc2372fa2a5488e2cc469f8e74c7
+  - enabled: 1
+    path: Assets/Scenes/RegisterScene.unity
+    guid: 7935a6af63f2d3545b05db58e5534f1d
+  - enabled: 1
+    path: Assets/Scenes/DailyScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/RestScene.unity
+    guid: 7562fa82e48ef3644922d26d941bf6a7
+  - enabled: 1
+    path: Assets/Scenes/StudyScene.unity
+    guid: d2e55a877e20d964584174db52747f4e
+  - enabled: 1
+    path: Assets/Scenes/EndingScene.unity
+    guid: cbcc3bdc787725e449fed344b4168695
+  - enabled: 1
+    path: Assets/Scenes/ExamScene.unity
+    guid: 5cba35ac4dc7ea3479e5003f4057d939
+  - enabled: 1
+    path: Assets/Scenes/RushScene.unity
+    guid: 058afa2d01438524c9d55895e520d452
+  - enabled: 1
+    path: Assets/Scenes/BSQScene.unity
+    guid: db36364926fdda3438d66fa4844b5467
+  - enabled: 1
+    path: Assets/Scenes/EventScene.unity
+    guid: 102cb56dedc211341b29b30f755afe65
   m_configObjects: {}
