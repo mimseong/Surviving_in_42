@@ -66,6 +66,7 @@ public class ExamStory : MonoBehaviour
         GameManager.instance.SetClean(100);
         GameManager.instance.SetSleep(0);
         GameManager.instance.AddCountGoHome(1);
+        GameManager.instance.SetisExam(false);
         GameManager.instance.NextDaySchedule(Schedule.MORNING);
     }
 }

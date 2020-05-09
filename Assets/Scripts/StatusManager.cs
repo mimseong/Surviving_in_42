@@ -35,7 +35,8 @@ public class StatusManager : MonoBehaviour
     {
         GameManager.instance.DecideCondition();
         PlayerCondition();
-        Curfew();
+        if (GameManager.instance.GetDay() != Day.FRI)
+            Curfew();
     }
 
     // Update is called once per frame

@@ -81,6 +81,7 @@ public class RushStory : MonoBehaviour
         GameManager.instance.SetSleep(0);
         GameManager.instance.NextDay(1);
         GameManager.instance.AddCountGoHome(1);
+        GameManager.instance.SetisRush(false);
         GameManager.instance.NextDaySchedule(Schedule.MORNING);
     }
 
@@ -113,7 +114,7 @@ public class RushStory : MonoBehaviour
         texts[3] = "앗\n" + names[idx] + "가 멘탈이 안좋아 집으로 가버렸습니다!";
         dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, texts[0], texts[1]);
         
-        if (timoMental < Random.Range(0, 101))
+        if (Random.Range(timoMental, 101) < Random.Range(0, 101))
         {
             //timoRun;
             dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, texts);
@@ -141,7 +142,7 @@ public class RushStory : MonoBehaviour
         texts[3] = "앗! \n" + names[idx] + "가 멘탈이 깨져서 집으로 가버렸습니다!";
         dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, texts[0] , texts[1]);
 
-        if (yasuoMental < Random.Range(0, 101))
+        if (Random.Range(yasuoMental, 101) < Random.Range(0, 101))
         {
             //yasuoRun;
             dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, nextButton, texts);
