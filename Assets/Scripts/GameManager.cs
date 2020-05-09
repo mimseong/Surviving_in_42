@@ -580,7 +580,7 @@ public class GameManager : MonoBehaviour
             this.title = Title.RICH;
         if (GetCountCheating() >= 3)
             this.title = Title.TRASH;
-        if (GetCodingLevel() >= 38)
+        if (GetCodingLevel() == 42)
             this.title = Title.GOD_CODER;
         return (this.title);
     }
