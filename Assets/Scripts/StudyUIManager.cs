@@ -85,6 +85,7 @@ public class StudyUIManager : MonoBehaviour
                 evaluated.gameObject.SetActive(true);
                 break;
             case Work.CHEATING:
+                cheatingSuccess.gameObject.SetActive(true);
                 background.sprite = backgroundSprites[0];
                 cheating.gameObject.SetActive(true);
                 break;
@@ -119,6 +120,7 @@ public class StudyUIManager : MonoBehaviour
     /// </summary>
     public void CheatingFailed()
     {
+        cheatingSuccess.gameObject.SetActive(false);
         RandomSetImage(cheatingFailed, cheatSprites);
         cheatingFailed.gameObject.SetActive(true);
     }
