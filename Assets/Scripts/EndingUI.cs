@@ -14,10 +14,12 @@ public class EndingUI : MonoBehaviour
     [SerializeField] private Text titleText2 = null;
     [SerializeField] private Text playerName = null;
     [SerializeField] private Text titleMent = null;
+    [SerializeField] private Text theEnd = null;
     [SerializeField] private Button nextButton = null;
     [SerializeField] private Button endingButton = null;
     [SerializeField] private Image backgroundImage = null;
     [SerializeField] private Image titleIcon = null;
+    [SerializeField] private Image fadeout = null;
     [SerializeField] private Sprite[] titleSprites = null;
     [SerializeField] private GameObject countName = null;
     [SerializeField] private GameObject title = null;
@@ -162,11 +164,23 @@ public class EndingUI : MonoBehaviour
         scroll.gameObject.SetActive(true);
         logo.gameObject.SetActive(true);
         yield return StartCoroutine(MoveTarget(scroll, points[0].position, 0.2f, false));
-        StartCoroutine(MoveTarget(logo, points[2].position, 0.25f, false));
+        StartCoroutine(MoveTarget(logo, points[2].position, 0.3f, false));
         yield return StartCoroutine(MoveTarget(scroll, points[1].position, 0.2f, false));
         yield return new WaitForSeconds(5.0f);
-        Destroy(GameManager.instance.gameObject);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Prologue");
+        fadeout.gameObject.SetActive(true);
+        yield return StartCoroutine(Fadeout(fadeout));
+        theEnd.gameObject.SetActive(true);
+    }
+
+    private IEnumerator Fadeout(Image image)
+    {
+        float alpha = 0;
+        while (alpha < 1)
+        {
+            image.color = new Color(0, 0, 0, alpha);
+            alpha += 0.02f;
+            yield return new WaitForSeconds(0.05f);
+        }
     }
 
     /// <summary>

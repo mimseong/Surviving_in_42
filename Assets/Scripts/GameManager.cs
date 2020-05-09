@@ -560,16 +560,16 @@ public class GameManager : MonoBehaviour
     public Title TitleResult()
     {
         this.title = Title.NONE;
+        if (GetCountSnack() == 4)
+            this.title = Title.PIG;
+        if (GetCountSnack() == 0)
+            this.title = Title.HUNGRY;
         if (GetCountSoloCoding() >= 10)
             this.title = Title.MY_WAY;
         if (GetCountDuoCoding() >= 10)
             this.title = Title.COMMUNICATOR;
         if (GetCountDrinking() >= 5)
             this.title = Title.ALCOHOLIC;
-        if (GetCountSnack() == 0)
-            this.title = Title.HUNGRY;
-        if (GetCountSnack() == 4)
-            this.title = Title.PIG;
         if (GetCountGoHome() < 10)
             this.title = Title.HOMELESS;
         if (GetCountGoHome() >= 20)
