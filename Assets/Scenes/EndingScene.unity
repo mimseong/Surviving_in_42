@@ -538,7 +538,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: d3e116dfb6ace26419f5fcfa7d2689d3, type: 3}
-    m_FontSize: 56
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -549,7 +549,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.5
-  m_Text: "\uD68C\n\uD68C\n\uD68C\n\uD68C\n\uD68C\n\uD68C\n\uD68C\n\uD68C\n\uD68C"
+  m_Text: "\uD68C\n\uD68C\n\uD68C\n\uD68C\n\uD68C\n\uD68C\n\uD68C\n\uC810\nLv\nLv"
 --- !u!222 &513629986
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1527,7 +1527,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: d3e116dfb6ace26419f5fcfa7d2689d3, type: 3}
-    m_FontSize: 56
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -1904,7 +1904,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: d3e116dfb6ace26419f5fcfa7d2689d3, type: 3}
-    m_FontSize: 56
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -1918,7 +1918,7 @@ MonoBehaviour:
   m_Text: "\uD63C\uC790 \uCF54\uB529\uD558\uAE30 :\n\uB3D9\uB8CC\uC640 \uCF54\uB529\uD558\uAE30
     :\n\uC9D1\uC5D0 \uAC00\uAE30 :\n\uCEE8\uB2DD\uD558\uAE30 :\n\uC220\uB9C8\uC2DC\uAE30
     : \n\uAC04\uC2DD :\n\uD3C9\uAC00 \uD3EC\uC778\uD2B8 :\n\uBE48\uB465\uB300\uAE30
-    :\n\uCF54\uB529\uB808\uBCA8 :"
+    :\n\uCF54\uB529\uB808\uBCA8 :\n42\uB808\uBCA8 :"
 --- !u!222 &1728712964
 CanvasRenderer:
   m_ObjectHideFlags: 0
