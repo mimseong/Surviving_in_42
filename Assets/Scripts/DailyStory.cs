@@ -7,12 +7,6 @@ public class DailyStory : MonoBehaviour
     void Start()
     {
         uIManager.ActiveTerminal();
-        Debug.Log("치팅하기 : " + GameManager.instance.GetCountCheating());
-        Debug.Log("술마시기 : " + GameManager.instance.GetCountDrinking());
-        Debug.Log("함께코딩 : " + GameManager.instance.GetCountDuoCoding());
-        Debug.Log("혼자코딩 : " + GameManager.instance.GetCountSoloCoding());
-        Debug.Log("집에가기 : " + GameManager.instance.GetCountGoHome());
-        Debug.Log("간식먹기 : " + GameManager.instance.GetCountSnack());
     }
 
     void Update()
