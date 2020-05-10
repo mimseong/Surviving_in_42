@@ -1,7 +1,7 @@
 {
 "companyName": "DefaultCompany",
 "productName": "Program42",
-"productVersion": "0.1",
+"productVersion": "1.0.1",
 "dataUrl": "web_test.data.unityweb",
 "wasmCodeUrl": "web_test.wasm.code.unityweb",
 "wasmFrameworkUrl": "web_test.wasm.framework.unityweb",
