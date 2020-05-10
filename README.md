@@ -1,6 +1,7 @@
 # 42에서 살아남기
 
-![image](https://user-images.githubusercontent.com/50068946/79839417-744f5500-83ef-11ea-9916-5241ebbfe225.png)
+![위키](https://user-images.githubusercontent.com/50068946/81498947-c0acf700-9302-11ea-9fd0-e89846465120.png)
+
 
 	팀명 : 생존자들
 	프로젝트명 : 42에서 살아남기
