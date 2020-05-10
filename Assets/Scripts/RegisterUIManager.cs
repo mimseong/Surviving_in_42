@@ -51,9 +51,9 @@ public class RegisterUIManager : MonoBehaviour
     {
         if (inputField.text.Length <= 0)
             dialogController.ShowTexts(0.5f, 1.5f, 0.02f, "이름을 입력해주세요!");
-        else if (inputField.text.Length > 5)
+        else if (inputField.text.Length > 10)
         {
-            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, "이름을 5자 이내로 입력해주세요!");
+            dialogController.ShowTexts(0.5f, 1.5f, 0.02f, "이름을 10자 이내로 입력해주세요!");
             inputField.text = "";
         }
         else
