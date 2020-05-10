@@ -58,7 +58,7 @@ public class ExamStory : MonoBehaviour
                 dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "시험이 시작되었습니다", "두근두근.. \n떨린다", "...\n...?\n???\n??????????", "로그인조차 하지 못했다", "점수는 0점입니다");
             else
             {
-                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "시험이 시작되었습니다", "두근두근.. \n떨린다", "...\n...?\n???\n??????????", "무사히 시험을 마쳤다", scoreTxt);
+                dialogController.ShowTexts(0.5f, 1.5f, 0.02f, 0.5f, NextButton, "시험이 시작되었습니다", "두근두근.. \n떨린다", "...\n...?\n???\n??????????", scoreTxt, "무사히 시험을 마쳤다");
                 GameManager.instance.AddFortytwoLevel(result * 1.5f);
             }
         }
