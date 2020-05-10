@@ -1,3 +1,8 @@
+![issue](https://img.shields.io/badge/unity-2019.3.10f1-blue)
+![issue](https://img.shields.io/github/issues/mimseong/Surviving_in_42)
+![issue](https://img.shields.io/github/issues-closed/mimseong/Surviving_in_42)
+![issue](https://img.shields.io/github/commit-activity/w/mimseong/Surviving_in_42)
+
 ![42메인](https://user-images.githubusercontent.com/50068946/81499172-7c225b00-9304-11ea-8634-76edbd68c7db.png)
 
 
@@ -45,3 +50,7 @@ window10 환경에서 실행 가능합니다.
 ## 🏝 위키페이지
 
 ### [위키 페이지 링크](https://github.com/mimseong/Surviving_in_42/wiki)
+
+## 🏝 Find Bug
+
+만약 버그 발생 시 [이슈](https://github.com/mimseong/Surviving_in_42/issues)로 알려주시면 신속히 처리하겠습니다
