@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Unity WebGL Player | Program42</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
+    <link rel="stylesheet" href="TemplateData/style.css" />
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
-      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/web_test.json", {onProgress: UnityProgress});
+      var unityInstance = UnityLoader.instantiate(
+        "unityContainer",
+        "Build/web_test.json",
+        { onProgress: UnityProgress }
+      );
     </script>
   </head>
   <body>
     <div class="webgl-content">
+      <a href="https://hits.seeyoufarm.com"
+        ><img
+          src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fmimseong%2FSurviving_in_42.git&count_bg=%2378C9FF&title_bg=%23424242&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"
+      /></a>
       <div id="unityContainer" style="width: 960px; height: 540px"></div>
       <div class="footer">
         <div class="webgl-logo"></div>
         <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-        <div class="title">Program42</div>
+        <div class="title">42서울에서 살아남기</div>
       </div>
     </div>
   </body>
